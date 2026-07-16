@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notificações (Sentinela) · Silica</title>
+<meta name="description" content="A Sentinela do Silica avisa antes dos vencimentos: despesas, faturas de cartão, vendas, ordens de serviço e orçamentos a vencer — com a antecedência que você escolher.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt">Recursos</span><span data-lang="en">Features</span> › <span data-lang="pt">Notificações</span><span data-lang="en">Notifications</span></div>
+    <span class="eyebrow">🔔 <span data-lang="pt">Sentinela</span><span data-lang="en">Sentinel</span></span>
+    <h1 data-lang="pt">Nunca mais esqueça um vencimento</h1>
+    <h1 data-lang="en">Never miss a due date again</h1>
+    <p class="lead" data-lang="pt">A Sentinela é o vigia do Silica: ela monitora seus lançamentos e avisa com a antecedência e a frequência que você escolher.</p>
+    <p class="lead" data-lang="en">The Sentinel is Silica's watchdog: it monitors your entries and warns you with the lead time and frequency you choose.</p>
+  </div>
+
+  <div class="doc">
+    <aside class="doc-side">
+      <nav>
+        <span class="side-title" data-lang="pt">Nesta página</span><span class="side-title" data-lang="en">On this page</span>
+        <a href="#config" data-lang="pt">Como configurar</a><a href="#config" data-lang="en">How to set it up</a>
+        <a href="#monitora" data-lang="pt">O que é monitorado</a><a href="#monitora" data-lang="en">What's monitored</a>
+        <a href="#fatura" data-lang="pt">Aviso de fatura fechando</a><a href="#fatura" data-lang="en">Invoice-closing alert</a>
+        <a href="#backup" data-lang="pt">Lembrete de backup</a><a href="#backup" data-lang="en">Backup reminder</a>
+      </nav>
+    </aside>
+
+    <div class="doc-main">
+      <section id="config">
+        <h2 data-lang="pt">Como configurar</h2><h2 data-lang="en">How to set it up</h2>
+        <p data-lang="pt">Em <strong>Menu › Configurações</strong> você define:</p>
+        <p data-lang="en">In <strong>Menu › Settings</strong> you define:</p>
+        <ul>
+          <li data-lang="pt"><strong>Antecedência:</strong> de 1 a 7 dias antes do vencimento.</li>
+          <li data-lang="en"><strong>Lead time:</strong> from 1 to 7 days before the due date.</li>
+          <li data-lang="pt"><strong>Frequência:</strong> até 3 avisos por dia.</li>
+          <li data-lang="en"><strong>Frequency:</strong> up to 3 alerts per day.</li>
+          <li data-lang="pt"><strong>Quais perfis vigiar</strong> (PRO): Pessoal, Negócios, Vendas e/ou Serviços.</li>
+          <li data-lang="en"><strong>Which profiles to watch</strong> (PRO): Personal, Business, Sales and/or Services.</li>
+        </ul>
+      </section>
+
+      <section id="monitora">
+        <h2 data-lang="pt">O que a Sentinela monitora</h2><h2 data-lang="en">What the Sentinel monitors</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th data-lang="pt">Perfil</th><th data-lang="en">Profile</th><th data-lang="pt">Avisa sobre</th><th data-lang="en">Warns about</th></tr></thead>
+            <tbody>
+              <tr><td>Pessoal / Personal · Negócios / Business</td><td data-lang="pt">Despesas avulsas e faturas de cartão a vencer ou atrasadas.</td><td data-lang="en">One-off expenses and card invoices due or overdue.</td></tr>
+              <tr><td>Vendas / Sales</td><td data-lang="pt">Parcelas de venda a receber.</td><td data-lang="en">Sale installments to receive.</td></tr>
+              <tr><td>Serviços / Services</td><td data-lang="pt">Ordens de serviço a receber e <strong>orçamentos a vencer</strong> (validade).</td><td data-lang="en">Work orders to receive and <strong>quotes about to expire</strong>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p data-lang="pt">Cada aviso mostra o valor e o status ("vence hoje", "vence em X dias" ou "atrasado"), com um prefixo do perfil de origem.</p>
+        <p data-lang="en">Each alert shows the amount and status ("due today", "due in X days" or "overdue"), prefixed with the source profile.</p>
+      </section>
+
+      <section id="fatura">
+        <h2 data-lang="pt">Aviso de fatura fechando</h2><h2 data-lang="en">Invoice-closing alert</h2>
+        <p data-lang="pt">Além dos vencimentos, você pode ser avisado quando a fatura de um cartão está prestes a <strong>fechar</strong> — ative isso por cartão em <strong>Gerenciar Cartões</strong>, definindo com quantos dias de antecedência quer o aviso.</p>
+        <p data-lang="en">Beyond due dates, you can be warned when a card invoice is about to <strong>close</strong> — enable it per card in <strong>Manage Cards</strong>, choosing how many days ahead you want the alert.</p>
+      </section>
+
+      <section id="backup">
+        <h2 data-lang="pt">Lembrete de backup automático</h2><h2 data-lang="en">Automatic backup reminder</h2>
+        <p data-lang="pt">Se você é PRO pleno e ainda não ativou o backup automático, a Sentinela envia um lembrete gentil (até 7 dias seguidos) recomendando ativá-lo — de preferência para uma pasta na nuvem. Um toque em <strong>"Ativar agora"</strong> leva direto às configurações. Assim que o backup é ligado, o lembrete para de vez.</p>
+        <p data-lang="en">If you're a full PRO user and haven't turned on automatic backup, the Sentinel sends a gentle reminder (up to 7 days in a row) suggesting you enable it — ideally to a cloud folder. Tapping <strong>"Enable now"</strong> goes straight to settings. Once backup is on, the reminder stops for good.</p>
+        <a class="card-link" href="seguranca-backup.html">→ <span data-lang="pt">Ver tudo sobre Backup</span><span data-lang="en">See everything about Backup</span></a>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raio-X · Silica</title>
+<meta name="description" content="O Raio-X do Silica: gastos e lucros por categoria, mês ou ano, com médias, ROI, Conversão em Caixa e relatório do Gerente em PDF.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt">Recursos</span><span data-lang="en">Features</span> › Raio-X</div>
+    <span class="eyebrow">📊 <span data-lang="pt">Relatórios</span><span data-lang="en">Reports</span></span>
+    <h1 data-lang="pt">Raio-X: para onde vai o seu dinheiro</h1>
+    <h1 data-lang="en">X-Ray: where your money goes</h1>
+    <p class="lead" data-lang="pt">Agrupa gastos e lucros por categoria, com médias e percentuais, no mês ou no acumulado do ano.</p>
+    <p class="lead" data-lang="en">Groups spending and profit by category, with averages and percentages, monthly or year-to-date.</p>
+  </div>
+
+  <div class="doc">
+    <aside class="doc-side">
+      <nav>
+        <span class="side-title" data-lang="pt">Nesta página</span><span class="side-title" data-lang="en">On this page</span>
+        <a href="#categorias" data-lang="pt">Por categoria</a><a href="#categorias" data-lang="en">By category</a>
+        <a href="#mes-ano" data-lang="pt">Mês vs Ano</a><a href="#mes-ano" data-lang="en">Month vs Year</a>
+        <a href="#vendas" data-lang="pt">No perfil Vendas</a><a href="#vendas" data-lang="en">In the Sales profile</a>
+        <a href="#servicos" data-lang="pt">No perfil Serviços</a><a href="#servicos" data-lang="en">In the Services profile</a>
+        <a href="#pdf" data-lang="pt">Relatório em PDF</a><a href="#pdf" data-lang="en">PDF report</a>
+      </nav>
+    </aside>
+
+    <div class="doc-main">
+      <section id="categorias">
+        <h2 data-lang="pt">Gastos por categoria</h2><h2 data-lang="en">Spending by category</h2>
+        <div class="split">
+          <div>
+            <p data-lang="pt">Cada categoria vira uma barra com o total, a <strong>média mensal</strong> e o <strong>percentual</strong> do todo. Toque numa categoria (Pessoal/Negócios) ou no nome do Gerente (Vendas) para expandir e ver os lançamentos que compõem aquele valor.</p>
+            <p data-lang="en">Each category becomes a bar with the total, the <strong>monthly average</strong> and the <strong>percentage</strong> of the whole. Tap a category (Personal/Business) or the Manager's name (Sales) to expand and see the entries behind that value.</p>
+          </div>
+          <div class="split-media"><div class="device"><img src="assets/img/raio-x.webp" alt="Raio-X do Silica por categoria" loading="lazy"></div></div>
+        </div>
+      </section>
+
+      <section id="mes-ano">
+        <h2 data-lang="pt">Mês atual vs acumulado do ano</h2><h2 data-lang="en">Current month vs year-to-date</h2>
+        <p data-lang="pt">Alterne entre <strong>Mês Atual</strong> e <strong>Acumulado do Ano</strong> no topo. Deslize a tela lateralmente para navegar entre os meses sem sair do Raio-X.</p>
+        <p data-lang="en">Switch between <strong>Current Month</strong> and <strong>Year-to-date</strong> at the top. Swipe sideways to move between months without leaving the X-Ray.</p>
+      </section>
+
+      <section id="vendas">
+        <h2 data-lang="pt">No perfil Vendas: ROI & Conversão</h2><h2 data-lang="en">In Sales: ROI & Conversion</h2>
+        <ul>
+          <li data-lang="pt"><strong>ROI:</strong> quanto seu dinheiro rendeu sobre o custo do estoque.</li>
+          <li data-lang="en"><strong>ROI:</strong> how much your money earned over the stock cost.</li>
+          <li data-lang="pt"><strong>Conversão em Caixa:</strong> quanto do que você vendeu já entrou de fato no caixa.</li>
+          <li data-lang="en"><strong>Cash Conversion:</strong> how much of what you sold has actually reached the cash.</li>
+        </ul>
+      </section>
+
+      <section id="servicos">
+        <h2 data-lang="pt">No perfil Serviços</h2><h2 data-lang="en">In the Services profile</h2>
+        <p data-lang="pt">O Serviços tem um Raio-X próprio: recebido no mês, a receber, lucro estimado, ticket médio, faturamento por categoria, mix de formas de pagamento, taxa de conversão de orçamento em serviço e top clientes. Veja em <a href="servicos.html#raiox">Serviços</a>.</p>
+        <p data-lang="en">Services has its own X-Ray: month received, to receive, estimated profit, average ticket, revenue by category, payment-method mix, quote-to-service conversion and top clients. See <a href="servicos.html#raiox">Services</a>.</p>
+      </section>
+
+      <section id="pdf">
+        <h2 data-lang="pt">Relatório em PDF</h2><h2 data-lang="en">PDF report</h2>
+        <p data-lang="pt">No perfil Vendas, o ícone de PDF gera o <strong>relatório do Gerente</strong>: escolha o vendedor, o período e o % de comissão. Cada parcela entra no mês do vencimento, separando a comissão já realizada da comissão a receber.</p>
+        <p data-lang="en">In the Sales profile, the PDF icon generates the <strong>Manager report</strong>: choose the seller, the period and the commission %. Each installment lands in its due month, separating realized commission from commission to receive.</p>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>

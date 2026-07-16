@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfis · Silica</title>
+<meta name="description" content="Os quatro espaços isolados do Silica — Pessoal, Negócios, Vendas e Serviços — e como habilitar, desabilitar e definir o perfil principal.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt">Perfis</span><span data-lang="en">Profiles</span></div>
+    <span class="eyebrow" data-lang="pt">Espaços isolados</span><span class="eyebrow" data-lang="en">Isolated spaces</span>
+    <h1 data-lang="pt">Quatro espaços, zero mistura</h1>
+    <h1 data-lang="en">Four spaces, zero mixing</h1>
+    <p class="lead" data-lang="pt">Cada perfil tem seus próprios lançamentos, categorias, cartões, relatórios e regras. O que você lança em um espaço nunca aparece no outro.</p>
+    <p class="lead" data-lang="en">Each profile has its own entries, categories, cards, reports and rules. What you record in one space never shows up in another.</p>
+  </div>
+
+  <div class="doc">
+    <aside class="doc-side">
+      <nav>
+        <span class="side-title" data-lang="pt">Nesta página</span><span class="side-title" data-lang="en">On this page</span>
+        <a href="#pessoal">Pessoal / Personal</a>
+        <a href="#negocios">Negócios / Business</a>
+        <a href="#vendas">Vendas / Sales</a>
+        <a href="#servicos">Serviços / Services</a>
+        <a href="#alternar" data-lang="pt">Alternar de espaço</a><a href="#alternar" data-lang="en">Switch space</a>
+        <a href="#gerenciar" data-lang="pt">Gerenciar perfis</a><a href="#gerenciar" data-lang="en">Manage profiles</a>
+        <a href="#principal" data-lang="pt">Perfil principal</a><a href="#principal" data-lang="en">Main profile</a>
+        <a href="#reset" data-lang="pt">Zerar um perfil</a><a href="#reset" data-lang="en">Reset a profile</a>
+      </nav>
+    </aside>
+
+    <div class="doc-main">
+      <section id="pessoal">
+        <h2>🏠 Pessoal <span class="badge badge-free" data-lang="pt">Grátis</span><span class="badge badge-free" data-lang="en">Free</span></h2>
+        <p data-lang="pt">O espaço do seu dia a dia, sempre gratuito. Aqui você controla despesas, rendas, cartões de crédito e assinaturas. É o único perfil disponível sem PRO — e nunca pode ser desativado.</p>
+        <p data-lang="en">Your everyday space, always free. Here you manage expenses, income, credit cards and subscriptions. It's the only profile available without PRO — and it can never be disabled.</p>
+        <ul>
+          <li data-lang="pt">Despesas avulsas, recorrentes e parceladas</li><li data-lang="en">One-off, recurring and installment expenses</li>
+          <li data-lang="pt">Rendas lançadas manualmente</li><li data-lang="en">Manually entered income</li>
+          <li data-lang="pt">Cartões de crédito com faturas</li><li data-lang="en">Credit cards with invoices</li>
+          <li data-lang="pt">Assinaturas e Raio-X por categoria</li><li data-lang="en">Subscriptions and category X-Ray</li>
+        </ul>
+      </section>
+
+      <section id="negocios">
+        <h2>💼 Negócios <span class="badge badge-pro">PRO</span></h2>
+        <p data-lang="pt">Um espaço totalmente isolado para sua empresa ou MEI. Funciona como o Pessoal (despesas, rendas, cartões, categorias, Raio-X), mas com dados 100% separados da sua vida pessoal — ideal para não misturar o caixa da empresa com o seu.</p>
+        <p data-lang="en">A fully isolated space for your company. It works like Personal (expenses, income, cards, categories, X-Ray), but with data 100% separate from your personal life — perfect to keep the company's cash apart from yours.</p>
+        <div class="split-media" style="justify-content:flex-start"><div class="device" style="max-width:250px"><img src="assets/img/home-negocios.webp" alt="Perfil Silica Negócios" loading="lazy"></div></div>
+      </section>
+
+      <section id="vendas">
+        <h2>📦 Vendas <span class="badge badge-pro">PRO</span></h2>
+        <p data-lang="pt">Gestão completa de revenda: <strong>estoque</strong>, vendas parceladas, <strong>lucro automático</strong>, comissões de vendedores (Gerentes) e relatório do Gerente em PDF. Aqui você não cadastra rendas manualmente — elas nascem quando você marca uma parcela de venda como paga.</p>
+        <p data-lang="en">Full resale management: <strong>stock</strong>, installment sales, <strong>automatic profit</strong>, seller commissions and a Manager PDF report. You don't add income manually here — it's created when you mark a sale installment as paid.</p>
+        <a class="card-link" href="vendas.html">→ <span data-lang="pt">Ver tudo sobre Vendas</span><span data-lang="en">See everything about Sales</span></a>
+      </section>
+
+      <section id="servicos">
+        <h2>🔧 Serviços <span class="badge badge-pro">PRO</span></h2>
+        <p data-lang="pt">Para prestadores de serviço. Monte um catálogo com preços, registre ordens de serviço, gere <strong>orçamentos e recibos em PDF</strong> com QR Pix, colha a assinatura do cliente na tela e envie pelo WhatsApp. Tem Raio-X próprio, numeração de OS, sinal, garantia e recorrência.</p>
+        <p data-lang="en">For service providers. Build a priced catalog, register work orders, generate <strong>PDF quotes and receipts</strong> with a Pix QR, capture the client's on-screen signature and share on WhatsApp. It has its own X-Ray, order numbering, down payments, warranty and recurrence.</p>
+        <a class="card-link" href="servicos.html">→ <span data-lang="pt">Ver tudo sobre Serviços</span><span data-lang="en">See everything about Services</span></a>
+      </section>
+
+      <section id="alternar">
+        <h2 data-lang="pt">Alternar de espaço</h2><h2 data-lang="en">Switch space</h2>
+        <p data-lang="pt">Toque no ícone de <strong>perfil</strong> no canto superior da tela para abrir o seletor. Ao escolher um espaço, o app <strong>sempre abre na Home</strong> dele — a aba ou o menu que estava aberto no espaço anterior não é levado junto.</p>
+        <p data-lang="en">Tap the <strong>profile</strong> icon at the top of the screen to open the switcher. When you pick a space, the app <strong>always opens on its Home</strong> — whatever tab or menu was open in the previous space is not carried over.</p>
+      </section>
+
+      <section id="gerenciar">
+        <h2 data-lang="pt">Gerenciar perfis (PRO)</h2><h2 data-lang="en">Manage profiles (PRO)</h2>
+        <p data-lang="pt">Em <strong>Menu › Configurações › Perfis</strong>, usuários PRO escolhem quais espaços ficam visíveis. Ligue ou desligue Negócios, Vendas e Serviços conforme usar. Duas regras protegem você de se trancar para fora:</p>
+        <p data-lang="en">In <strong>Menu › Settings › Profiles</strong>, PRO users choose which spaces are visible. Turn Business, Sales and Services on or off as needed. Two rules keep you from locking yourself out:</p>
+        <ul>
+          <li data-lang="pt">O <strong>Pessoal</strong> nunca pode ser desativado.</li><li data-lang="en">The <strong>Personal</strong> space can never be disabled.</li>
+          <li data-lang="pt">O <strong>perfil principal</strong> também fica sempre ativo.</li><li data-lang="en">The <strong>main profile</strong> also stays always active.</li>
+        </ul>
+      </section>
+
+      <section id="principal">
+        <h2 data-lang="pt">Perfil principal e em qual perfil o app abre</h2><h2 data-lang="en">Main profile & which profile opens</h2>
+        <p data-lang="pt">Marque um espaço com a <strong>estrela</strong> em Configurações › Perfis para defini-lo como <strong>principal</strong>: o app passa a abrir nele toda vez que você liga o celular.</p>
+        <p data-lang="en">Mark a space with the <strong>star</strong> in Settings › Profiles to make it the <strong>main</strong> one: the app will open in it every time you start your phone.</p>
+        <div class="callout warn">
+          <div class="callout-title">⚠️ <span data-lang="pt">Sem PRO</span><span data-lang="en">Without PRO</span></div>
+          <p data-lang="pt">Se você não é PRO (ou deixa de ser), o app volta a abrir sempre no <strong>Pessoal</strong> e só ele fica disponível — mas <strong>nenhum dado é apagado</strong>. Ao voltar ao PRO, tudo é reativado.</p>
+          <p data-lang="en">If you're not PRO (or stop being), the app opens in <strong>Personal</strong> again and only it stays available — but <strong>no data is deleted</strong>. Going PRO again reactivates everything.</p>
+        </div>
+      </section>
+
+      <section id="reset">
+        <h2 data-lang="pt">Zerar um perfil</h2><h2 data-lang="en">Reset a profile</h2>
+        <p data-lang="pt">Cada espaço pode ser zerado individualmente em Configurações, apagando apenas os lançamentos daquele perfil, sem tocar nos outros. No Serviços, a sua identidade profissional (dados, logo, assinatura) é preservada — ela não é "movimento", e sim cadastro.</p>
+        <p data-lang="en">Each space can be reset individually in Settings, erasing only that profile's entries without touching the others. In Services, your professional identity (details, logo, signature) is preserved — it's a registration, not a transaction.</p>
+        <div class="callout warn">
+          <div class="callout-title">⚠️ <span data-lang="pt">Ação irreversível</span><span data-lang="en">Irreversible action</span></div>
+          <p data-lang="pt">Zerar um perfil não pode ser desfeito. Faça um <a href="seguranca-backup.html">backup</a> antes, por segurança.</p>
+          <p data-lang="en">Resetting a profile can't be undone. Make a <a href="seguranca-backup.html">backup</a> first, just in case.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>

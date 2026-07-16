@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regras de negócio · Silica</title>
+<meta name="description" content="As regras que o Silica segue para calcular saldo, lucro, comprometimento, faturas, parcelas, recorrência e documentos — explicadas com exemplos.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt">Regras de negócio</span><span data-lang="en">Business rules</span></div>
+    <span class="eyebrow" data-lang="pt">Como o app pensa</span><span class="eyebrow" data-lang="en">How the app thinks</span>
+    <h1 data-lang="pt">Regras de negócio, com exemplos</h1>
+    <h1 data-lang="en">Business rules, with examples</h1>
+    <p class="lead" data-lang="pt">O Silica é opinativo: ele tem regras claras para calcular tudo de forma consistente. Aqui estão as principais, com exemplos práticos.</p>
+    <p class="lead" data-lang="en">Silica is opinionated: it follows clear rules to calculate everything consistently. Here are the main ones, with practical examples.</p>
+  </div>
+
+  <div class="doc">
+    <aside class="doc-side">
+      <nav>
+        <span class="side-title" data-lang="pt">Nesta página</span><span class="side-title" data-lang="en">On this page</span>
+        <a href="#saldo" data-lang="pt">Saldo & comprometimento</a><a href="#saldo" data-lang="en">Balance & commitment</a>
+        <a href="#lucro" data-lang="pt">Lucro só quando entra</a><a href="#lucro" data-lang="en">Profit only when paid</a>
+        <a href="#parcelas" data-lang="pt">Parcelas exatas</a><a href="#parcelas" data-lang="en">Exact installments</a>
+        <a href="#faturas" data-lang="pt">Faturas de cartão</a><a href="#faturas" data-lang="en">Card invoices</a>
+        <a href="#recorrencia" data-lang="pt">Recorrência & histórico</a><a href="#recorrencia" data-lang="en">Recurrence & history</a>
+        <a href="#orcamento" data-lang="pt">Orçamento vs recibo</a><a href="#orcamento" data-lang="en">Quote vs receipt</a>
+        <a href="#os" data-lang="pt">Numeração de OS</a><a href="#os" data-lang="en">Order numbering</a>
+        <a href="#sinal" data-lang="pt">Sinal & data da renda</a><a href="#sinal" data-lang="en">Down payment & income date</a>
+        <a href="#gating" data-lang="pt">Grátis vs PRO</a><a href="#gating" data-lang="en">Free vs PRO</a>
+      </nav>
+    </aside>
+
+    <div class="doc-main">
+      <section id="saldo">
+        <h2 data-lang="pt">Saldo livre & comprometimento</h2><h2 data-lang="en">Free balance & commitment</h2>
+        <ul>
+          <li data-lang="pt"><strong>Saldo livre</strong> = saldo anterior + renda do mês − despesas do mês.</li>
+          <li data-lang="en"><strong>Free balance</strong> = previous balance + month income − month expenses.</li>
+          <li data-lang="pt"><strong>Comprometimento</strong> = despesas do mês ÷ (saldo anterior + renda do mês). Se não há saldo positivo mas há contas, é 100%.</li>
+          <li data-lang="en"><strong>Commitment</strong> = month expenses ÷ (previous balance + month income). With no positive balance but bills pending, it's 100%.</li>
+        </ul>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt">Saldo anterior R$ 1.000 + renda R$ 4.000 = R$ 5.000. Despesas R$ 950.</li>
+            <li data-lang="en">Previous $200 + income $800 = $1,000. Expenses $190.</li>
+            <li data-lang="pt">→ Comprometimento = 950 ÷ 5.000 = <b>19%</b>; saldo livre = <b>R$ 4.050</b>.</li>
+            <li data-lang="en">→ Commitment = 190 ÷ 1,000 = <b>19%</b>; free balance = <b>$810</b>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="lucro">
+        <h2 data-lang="pt">O lucro só é real quando o dinheiro entra</h2><h2 data-lang="en">Profit only counts when the money arrives</h2>
+        <p data-lang="pt">Nos perfis Vendas e Serviços, o lucro (ou a renda) não é contado quando a venda/serviço é registrado, e sim quando você marca como <strong>recebido</strong>. Isso mantém o Raio-X honesto: mostra caixa de verdade, não promessa.</p>
+        <p data-lang="en">In Sales and Services, profit (or income) isn't counted when the sale/service is recorded, but when you mark it as <strong>received</strong>. This keeps the X-Ray honest: it shows real cash, not a promise.</p>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt">Venda de R$ 100 (custo R$ 60) em 2×. Ao receber a 1ª parcela, metade do lucro entra como renda; ao receber a 2ª, o restante.</li>
+            <li data-lang="en">A $100 sale (cost $60) in 2×. When you receive the 1st installment, half the profit becomes income; the 2nd brings the rest.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="parcelas">
+        <h2 data-lang="pt">Parcelas que somam exatamente o total</h2><h2 data-lang="en">Installments that add up exactly</h2>
+        <p data-lang="pt">A divisão é feita por centavos e o resíduo vai para a última parcela.</p>
+        <p data-lang="en">The split is by cents and the remainder goes to the last installment.</p>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt"><b>R$ 100 em 3×</b> → 33,33 + 33,33 + <b>33,34</b> = 100,00.</li>
+            <li data-lang="en"><b>$100 in 3×</b> → 33.33 + 33.33 + <b>33.34</b> = 100.00.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="faturas">
+        <h2 data-lang="pt">Faturas de cartão</h2><h2 data-lang="en">Card invoices</h2>
+        <ul>
+          <li data-lang="pt"><strong>Mês da fatura:</strong> compra a partir do dia de fechamento entra na fatura do mês seguinte.</li>
+          <li data-lang="en"><strong>Invoice month:</strong> a purchase on/after the closing day goes to next month's invoice.</li>
+          <li data-lang="pt"><strong>Fatura reaberta:</strong> se você compra de novo após pagar, a timeline mostra só o valor não pago.</li>
+          <li data-lang="en"><strong>Reopened invoice:</strong> if you buy again after paying, the timeline shows only the unpaid amount.</li>
+          <li data-lang="pt"><strong>Limite disponível</strong> = limite − despesas não pagas.</li>
+          <li data-lang="en"><strong>Available limit</strong> = limit − unpaid expenses.</li>
+        </ul>
+      </section>
+
+      <section id="recorrencia">
+        <h2 data-lang="pt">Recorrência protege seu histórico</h2><h2 data-lang="en">Recurrence protects your history</h2>
+        <ul>
+          <li data-lang="pt"><strong>Uma série ativa por descrição</strong> em cada perfil — o app impede duplicar a mesma conta.</li>
+          <li data-lang="en"><strong>One active series per description</strong> in each profile — the app prevents duplicating the same bill.</li>
+          <li data-lang="pt"><strong>Encerrar nunca apaga o pago:</strong> ao encerrar uma recorrência, cobranças futuras somem, mas as parcelas já pagas viram avulsas e permanecem no histórico.</li>
+          <li data-lang="en"><strong>Ending never erases the paid:</strong> when you end a recurrence, future charges disappear, but already-paid entries stay in history.</li>
+          <li data-lang="pt"><strong>12 meses à frente:</strong> a série é sempre mantida com ~12 meses projetados.</li>
+          <li data-lang="en"><strong>12 months ahead:</strong> the series is always kept with ~12 months projected.</li>
+        </ul>
+      </section>
+
+      <section id="orcamento">
+        <h2 data-lang="pt">Orçamento não entra nos números</h2><h2 data-lang="en">A quote doesn't enter the numbers</h2>
+        <p data-lang="pt">Um orçamento é uma proposta: não conta como faturamento nem lucro até ser convertido em serviço. Ao converter, o <strong>número da OS é mantido</strong> e o app registra a conversão (métrica de taxa de conversão no Raio-X).</p>
+        <p data-lang="en">A quote is a proposal: it doesn't count as revenue or profit until converted into a service. On conversion, the <strong>order number is kept</strong> and the app records it (conversion-rate metric in the X-Ray).</p>
+      </section>
+
+      <section id="os">
+        <h2 data-lang="pt">Numeração de OS: AAMMDD-NNNN</h2><h2 data-lang="en">Order numbering: YYMMDD-NNNN</h2>
+        <p data-lang="pt">Cada ordem recebe um número no formato ano-mês-dia + uma sequência que reinicia a cada dia. É atribuído na criação (mesmo em orçamento) e nunca muda — nem na conversão para recibo.</p>
+        <p data-lang="en">Each order gets a number as year-month-day + a sequence that restarts each day. It's assigned on creation (even for quotes) and never changes — not even when converted to a receipt.</p>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt">2ª OS criada em 26/04/2026 → <code>260426-0002</code>.</li>
+            <li data-lang="en">2nd order created on 2026-04-26 → <code>260426-0002</code>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="sinal">
+        <h2 data-lang="pt">Sinal e a data certa da renda</h2><h2 data-lang="en">Down payment and the right income date</h2>
+        <p data-lang="pt">Se você recebe um sinal, ele vira renda <strong>na data do sinal</strong>; o saldo restante vira renda na data em que você quita o serviço. Assim, cada valor aparece no mês em que o dinheiro realmente entrou. O sinal nunca pode ser maior que o total.</p>
+        <p data-lang="en">If you take a down payment, it becomes income <strong>on the down-payment date</strong>; the remaining balance becomes income on the day you settle the service. So each amount shows up in the month the money actually arrived. The down payment can never exceed the total.</p>
+      </section>
+
+      <section id="gating">
+        <h2 data-lang="pt">Grátis vs PRO (e o que acontece ao perder o PRO)</h2><h2 data-lang="en">Free vs PRO (and what happens if PRO ends)</h2>
+        <p data-lang="pt">Sem PRO, você usa só o perfil Pessoal, o tema do Sistema e nada de texturas, backup ou exportação. Se o PRO expira, <strong>nenhum dado é apagado</strong> — o app apenas volta ao modo gratuito e reativa tudo quando você renova.</p>
+        <p data-lang="en">Without PRO you use only the Personal profile, the System theme and no textures, backup or export. If PRO expires, <strong>no data is deleted</strong> — the app simply returns to free mode and reactivates everything when you renew.</p>
+        <a class="card-link" href="planos.html">→ <span data-lang="pt">Comparar Grátis e PRO</span><span data-lang="en">Compare Free and PRO</span></a>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>

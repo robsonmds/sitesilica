@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silica Vendas · Silica</title>
+<meta name="description" content="Silica Vendas: estoque, vendas parceladas, lucro automático, abatimento, comissões de vendedores e relatório do Gerente em PDF.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt">Recursos</span><span data-lang="en">Features</span> › <span data-lang="pt">Vendas</span><span data-lang="en">Sales</span></div>
+    <span class="eyebrow">📦 Silica Vendas <span class="badge badge-pro">PRO</span></span>
+    <h1 data-lang="pt">Do estoque ao lucro, no automático</h1>
+    <h1 data-lang="en">From stock to profit, automatically</h1>
+    <p class="lead" data-lang="pt">O perfil Vendas é uma gestão de revenda completa: controla estoque, registra vendas parceladas, calcula o lucro sozinho e ainda gera relatório de comissões.</p>
+    <p class="lead" data-lang="en">The Sales profile is complete resale management: it tracks stock, records installment sales, computes profit on its own and generates a commission report.</p>
+  </div>
+
+  <div class="doc">
+    <aside class="doc-side">
+      <nav>
+        <span class="side-title" data-lang="pt">Nesta página</span><span class="side-title" data-lang="en">On this page</span>
+        <a href="#estoque" data-lang="pt">Estoque</a><a href="#estoque" data-lang="en">Stock</a>
+        <a href="#venda" data-lang="pt">Cadastrar uma venda</a><a href="#venda" data-lang="en">Register a sale</a>
+        <a href="#lucro" data-lang="pt">Lucro automático</a><a href="#lucro" data-lang="en">Automatic profit</a>
+        <a href="#abatimento" data-lang="pt">Abatimento & resíduo</a><a href="#abatimento" data-lang="en">Partial payment</a>
+        <a href="#comissoes" data-lang="pt">Comissões (Gerentes)</a><a href="#comissoes" data-lang="en">Commissions</a>
+        <a href="#relatorio" data-lang="pt">Relatório do Gerente</a><a href="#relatorio" data-lang="en">Manager report</a>
+        <a href="#metricas" data-lang="pt">ROI & Conversão</a><a href="#metricas" data-lang="en">ROI & Conversion</a>
+      </nav>
+    </aside>
+
+    <div class="doc-main">
+      <section id="estoque">
+        <h2 data-lang="pt">Estoque</h2><h2 data-lang="en">Stock</h2>
+        <p data-lang="pt">Na aba de <strong>Estoque</strong> você cadastra produtos com custo e quantidade. Use a busca por nome e o filtro <em>"Somente sem estoque"</em> para achar produtos rápido. Ao vender, o estoque diminui sozinho; se você excluir a venda inteira, os itens <strong>voltam ao estoque automaticamente</strong>.</p>
+        <p data-lang="en">In the <strong>Stock</strong> tab you register products with cost and quantity. Use name search and the <em>"Out of stock only"</em> filter to find products fast. When you sell, stock decreases on its own; if you delete the whole sale, items <strong>return to stock automatically</strong>.</p>
+      </section>
+
+      <section id="venda">
+        <h2 data-lang="pt">Cadastrar uma venda</h2><h2 data-lang="en">Register a sale</h2>
+        <ol class="steps">
+          <li><strong data-lang="pt">Cliente e vendedor</strong><strong data-lang="en">Client and seller</strong><span data-lang="pt">Com autocomplete de clientes e Gerentes já usados.</span><span data-lang="en">With autocomplete for clients and Managers you've used.</span></li>
+          <li><strong data-lang="pt">Itens do estoque</strong><strong data-lang="en">Stock items</strong><span data-lang="pt">O app valida que o estoque não fica negativo.</span><span data-lang="en">The app checks stock never goes negative.</span></li>
+          <li><strong data-lang="pt">Data, vencimento e parcelas</strong><strong data-lang="en">Date, due date and installments</strong><span data-lang="pt">Divididas por centavos (soma exata).</span><span data-lang="en">Split by cents (exact total).</span></li>
+          <li><strong data-lang="pt">Confirmar</strong><strong data-lang="en">Confirm</strong><span data-lang="pt">A venda é gravada e o estoque é baixado.</span><span data-lang="en">The sale is saved and stock is reduced.</span></li>
+        </ol>
+      </section>
+
+      <section id="lucro">
+        <h2 data-lang="pt">Lucro que vira renda sozinho</h2><h2 data-lang="en">Profit that becomes income by itself</h2>
+        <p data-lang="pt">Aqui você <strong>não</strong> cadastra rendas manualmente. Sempre que marca uma <strong>parcela de venda como paga</strong>, o Silica calcula o lucro líquido e registra na sua lista de Rendas, com cliente, produto e valor.</p>
+        <p data-lang="en">Here you do <strong>not</strong> add income manually. Whenever you mark a <strong>sale installment as paid</strong>, Silica computes the net profit and records it in your Income list, with client, product and amount.</p>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt">Produto custou R$ 60, vendido por R$ 100 em 2×.</li>
+            <li data-lang="en">Product cost $60, sold for $100 in 2×.</li>
+            <li data-lang="pt">Ao receber cada parcela, o lucro proporcional entra como renda — o lucro só é "real" quando o dinheiro entra.</li>
+            <li data-lang="en">As each installment is received, the proportional profit becomes income — profit only counts when the money arrives.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="abatimento">
+        <h2 data-lang="pt">Abatimento & resíduo</h2><h2 data-lang="en">Partial payment & residual</h2>
+        <p data-lang="pt">Se um cliente paga só parte de uma venda, use <strong>Abater Valor</strong>: o app quita a parcela atual e <strong>redistribui o saldo restante</strong> nas parcelas futuras pendentes. Quando um pagamento parcial deixa um resíduo, você pode estendê-lo para uma nova data.</p>
+        <p data-lang="en">If a client pays only part of a sale, use <strong>Partial Payment</strong>: the app settles the current installment and <strong>redistributes the remaining balance</strong> across the future pending installments. When a partial payment leaves a residual, you can extend it to a new date.</p>
+      </section>
+
+      <section id="comissoes">
+        <h2 data-lang="pt">Comissões (Gerentes Comerciais)</h2><h2 data-lang="en">Commissions (Sales Managers)</h2>
+        <p data-lang="pt">Em <strong>Menu › Gerente Comercial › aba Comissões</strong>, você define o percentual de cada Gerente e usa as setas ‹ › para ver o lucro de cada mês sem sair da tela. A comissão é calculada por parcela paga.</p>
+        <p data-lang="en">In <strong>Menu › Sales Manager › Commissions tab</strong>, you set each Manager's percentage and use the ‹ › arrows to see each month's profit without leaving the screen. Commission is computed per paid installment.</p>
+      </section>
+
+      <section id="relatorio">
+        <h2 data-lang="pt">Relatório do Gerente (PDF)</h2><h2 data-lang="en">Manager report (PDF)</h2>
+        <p data-lang="pt">No Raio-X do perfil Vendas, toque no ícone de PDF: escolha o Gerente, o período (um mês ou tudo) e o % de comissão. O relatório é um <strong>extrato de parcelas</strong> — cada parcela entra no mês do seu vencimento, separando a <strong>comissão realizada</strong> (parcelas pagas) da <strong>comissão a receber</strong>.</p>
+        <p data-lang="en">In the Sales X-Ray, tap the PDF icon: choose the Manager, the period (one month or all) and the commission %. The report is a <strong>per-installment statement</strong> — each installment lands in its due month, separating <strong>realized commission</strong> (paid) from <strong>commission to receive</strong>.</p>
+      </section>
+
+      <section id="metricas">
+        <h2 data-lang="pt">ROI & Conversão em Caixa</h2><h2 data-lang="en">ROI & Cash Conversion</h2>
+        <p data-lang="pt">O Raio-X do Vendas traz métricas profissionais:</p>
+        <p data-lang="en">The Sales X-Ray adds professional metrics:</p>
+        <ul>
+          <li data-lang="pt"><strong>ROI (Retorno sobre Investimento):</strong> quanto seu dinheiro rendeu sobre o custo do estoque.</li>
+          <li data-lang="en"><strong>ROI (Return on Investment):</strong> how much your money earned over the stock cost.</li>
+          <li data-lang="pt"><strong>Conversão em Caixa:</strong> quanto do que você vendeu já entrou de fato no seu bolso.</li>
+          <li data-lang="en"><strong>Cash Conversion:</strong> how much of what you sold has actually reached your pocket.</li>
+        </ul>
+        <a class="card-link" href="raiox.html">→ <span data-lang="pt">Ver tudo sobre o Raio-X</span><span data-lang="en">See everything about X-Ray</span></a>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>
