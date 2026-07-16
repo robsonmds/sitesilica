@@ -420,3 +420,17 @@ td .no { color: var(--text-muted); }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* ---------- Acabamento v2: figuras, galeria e reveal ---------- */
+figure.shot { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+figure.shot figcaption { font-size: .88rem; color: var(--text-muted); text-align: center; max-width: 30ch; line-height: 1.45; }
+.shot-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; justify-items: center; align-items: start; margin-top: 1.8rem; }
+.shot-row .device { max-width: 230px; }
+
+/* Reveal ao rolar (JS marca .reveal; sem JS, tudo visível) */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
+
+/* Devices com brilho sutil no tema escuro */
+:root[data-theme="dark"] .device { box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(52,211,153,.08), 0 0 42px rgba(52,211,153,.07); }

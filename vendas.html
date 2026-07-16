@@ -6,6 +6,14 @@
 <title>Silica Vendas · Silica</title>
 <meta name="description" content="Silica Vendas: estoque, vendas parceladas, lucro automático, abatimento, comissões de vendedores e relatório do Gerente em PDF.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://silica.app.br/vendas.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Silica">
+<meta property="og:title" content="Silica Vendas · Silica">
+<meta property="og:description" content="Silica Vendas: estoque, vendas parceladas, lucro automático, abatimento, comissões de vendedores e relatório do Gerente em PDF.">
+<meta property="og:url" content="https://silica.app.br/vendas.html">
+<meta property="og:image" content="https://silica.app.br/assets/img/home-pessoal.webp">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
 <script src="assets/js/site.js" defer></script>
@@ -38,18 +46,42 @@
     <div class="doc-main">
       <section id="estoque">
         <h2 data-lang="pt">Estoque</h2><h2 data-lang="en">Stock</h2>
+        <div class="split">
+        <div>
         <p data-lang="pt">Na aba de <strong>Estoque</strong> você cadastra produtos com custo e quantidade. Use a busca por nome e o filtro <em>"Somente sem estoque"</em> para achar produtos rápido. Ao vender, o estoque diminui sozinho; se você excluir a venda inteira, os itens <strong>voltam ao estoque automaticamente</strong>.</p>
         <p data-lang="en">In the <strong>Stock</strong> tab you register products with cost and quantity. Use name search and the <em>"Out of stock only"</em> filter to find products fast. When you sell, stock decreases on its own; if you delete the whole sale, items <strong>return to stock automatically</strong>.</p>
+        <p data-lang="pt">O topo mostra o <strong>valor total em estoque</strong> e cada produto sinaliza quando está com estoque baixo.</p>
+        <p data-lang="en">The top shows the <strong>total stock value</strong> and each product flags when it's running low.</p>
+        </div>
+        <div class="split-media">
+          <figure class="shot">
+            <div class="device"><img src="assets/img/estoque.jpg" alt="Aba de estoque do Silica Vendas" loading="lazy"></div>
+            <figcaption data-lang="pt">Estoque com valor total, busca e alerta de estoque baixo.</figcaption>
+            <figcaption data-lang="en">Stock with total value, search and low-stock flags.</figcaption>
+          </figure>
+        </div>
+        </div>
       </section>
 
       <section id="venda">
         <h2 data-lang="pt">Cadastrar uma venda</h2><h2 data-lang="en">Register a sale</h2>
+        <div class="split reverse">
+        <div>
         <ol class="steps">
           <li><strong data-lang="pt">Cliente e vendedor</strong><strong data-lang="en">Client and seller</strong><span data-lang="pt">Com autocomplete de clientes e Gerentes já usados.</span><span data-lang="en">With autocomplete for clients and Managers you've used.</span></li>
           <li><strong data-lang="pt">Itens do estoque</strong><strong data-lang="en">Stock items</strong><span data-lang="pt">O app valida que o estoque não fica negativo.</span><span data-lang="en">The app checks stock never goes negative.</span></li>
           <li><strong data-lang="pt">Data, vencimento e parcelas</strong><strong data-lang="en">Date, due date and installments</strong><span data-lang="pt">Divididas por centavos (soma exata).</span><span data-lang="en">Split by cents (exact total).</span></li>
           <li><strong data-lang="pt">Confirmar</strong><strong data-lang="en">Confirm</strong><span data-lang="pt">A venda é gravada e o estoque é baixado.</span><span data-lang="en">The sale is saved and stock is reduced.</span></li>
         </ol>
+        </div>
+        <div class="split-media">
+          <figure class="shot">
+            <div class="device"><img src="assets/img/home-vendas.jpg" alt="Home do Silica Vendas com resumo e vendas parceladas" loading="lazy"></div>
+            <figcaption data-lang="pt">Resumo do mês: total vendido, lucro, pago e pendente — com cada parcela no seu vencimento.</figcaption>
+            <figcaption data-lang="en">Month summary: total sold, profit, paid and pending — each installment on its due date.</figcaption>
+          </figure>
+        </div>
+        </div>
       </section>
 
       <section id="lucro">
@@ -77,6 +109,18 @@
         <h2 data-lang="pt">Comissões (Gerentes Comerciais)</h2><h2 data-lang="en">Commissions (Sales Managers)</h2>
         <p data-lang="pt">Em <strong>Menu › Gerente Comercial › aba Comissões</strong>, você define o percentual de cada Gerente e usa as setas ‹ › para ver o lucro de cada mês sem sair da tela. A comissão é calculada por parcela paga.</p>
         <p data-lang="en">In <strong>Menu › Sales Manager › Commissions tab</strong>, you set each Manager's percentage and use the ‹ › arrows to see each month's profit without leaving the screen. Commission is computed per paid installment.</p>
+        <div class="shot-row">
+          <figure class="shot">
+            <div class="device"><img src="assets/img/gerentes.jpg" alt="Cadastro de Gerentes Comerciais no Silica Vendas" loading="lazy"></div>
+            <figcaption data-lang="pt">Cadastre seus Gerentes Comerciais.</figcaption>
+            <figcaption data-lang="en">Register your Sales Managers.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="device"><img src="assets/img/comissoes.jpg" alt="Comissões por Gerente no Silica Vendas" loading="lazy"></div>
+            <figcaption data-lang="pt">% por Gerente e comissão do mês calculada na hora.</figcaption>
+            <figcaption data-lang="en">Per-Manager % with the month's commission computed live.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section id="relatorio">

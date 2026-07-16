@@ -186,6 +186,31 @@
 
     // Scroll-spy da sidebar de docs
     initScrollSpy();
+
+    // Reveal suave ao rolar (respeita prefers-reduced-motion via CSS)
+    initReveal();
+  }
+
+  function initReveal() {
+    if (!("IntersectionObserver" in window)) return;
+    var targets = Array.prototype.slice.call(
+      document.querySelectorAll(".card, .split, figure.shot, .section-head, .example, .plan, .cta-band")
+    );
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    targets.forEach(function (t) {
+      t.classList.add("reveal");
+      // Já visível no primeiro paint? Revela sem esperar o observer.
+      if (t.getBoundingClientRect().top < window.innerHeight) t.classList.add("in");
+      else io.observe(t);
+    });
+    // Rede de segurança: nada fica invisível se o observer não disparar (browsers embutidos etc.).
+    setTimeout(function () {
+      targets.forEach(function (t) { t.classList.add("in"); });
+    }, 3000);
   }
 
   function setLang(lang) {

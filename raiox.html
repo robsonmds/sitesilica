@@ -6,6 +6,14 @@
 <title>Raio-X · Silica</title>
 <meta name="description" content="O Raio-X do Silica: gastos e lucros por categoria, mês ou ano, com médias, ROI, Conversão em Caixa e relatório do Gerente em PDF.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://silica.app.br/raiox.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Silica">
+<meta property="og:title" content="Raio-X · Silica">
+<meta property="og:description" content="O Raio-X do Silica: gastos e lucros por categoria, mês ou ano, com médias, ROI, Conversão em Caixa e relatório do Gerente em PDF.">
+<meta property="og:url" content="https://silica.app.br/raiox.html">
+<meta property="og:image" content="https://silica.app.br/assets/img/home-pessoal.webp">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
 <script src="assets/js/site.js" defer></script>
@@ -47,8 +55,20 @@
 
       <section id="mes-ano">
         <h2 data-lang="pt">Mês atual vs acumulado do ano</h2><h2 data-lang="en">Current month vs year-to-date</h2>
-        <p data-lang="pt">Alterne entre <strong>Mês Atual</strong> e <strong>Acumulado do Ano</strong> no topo. Deslize a tela lateralmente para navegar entre os meses sem sair do Raio-X.</p>
-        <p data-lang="en">Switch between <strong>Current Month</strong> and <strong>Year-to-date</strong> at the top. Swipe sideways to move between months without leaving the X-Ray.</p>
+        <p data-lang="pt">Alterne entre <strong>Mês Atual</strong> e <strong>Acumulado do Ano</strong> no topo. Deslize a tela lateralmente para navegar entre os meses sem sair do Raio-X. O mês atual ainda traz o <strong>comparativo com o mês anterior</strong>, categoria a categoria, com a variação percentual.</p>
+        <p data-lang="en">Switch between <strong>Current Month</strong> and <strong>Year-to-date</strong> at the top. Swipe sideways to move between months without leaving the X-Ray. The current month also brings a <strong>comparison with the previous month</strong>, category by category, with the percentage change.</p>
+        <div class="shot-row">
+          <figure class="shot">
+            <div class="device"><img src="assets/img/raiox-comparativo.jpg" alt="Raio-X do mês com comparativo do mês anterior" loading="lazy"></div>
+            <figcaption data-lang="pt">Comparativo com o mês anterior, com variação por categoria.</figcaption>
+            <figcaption data-lang="en">Previous-month comparison, with per-category change.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="device"><img src="assets/img/raiox-acumulado.jpg" alt="Raio-X acumulado do ano com médias mensais" loading="lazy"></div>
+            <figcaption data-lang="pt">Acumulado do ano com média mensal por categoria.</figcaption>
+            <figcaption data-lang="en">Year-to-date totals with monthly average per category.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section id="vendas">
