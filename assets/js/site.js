@@ -64,7 +64,7 @@
     header.className = "site-header";
     header.innerHTML =
       '<div class="container"><div class="nav">' +
-        '<a class="nav-logo" href="index.html">' + IC.logo + '<span class="brand-word">Silica</span></a>' +
+        '<a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a>' +
         '<button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">' + IC.menu + "</button>" +
         '<nav class="nav-links">' + links + "</nav>" +
         '<div class="nav-actions">' +
@@ -84,7 +84,7 @@
     footer.innerHTML =
       '<div class="container"><div class="footer-grid">' +
         '<div class="footer-brand">' +
-          '<a class="nav-logo" href="index.html">' + IC.logo + '<span class="brand-word">Silica</span></a>' +
+          '<a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a>' +
           "<p>" + t(
             "Gestão financeira inteligente para sua vida pessoal, seu negócio, suas vendas e seus serviços — tudo em espaços isolados, no seu Android.",
             "Smart money management for your personal life, business, sales and services — all in isolated spaces, on your Android."
@@ -189,6 +189,112 @@
 
     // Reveal suave ao rolar (respeita prefers-reduced-motion via CSS)
     initReveal();
+    initMobileToc();
+    initBackToTop();
+    initLightbox();
+    initFaqSearch();
+  }
+
+  // Índice colapsável no mobile (a sidebar de docs some abaixo de 960px)
+  function initMobileToc() {
+    var side = document.querySelector(".doc-side nav");
+    var main = document.querySelector(".doc-main");
+    if (!side || !main) return;
+    var det = document.createElement("details");
+    det.className = "toc-mobile";
+    var links = "";
+    side.querySelectorAll("a").forEach(function (a) {
+      links += '<a href="' + a.getAttribute("href") + '"' +
+        (a.hasAttribute("data-lang") ? ' data-lang="' + a.getAttribute("data-lang") + '"' : "") +
+        ">" + a.innerHTML + "</a>";
+    });
+    det.innerHTML = "<summary>" + t("Nesta página", "On this page") + "</summary><nav>" + links + "</nav>";
+    main.prepend(det);
+    det.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { det.removeAttribute("open"); });
+    });
+  }
+
+  // Voltar ao topo
+  function initBackToTop() {
+    var btn = document.createElement("button");
+    btn.className = "to-top";
+    btn.type = "button";
+    btn.setAttribute("aria-label", "Voltar ao topo");
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    document.body.appendChild(btn);
+    var onScroll = function () { btn.classList.toggle("show", window.scrollY > 600); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Lightbox: as telas são densas; clicar amplia
+  function initLightbox() {
+    var imgs = document.querySelectorAll(".device img");
+    if (!imgs.length) return;
+    var box = document.createElement("div");
+    box.className = "lightbox";
+    box.innerHTML = '<button class="lightbox-close" type="button" aria-label="Fechar">×</button><img alt="">';
+    document.body.appendChild(box);
+    var big = box.querySelector("img");
+    var close = function () { box.classList.remove("open"); document.body.style.overflow = ""; };
+    imgs.forEach(function (im) {
+      im.addEventListener("click", function () {
+        big.src = im.currentSrc || im.src;
+        big.alt = im.alt || "";
+        box.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+    box.addEventListener("click", close);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  }
+
+  // Busca da FAQ (30 perguntas): filtra em tempo real, nos dois idiomas
+  function initFaqSearch() {
+    var list = document.querySelector(".faq-list");
+    if (!list || !document.body.contains(list)) return;
+    var container = list.parentElement;
+    var wrap = document.createElement("div");
+    wrap.className = "faq-search";
+    wrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>' +
+      '<input type="search" id="faqSearch" autocomplete="off">';
+    container.prepend(wrap);
+    var input = wrap.querySelector("input");
+    var setPh = function () {
+      input.placeholder = document.documentElement.getAttribute("data-lang") === "en"
+        ? "Search the FAQ…" : "Buscar na FAQ…";
+    };
+    setPh();
+    document.getElementById("langBtn").addEventListener("click", function () { setTimeout(setPh, 0); });
+
+    var empty = document.createElement("p");
+    empty.className = "faq-empty";
+    empty.innerHTML = t("Nenhuma pergunta encontrada.", "No questions found.");
+    container.appendChild(empty);
+
+    var items = Array.prototype.slice.call(document.querySelectorAll(".faq-item"));
+    var cats = Array.prototype.slice.call(document.querySelectorAll(".faq-cat"));
+    var norm = function (s) { return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); };
+
+    input.addEventListener("input", function () {
+      var q = norm(input.value.trim());
+      var hits = 0;
+      items.forEach(function (it) {
+        var show = !q || norm(it.textContent).indexOf(q) !== -1;
+        it.style.display = show ? "" : "none";
+        if (show) hits++;
+      });
+      // Esconde os títulos de categoria e as listas que ficaram sem resultado
+      cats.forEach(function (c) { c.style.display = q ? "none" : ""; });
+      document.querySelectorAll(".faq-list").forEach(function (l) {
+        var vis = Array.prototype.slice.call(l.querySelectorAll(".faq-item"))
+          .some(function (i) { return i.style.display !== "none"; });
+        l.style.display = vis ? "" : "none";
+      });
+      empty.classList.toggle("show", hits === 0);
+    });
   }
 
   function initReveal() {
@@ -241,7 +347,12 @@
     buildFooter();
     // Insere botão da loja em quaisquer slots [data-store]
     document.querySelectorAll("[data-store]").forEach(function (el) { el.innerHTML = storeButton(); });
-    document.querySelectorAll("[data-email]").forEach(function (el) { el.textContent = SUPPORT_EMAIL; el.setAttribute("href", "mailto:" + SUPPORT_EMAIL); });
+    // E-mail de suporte com assunto pré-preenchido (facilita a triagem)
+    var subj = encodeURIComponent("Silica — Suporte");
+    document.querySelectorAll("[data-email]").forEach(function (el) {
+      el.textContent = SUPPORT_EMAIL;
+      el.setAttribute("href", "mailto:" + SUPPORT_EMAIL + "?subject=" + subj);
+    });
     wire();
   }
 
