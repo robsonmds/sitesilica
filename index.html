@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-20L3DRpUYD6utBVDAzKVXoiAlUXmyfAu+vP4Q2s3050='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Silica — Gestão financeira inteligente para Android</title>
 <meta name="description" content="Silica: gestão financeira com quatro espaços isolados (Pessoal, Negócios, Vendas e Serviços). Controle contas, cartões, lucro, estoque, orçamentos e recibos — tudo offline no seu Android.">
 <link rel="icon" href="assets/img/logo-mark.png" type="image/png">
@@ -17,9 +19,9 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=20260717">
 <script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
-<script src="assets/js/site.js" defer></script>
+<script src="assets/js/site.js?v=20260717" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo"><span data-lang="pt">Pular para o conteúdo</span><span data-lang="en">Skip to content</span></a>
@@ -32,8 +34,8 @@
         <div class="hero-copy">
           <span class="eyebrow" data-lang="pt">Assistente financeiro · Android</span>
           <span class="eyebrow" data-lang="en">Financial assistant · Android</span>
-          <h1 data-lang="pt">Sua vida financeira organizada, sem planilhas e sem estresse.</h1>
-          <h1 data-lang="en">Your finances organized — no spreadsheets, no stress.</h1>
+          <h1 data-lang="pt">Sua vida financeira organizada, sem planilhas e <span class="grad-text">sem estresse</span>.</h1>
+          <h1 data-lang="en">Your finances organized — no spreadsheets, <span class="grad-text">no stress</span>.</h1>
           <p class="lead" data-lang="pt">O <strong class="brand-word">Silica</strong> reúne quatro universos isolados — Pessoal, Negócios, Vendas e Serviços — para você visualizar sua saúde financeira e o lucro do seu negócio com clareza.</p>
           <p class="lead" data-lang="en">The <strong class="brand-word">Silica</strong> app brings four isolated universes — Personal, Business, Sales and Services — so you can see your financial health and your business profit clearly.</p>
           <div class="hero-cta">
@@ -104,7 +106,7 @@
   </section>
 
   <!-- DESTAQUE 1: SAÚDE FINANCEIRA -->
-  <section class="section">
+  <section class="section band">
     <div class="container">
       <div class="split">
         <div class="split-copy stack">
@@ -149,7 +151,7 @@
   </section>
 
   <!-- GRID DE RECURSOS -->
-  <section class="section">
+  <section class="section band">
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow" data-lang="pt">Recursos</span><span class="eyebrow" data-lang="en">Features</span>
@@ -227,7 +229,7 @@
   </section>
 
   <!-- PRIVACIDADE -->
-  <section class="section">
+  <section class="section band">
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow">🔒 <span data-lang="pt">Privacidade por princípio</span><span data-lang="en">Privacy by design</span></span>
@@ -289,7 +291,7 @@
   </section>
 
   <!-- GALERIA -->
-  <section class="section">
+  <section class="section band">
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow" data-lang="pt">O Silica em ação</span><span class="eyebrow" data-lang="en">Silica in action</span>

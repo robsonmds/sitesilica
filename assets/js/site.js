@@ -193,6 +193,33 @@
     initBackToTop();
     initLightbox();
     initFaqSearch();
+    initHeaderScroll();
+    initReadProgress();
+  }
+
+  // Cabeçalho condensa (sombra + altura menor) depois de rolar um pouco
+  function initHeaderScroll() {
+    var header = document.querySelector(".site-header");
+    if (!header) return;
+    var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 40); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Barra fina de progresso de leitura — só nas páginas longas (doc/prose)
+  function initReadProgress() {
+    if (!document.querySelector(".doc-main, .prose")) return;
+    var bar = document.createElement("div");
+    bar.className = "read-progress";
+    document.body.appendChild(bar);
+    var onScroll = function () {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    onScroll();
   }
 
   // Índice colapsável no mobile (a sidebar de docs some abaixo de 960px)
@@ -299,12 +326,29 @@
 
   function initReveal() {
     if (!("IntersectionObserver" in window)) return;
+    // Grupos cujos filhos revelam em cascata (stagger por índice)
+    var STAGGER = ["grid", "shot-row", "plans", "origin-steps"];
+    function staggerDelay(el) {
+      var p = el.parentElement;
+      if (!p) return 0;
+      for (var i = 0; i < STAGGER.length; i++) {
+        if (p.classList.contains(STAGGER[i])) {
+          return Array.prototype.indexOf.call(p.children, el) * 70;
+        }
+      }
+      return 0;
+    }
     var targets = Array.prototype.slice.call(
-      document.querySelectorAll(".card, .split, figure.shot, .section-head, .example, .plan, .cta-band, .origin")
+      document.querySelectorAll(".card, .split, figure.shot, .section-head, .example, .plan, .cta-band, .origin, .origin-step, .origin-arrow")
     );
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        if (e.isIntersecting) {
+          var el = e.target, d = staggerDelay(el);
+          if (d) setTimeout(function () { el.classList.add("in"); }, d);
+          else el.classList.add("in");
+          io.unobserve(el);
+        }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     targets.forEach(function (t) {
