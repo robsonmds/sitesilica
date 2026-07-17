@@ -300,7 +300,7 @@
   function initReveal() {
     if (!("IntersectionObserver" in window)) return;
     var targets = Array.prototype.slice.call(
-      document.querySelectorAll(".card, .split, figure.shot, .section-head, .example, .plan, .cta-band")
+      document.querySelectorAll(".card, .split, figure.shot, .section-head, .example, .plan, .cta-band, .origin")
     );
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
