@@ -19,9 +19,10 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/styles.css?v=20260717">
+<link rel="preload" href="assets/fonts/sora-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css?v=20260718">
 <script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
-<script src="assets/js/site.js?v=20260717" defer></script>
+<script src="assets/js/site.js?v=20260718" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo"><span data-lang="pt">Pular para o conteúdo</span><span data-lang="en">Skip to content</span></a>
@@ -31,8 +32,8 @@
     <span class="eyebrow" data-lang="pt">Pessoal & Negócios</span><span class="eyebrow" data-lang="en">Personal & Business</span>
     <h1 data-lang="pt">O núcleo financeiro</h1>
     <h1 data-lang="en">The financial core</h1>
-    <p class="lead" data-lang="pt">Despesas, rendas, cartões, recorrência e assinaturas funcionam da mesma forma nos perfis Pessoal e Negócios — cada um no seu espaço.</p>
-    <p class="lead" data-lang="en">Expenses, income, cards, recurrence and subscriptions work the same way in the Personal and Business profiles — each in its own space.</p>
+    <p class="lead" data-lang="pt">Despesas, rendas, cartões, recorrência e assinaturas funcionam da mesma forma nos perfis Pessoal e Negócios, cada um no seu espaço.</p>
+    <p class="lead" data-lang="en">Expenses, income, cards, recurrence and subscriptions work the same way in the Personal and Business profiles, each in its own space.</p>
   </div>
 
   <div class="doc">
@@ -66,32 +67,32 @@
         <p data-lang="en">In the <strong>Income</strong> tab you add your earnings (salary, freelance) manually in the Personal and Business profiles. Silica uses the month's income to calculate how much of your money is committed to bills.</p>
         <div class="callout info">
           <div class="callout-title">ℹ️ <span data-lang="pt">Nos perfis Vendas e Serviços é diferente</span><span data-lang="en">Sales & Services work differently</span></div>
-          <p data-lang="pt">Lá as rendas surgem <strong>automaticamente</strong> — o lucro de uma venda ou o valor de um serviço vira renda quando você marca como recebido. Veja em <a href="vendas.html">Vendas</a> e <a href="servicos.html">Serviços</a>.</p>
-          <p data-lang="en">There, income appears <strong>automatically</strong> — a sale's profit or a service's amount becomes income when you mark it as received. See <a href="vendas.html">Sales</a> and <a href="servicos.html">Services</a>.</p>
+          <p data-lang="pt">Lá as rendas surgem <strong>automaticamente</strong>: o lucro de uma venda ou o valor de um serviço vira renda quando você marca como recebido. Veja em <a href="vendas.html">Vendas</a> e <a href="servicos.html">Serviços</a>.</p>
+          <p data-lang="en">There, income appears <strong>automatically</strong>: a sale's profit or a service's amount becomes income when you mark it as received. See <a href="vendas.html">Sales</a> and <a href="servicos.html">Services</a>.</p>
         </div>
       </section>
 
       <section id="recorrencia">
         <h2 data-lang="pt">Recorrência (contas que se repetem)</h2><h2 data-lang="en">Recurrence (repeating bills)</h2>
-        <p data-lang="pt">Ao criar uma despesa ou renda, marque <strong>recorrente/assinatura</strong> para ela se repetir todo mês. O Silica materializa a série por <strong>12 meses à frente</strong> e a renova automaticamente conforme o tempo passa — sua dívida nunca "some" da timeline.</p>
-        <p data-lang="en">When creating an expense or income, toggle <strong>recurring/subscription</strong> so it repeats every month. Silica materializes the series <strong>12 months ahead</strong> and auto-renews it as time passes — your bill never "disappears" from the timeline.</p>
+        <p data-lang="pt">Ao criar uma despesa ou renda, marque <strong>recorrente/assinatura</strong> para ela se repetir todo mês. O Silica materializa a série por <strong>12 meses à frente</strong> e a renova automaticamente conforme o tempo passa. Sua dívida nunca "some" da timeline.</p>
+        <p data-lang="en">When creating an expense or income, toggle <strong>recurring/subscription</strong> so it repeats every month. Silica materializes the series <strong>12 months ahead</strong> and auto-renews it as time passes. Your bill never "disappears" from the timeline.</p>
         <div class="example">
           <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt">Você cria "Aluguel — R$ 1.500" como recorrente em janeiro.</li>
-            <li data-lang="en">You create "Rent — $300" as recurring in January.</li>
+            <li data-lang="pt">Você cria "Aluguel, R$ 1.500" como recorrente em janeiro.</li>
+            <li data-lang="en">You create "Rent, $300" as recurring in January.</li>
             <li data-lang="pt">O app cria 12 ocorrências (jan a dez) e, mês a mês, adiciona novas à frente para manter sempre ~12 meses visíveis.</li>
             <li data-lang="en">The app creates 12 occurrences (Jan–Dec) and, month by month, adds new ones ahead to always keep ~12 months visible.</li>
           </ul>
         </div>
         <h3 data-lang="pt">Regras que protegem seu histórico</h3><h3 data-lang="en">Rules that protect your history</h3>
         <ul>
-          <li data-lang="pt"><strong>Uma série ativa por descrição.</strong> Se você tentar criar uma recorrente com um nome que já existe, o app avisa — evitando cobrar a mesma conta duas vezes no mês.</li>
-          <li data-lang="en"><strong>One active series per description.</strong> If you try to create a recurring bill with a name that already exists, the app warns you — preventing the same bill being charged twice in a month.</li>
+          <li data-lang="pt"><strong>Uma série ativa por descrição.</strong> Se você tentar criar uma recorrente com um nome que já existe, o app avisa, evitando cobrar a mesma conta duas vezes no mês.</li>
+          <li data-lang="en"><strong>One active series per description.</strong> If you try to create a recurring bill with a name that already exists, the app warns you, preventing the same bill being charged twice in a month.</li>
           <li data-lang="pt"><strong>Encerrar recorrência preserva o passado.</strong> Ao encerrar, as cobranças futuras somem, mas todas as parcelas <strong>já pagas continuam no histórico</strong>.</li>
           <li data-lang="en"><strong>Ending recurrence preserves the past.</strong> When you end it, future charges disappear, but every <strong>already-paid entry stays in history</strong>.</li>
-          <li data-lang="pt">Recorrentes não são excluídas direto pela timeline — o app te leva ao menu <strong>Assinaturas</strong> para encerrar a série inteira com segurança.</li>
-          <li data-lang="en">Recurring items aren't deleted straight from the timeline — the app takes you to the <strong>Subscriptions</strong> menu to end the whole series safely.</li>
+          <li data-lang="pt">Recorrentes não são excluídas direto pela timeline: o app te leva ao menu <strong>Assinaturas</strong> para encerrar a série inteira com segurança.</li>
+          <li data-lang="en">Recurring items aren't deleted straight from the timeline: the app takes you to the <strong>Subscriptions</strong> menu to end the whole series safely.</li>
         </ul>
       </section>
 
@@ -99,14 +100,14 @@
         <h2 data-lang="pt">Assinaturas</h2><h2 data-lang="en">Subscriptions</h2>
         <div class="split">
         <div>
-        <p data-lang="pt">A aba <strong>Assinaturas</strong> lista seus gastos recorrentes e calcula o <strong>impacto projetado até o fim do ano</strong>, ajudando a decidir o que cortar. Ao remover uma assinatura, o Silica <strong>encerra as cobranças futuras e mantém o histórico já pago</strong> — você não perde o registro do que gastou.</p>
-        <p data-lang="en">The <strong>Subscriptions</strong> tab lists your recurring costs and computes the <strong>projected impact until year-end</strong>, helping you decide what to cut. When you remove a subscription, Silica <strong>ends future charges and keeps the paid history</strong> — you don't lose the record of what you spent.</p>
+        <p data-lang="pt">A aba <strong>Assinaturas</strong> lista seus gastos recorrentes e calcula o <strong>impacto projetado até o fim do ano</strong>, ajudando a decidir o que cortar. Ao remover uma assinatura, o Silica <strong>encerra as cobranças futuras e mantém o histórico já pago</strong>. Você não perde o registro do que gastou.</p>
+        <p data-lang="en">The <strong>Subscriptions</strong> tab lists your recurring costs and computes the <strong>projected impact until year-end</strong>, helping you decide what to cut. When you remove a subscription, Silica <strong>ends future charges and keeps the paid history</strong>. You don't lose the record of what you spent.</p>
         </div>
         <div class="split-media">
           <figure class="shot">
             <div class="device"><img src="assets/img/assinaturas.webp" alt="Aba de assinaturas do Silica com impacto projetado" loading="lazy" width="720" height="1468"></div>
-            <figcaption data-lang="pt">Cada assinatura com o subtotal de 12 meses — e o impacto total projetado.</figcaption>
-            <figcaption data-lang="en">Each subscription with its 12-month subtotal — and the total projected impact.</figcaption>
+            <figcaption data-lang="pt">Cada assinatura com o subtotal de 12 meses e o impacto total projetado.</figcaption>
+            <figcaption data-lang="en">Each subscription with its 12-month subtotal and the total projected impact.</figcaption>
           </figure>
         </div>
         </div>
@@ -149,11 +150,11 @@
           <li data-lang="en"><strong>Available limit</strong> = card limit − sum of unpaid expenses.</li>
           <li data-lang="pt"><strong>Abater valor:</strong> quando quiser liberar limite, um abatimento reduz o total da fatura (lança um valor negativo "Abatimento de Fatura").</li>
           <li data-lang="en"><strong>Partial payment:</strong> to free up limit, a partial payment reduces the invoice total (records a negative "Invoice Partial Payment").</li>
-          <li data-lang="pt"><strong>Fatura reaberta:</strong> se você compra de novo depois de pagar (antes do fechamento), a timeline mostra <strong>só o valor ainda não pago</strong> — o detalhamento Total / Em aberto / Pago fica no cabeçalho da fatura.</li>
-          <li data-lang="en"><strong>Reopened invoice:</strong> if you buy again after paying (before closing), the timeline shows <strong>only the still-unpaid amount</strong> — the Total / Open / Paid breakdown is in the invoice header.</li>
+          <li data-lang="pt"><strong>Fatura reaberta:</strong> se você compra de novo depois de pagar (antes do fechamento), a timeline mostra <strong>só o valor ainda não pago</strong>; o detalhamento Total / Em aberto / Pago fica no cabeçalho da fatura.</li>
+          <li data-lang="en"><strong>Reopened invoice:</strong> if you buy again after paying (before closing), the timeline shows <strong>only the still-unpaid amount</strong>; the Total / Open / Paid breakdown is in the invoice header.</li>
         </ul>
-        <p data-lang="pt">Você ainda pode ser avisado quando a fatura estiver <strong>prestes a fechar</strong> — ative o aviso por cartão em Gerenciar Cartões. Veja <a href="notificacoes.html">Notificações</a>.</p>
-        <p data-lang="en">You can also be warned when an invoice is <strong>about to close</strong> — enable it per card in Manage Cards. See <a href="notificacoes.html">Notifications</a>.</p>
+        <p data-lang="pt">Você ainda pode ser avisado quando a fatura estiver <strong>prestes a fechar</strong>: ative o aviso por cartão em Gerenciar Cartões. Veja <a href="notificacoes.html">Notificações</a>.</p>
+        <p data-lang="en">You can also be warned when an invoice is <strong>about to close</strong>: enable it per card in Manage Cards. See <a href="notificacoes.html">Notifications</a>.</p>
         <div class="split" style="margin-top:1.6rem">
           <div class="split-media">
             <figure class="shot">

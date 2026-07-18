@@ -19,9 +19,10 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/styles.css?v=20260717">
+<link rel="preload" href="assets/fonts/sora-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css?v=20260718">
 <script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
-<script src="assets/js/site.js?v=20260717" defer></script>
+<script src="assets/js/site.js?v=20260718" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo"><span data-lang="pt">Pular para o conteúdo</span><span data-lang="en">Skip to content</span></a>
@@ -113,8 +114,8 @@
       <section id="recorrencia">
         <h2 data-lang="pt">Recorrência protege seu histórico</h2><h2 data-lang="en">Recurrence protects your history</h2>
         <ul>
-          <li data-lang="pt"><strong>Uma série ativa por descrição</strong> em cada perfil — o app impede duplicar a mesma conta.</li>
-          <li data-lang="en"><strong>One active series per description</strong> in each profile — the app prevents duplicating the same bill.</li>
+          <li data-lang="pt"><strong>Uma série ativa por descrição</strong> em cada perfil: o app impede duplicar a mesma conta.</li>
+          <li data-lang="en"><strong>One active series per description</strong> in each profile: the app prevents duplicating the same bill.</li>
           <li data-lang="pt"><strong>Encerrar nunca apaga o pago:</strong> ao encerrar uma recorrência, cobranças futuras somem, mas as parcelas já pagas viram avulsas e permanecem no histórico.</li>
           <li data-lang="en"><strong>Ending never erases the paid:</strong> when you end a recurrence, future charges disappear, but already-paid entries stay in history.</li>
           <li data-lang="pt"><strong>12 meses à frente:</strong> a série é sempre mantida com ~12 meses projetados.</li>
@@ -130,8 +131,8 @@
 
       <section id="os">
         <h2 data-lang="pt">Numeração de OS: AAMMDD-NNNN</h2><h2 data-lang="en">Order numbering: YYMMDD-NNNN</h2>
-        <p data-lang="pt">Cada ordem recebe um número no formato ano-mês-dia + uma sequência que reinicia a cada dia. É atribuído na criação (mesmo em orçamento) e nunca muda — nem na conversão para recibo.</p>
-        <p data-lang="en">Each order gets a number as year-month-day + a sequence that restarts each day. It's assigned on creation (even for quotes) and never changes — not even when converted to a receipt.</p>
+        <p data-lang="pt">Cada ordem recebe um número no formato ano-mês-dia + uma sequência que reinicia a cada dia. É atribuído na criação (mesmo em orçamento) e nunca muda, nem na conversão para recibo.</p>
+        <p data-lang="en">Each order gets a number as year-month-day + a sequence that restarts each day. It's assigned on creation (even for quotes) and never changes, not even when converted to a receipt.</p>
         <div class="example">
           <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
           <ul>
@@ -142,11 +143,11 @@
       </section>
 
       <section id="os-ciclo">
-        <h2 data-lang="pt">OS não se exclui: cancela — e OS recebida é protegida</h2><h2 data-lang="en">Orders aren't deleted: they're canceled — and paid orders are protected</h2>
-        <p data-lang="pt">Uma ordem de serviço <strong>nunca é apagada</strong>. Ela é <strong>cancelada</strong>: o número e o histórico ficam guardados, ela sai dos totais, do Raio-X e dos avisos da Sentinela, e a repetição (se houver) é encerrada. Se mudar de ideia, você pode <strong>reativar</strong> — a OS volta exatamente ao estado em que estava (serviço ou orçamento).</p>
-        <p data-lang="en">A work order is <strong>never erased</strong>. It is <strong>canceled</strong>: its number and history are kept, it leaves the totals, the X-Ray and Sentinel alerts, and any recurrence is ended. If you change your mind, you can <strong>reactivate</strong> it — the order returns to exactly the state it was in (service or quote).</p>
-        <p data-lang="pt">Uma OS <strong>já recebida é imutável</strong>: editar ou cancelar exige <strong>reabrir</strong> antes (o valor sai do "Recebido" ao reabrir). E um <strong>orçamento não aceita sinal nem recorrência</strong> — esses recursos passam a valer quando ele é convertido em serviço.</p>
-        <p data-lang="en">A <strong>paid order is immutable</strong>: editing or canceling requires <strong>reopening</strong> it first (the amount leaves "Received" when you do). And a <strong>quote takes no down payment or recurrence</strong> — those apply once it's converted into a service.</p>
+        <h2 data-lang="pt">OS não se exclui: cancela. E OS recebida é protegida</h2><h2 data-lang="en">Orders aren't deleted: they're canceled. And paid orders are protected</h2>
+        <p data-lang="pt">Uma ordem de serviço <strong>nunca é apagada</strong>. Ela é <strong>cancelada</strong>: o número e o histórico ficam guardados, ela sai dos totais, do Raio-X e dos avisos da Sentinela, e a repetição (se houver) é encerrada. Se mudar de ideia, você pode <strong>reativar</strong>: a OS volta exatamente ao estado em que estava (serviço ou orçamento).</p>
+        <p data-lang="en">A work order is <strong>never erased</strong>. It is <strong>canceled</strong>: its number and history are kept, it leaves the totals, the X-Ray and Sentinel alerts, and any recurrence is ended. If you change your mind, you can <strong>reactivate</strong> it: the order returns to exactly the state it was in (service or quote).</p>
+        <p data-lang="pt">Uma OS <strong>já recebida é imutável</strong>: editar ou cancelar exige <strong>reabrir</strong> antes (o valor sai do "Recebido" ao reabrir). E um <strong>orçamento não aceita sinal nem recorrência</strong>: esses recursos passam a valer quando ele é convertido em serviço.</p>
+        <p data-lang="en">A <strong>paid order is immutable</strong>: editing or canceling requires <strong>reopening</strong> it first (the amount leaves "Received" when you do). And a <strong>quote takes no down payment or recurrence</strong>: those apply once it's converted into a service.</p>
         <div class="example">
           <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
           <ul>
@@ -164,8 +165,8 @@
 
       <section id="gating">
         <h2 data-lang="pt">Grátis vs PRO (e o que acontece ao perder o PRO)</h2><h2 data-lang="en">Free vs PRO (and what happens if PRO ends)</h2>
-        <p data-lang="pt">Sem PRO, você usa só o perfil Pessoal, o tema do Sistema e nada de texturas, backup ou exportação. Se o PRO expira, <strong>nenhum dado é apagado</strong> — o app apenas volta ao modo gratuito e reativa tudo quando você renova.</p>
-        <p data-lang="en">Without PRO you use only the Personal profile, the System theme and no textures, backup or export. If PRO expires, <strong>no data is deleted</strong> — the app simply returns to free mode and reactivates everything when you renew.</p>
+        <p data-lang="pt">Sem PRO, você usa só o perfil Pessoal, o tema do Sistema e nada de texturas, backup ou exportação. Se o PRO expira, <strong>nenhum dado é apagado</strong>: o app apenas volta ao modo gratuito e reativa tudo quando você renova.</p>
+        <p data-lang="en">Without PRO you use only the Personal profile, the System theme and no textures, backup or export. If PRO expires, <strong>no data is deleted</strong>: the app simply returns to free mode and reactivates everything when you renew.</p>
         <a class="card-link" href="planos.html">→ <span data-lang="pt">Comparar Grátis e PRO</span><span data-lang="en">Compare Free and PRO</span></a>
       </section>
     </div>

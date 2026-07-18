@@ -86,8 +86,8 @@
         '<div class="footer-brand">' +
           '<a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a>' +
           "<p>" + t(
-            "Gestão financeira inteligente para sua vida pessoal, seu negócio, suas vendas e seus serviços — tudo em espaços isolados, no seu Android.",
-            "Smart money management for your personal life, business, sales and services — all in isolated spaces, on your Android."
+            "Gestão financeira inteligente para sua vida pessoal, seu negócio, suas vendas e seus serviços: tudo em espaços isolados, no seu Android.",
+            "Smart money management for your personal life, business, sales and services: all in isolated spaces, on your Android."
           ) + "</p>" +
           '<div style="margin-top:16px">' + storeButton() + "</div>" +
         "</div>" +

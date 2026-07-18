@@ -19,9 +19,10 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/styles.css?v=20260717">
+<link rel="preload" href="assets/fonts/sora-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css?v=20260718">
 <script>(function(){try{var t=localStorage.getItem('silica-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
-<script src="assets/js/site.js?v=20260717" defer></script>
+<script src="assets/js/site.js?v=20260718" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo"><span data-lang="pt">Pular para o conteúdo</span><span data-lang="en">Skip to content</span></a>
@@ -52,8 +53,8 @@
     <div class="doc-main">
       <section id="instalar">
         <h2 data-lang="pt">Instalar e abrir</h2><h2 data-lang="en">Install & open</h2>
-        <p data-lang="pt">O Silica está disponível na Google Play para Android. Ao abrir pela primeira vez, você já cai no espaço <strong>Pessoal</strong> — que é gratuito. Não é preciso criar conta: seus dados ficam guardados no próprio aparelho.</p>
-        <p data-lang="en">Silica is available on Google Play for Android. On first launch you land in the <strong>Personal</strong> space — which is free. No account needed: your data is stored on the device itself.</p>
+        <p data-lang="pt">O Silica está disponível na Google Play para Android. Ao abrir pela primeira vez, você já cai no espaço <strong>Pessoal</strong>, que é gratuito. Não é preciso criar conta: seus dados ficam guardados no próprio aparelho.</p>
+        <p data-lang="en">Silica is available on Google Play for Android. On first launch you land in the <strong>Personal</strong> space, which is free. No account needed: your data is stored on the device itself.</p>
         <div style="margin-top:16px"><span data-store></span></div>
       </section>
 
@@ -76,8 +77,8 @@
               <li data-lang="en"><strong>Bills list:</strong> the month's entries, colored by urgency.</li>
               <li data-lang="pt"><strong>Botão + (FAB):</strong> adiciona um lançamento.</li>
               <li data-lang="en"><strong>+ button (FAB):</strong> adds a new entry.</li>
-              <li data-lang="pt"><strong>Rodapé:</strong> 5 abas — Hoje, Rendas, Raio-X, Assinaturas e Menu.</li>
-              <li data-lang="en"><strong>Bottom bar:</strong> 5 tabs — Today, Income, X-Ray, Subscriptions and Menu.</li>
+              <li data-lang="pt"><strong>Rodapé:</strong> 5 abas (Hoje, Rendas, Raio-X, Assinaturas e Menu).</li>
+              <li data-lang="en"><strong>Bottom bar:</strong> 5 tabs (Today, Income, X-Ray, Subscriptions and Menu).</li>
             </ul>
           </div>
           <div class="split-media"><div class="device"><img src="assets/img/home-pessoal.webp" alt="Tela inicial do Silica" loading="lazy" width="698" height="1440"></div></div>
@@ -94,8 +95,8 @@
         </ol>
         <div class="callout tip" style="margin-top:20px">
           <div class="callout-title">💡 <span data-lang="pt">Dica</span><span data-lang="en">Tip</span></div>
-          <p data-lang="pt">Uma conta que se repete todo mês (aluguel, streaming) deve ser criada como <strong>Assinatura/recorrente</strong> — assim o Silica projeta 12 meses à frente e se renova sozinho.</p>
-          <p data-lang="en">A bill that repeats every month (rent, streaming) should be created as a <strong>Subscription/recurring</strong> — Silica then projects 12 months ahead and renews itself.</p>
+          <p data-lang="pt">Uma conta que se repete todo mês (aluguel, streaming) deve ser criada como <strong>Assinatura/recorrente</strong>: assim o Silica projeta 12 meses à frente e se renova sozinho.</p>
+          <p data-lang="en">A bill that repeats every month (rent, streaming) should be created as a <strong>Subscription/recurring</strong>: Silica then projects 12 months ahead and renews itself.</p>
         </div>
       </section>
 
@@ -125,12 +126,12 @@
 
       <section id="cores">
         <h2 data-lang="pt">As cores das contas</h2><h2 data-lang="en">Bill colors</h2>
-        <p data-lang="pt">As cores trabalham por você — dá pra ler a urgência sem abrir nada:</p>
-        <p data-lang="en">Colors work for you — you can read urgency without opening anything:</p>
+        <p data-lang="pt">As cores trabalham por você: dá pra ler a urgência sem abrir nada:</p>
+        <p data-lang="en">Colors work for you: you can read urgency without opening anything:</p>
         <div class="legend">
-          <div class="legend-item"><span class="legend-dot g"></span><span data-lang="pt"><b>Verde</b> — pago ou recebido.</span><span data-lang="en"><b>Green</b> — paid or received.</span></div>
-          <div class="legend-item"><span class="legend-dot o"></span><span data-lang="pt"><b>Laranja</b> — vence em até 10 dias.</span><span data-lang="en"><b>Orange</b> — due within 10 days.</span></div>
-          <div class="legend-item"><span class="legend-dot r"></span><span data-lang="pt"><b>Vermelho</b> — vence em até 4 dias, hoje ou já atrasada.</span><span data-lang="en"><b>Red</b> — due within 4 days, today, or overdue.</span></div>
+          <div class="legend-item"><span class="legend-dot g"></span><span data-lang="pt"><b>Verde</b>: pago ou recebido.</span><span data-lang="en"><b>Green</b>: paid or received.</span></div>
+          <div class="legend-item"><span class="legend-dot o"></span><span data-lang="pt"><b>Laranja</b>: vence em até 10 dias.</span><span data-lang="en"><b>Orange</b>: due within 10 days.</span></div>
+          <div class="legend-item"><span class="legend-dot r"></span><span data-lang="pt"><b>Vermelho</b>: vence em até 4 dias, hoje ou já atrasada.</span><span data-lang="en"><b>Red</b>: due within 4 days, today, or overdue.</span></div>
         </div>
         <p data-lang="pt">Contas pagas ganham um risco no texto e vão para o grupo <strong>Contas Pagas</strong>, no fim da lista, para manter o foco no que ainda falta.</p>
         <p data-lang="en">Paid bills get a strikethrough and move to the <strong>Paid Bills</strong> group at the end of the list, keeping the focus on what's still pending.</p>
