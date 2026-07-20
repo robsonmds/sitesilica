@@ -43,12 +43,14 @@
         <a href="#saldo" data-lang="pt">Saldo & comprometimento</a><a href="#saldo" data-lang="en">Balance & commitment</a>
         <a href="#lucro" data-lang="pt">Lucro só quando entra</a><a href="#lucro" data-lang="en">Profit only when paid</a>
         <a href="#parcelas" data-lang="pt">Parcelas exatas</a><a href="#parcelas" data-lang="en">Exact installments</a>
+        <a href="#quitacao" data-lang="pt">Quitação de parcelado</a><a href="#quitacao" data-lang="en">Installment settlement</a>
         <a href="#faturas" data-lang="pt">Faturas de cartão</a><a href="#faturas" data-lang="en">Card invoices</a>
         <a href="#recorrencia" data-lang="pt">Recorrência & histórico</a><a href="#recorrencia" data-lang="en">Recurrence & history</a>
         <a href="#orcamento" data-lang="pt">Orçamento vs recibo</a><a href="#orcamento" data-lang="en">Quote vs receipt</a>
         <a href="#os" data-lang="pt">Numeração de OS</a><a href="#os" data-lang="en">Order numbering</a>
         <a href="#os-ciclo" data-lang="pt">Cancelar & OS paga</a><a href="#os-ciclo" data-lang="en">Cancel & paid orders</a>
         <a href="#sinal" data-lang="pt">Sinal & data da renda</a><a href="#sinal" data-lang="en">Down payment & income date</a>
+        <a href="#inss" data-lang="pt">Retenção de INSS (RPA)</a><a href="#inss" data-lang="en">INSS withholding (RPA)</a>
         <a href="#gating" data-lang="pt">Grátis vs PRO</a><a href="#gating" data-lang="en">Free vs PRO</a>
       </nav>
     </aside>
@@ -95,6 +97,21 @@
           <ul>
             <li data-lang="pt"><b>R$ 100 em 3×</b> → 33,33 + 33,33 + <b>33,34</b> = 100,00.</li>
             <li data-lang="en"><b>$100 in 3×</b> → 33.33 + 33.33 + <b>33.34</b> = 100.00.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="quitacao">
+        <h2 data-lang="pt">Quitar dívida parcelada: como no banco, sem volta</h2><h2 data-lang="en">Settling an installment debt: like at a bank, no going back</h2>
+        <p data-lang="pt">Dívidas parceladas fora do cartão (empréstimo, financiamento, carnê) podem ser <strong>quitadas de uma vez</strong>. O app mostra o somatório das parcelas em aberto e pergunta se houve <strong>redução pela quitação antecipada</strong>; se sim, você informa o valor final negociado e o Silica mostra a economia. As parcelas em aberto são substituídas por um <strong>único lançamento pendente no mês atual</strong>, com vencimento hoje.</p>
+        <p data-lang="en">Installment debts outside the card (loan, financing, payment book) can be <strong>settled at once</strong>. The app shows the total of the open installments and asks whether the amount was <strong>reduced for settling early</strong>; if so, you enter the negotiated final amount and Silica shows the savings. The open installments are replaced by a <strong>single pending entry in the current month</strong>, due today.</p>
+        <p data-lang="pt"><strong>Sem volta, como no banco:</strong> as parcelas originais não são restauráveis; excluir o lançamento de quitação depois não as traz de volta. As parcelas <strong>já pagas ficam intocadas</strong> no histórico. No cartão de crédito, o caminho continua sendo a antecipação de parcelas.</p>
+        <p data-lang="en"><strong>No going back, like at a bank:</strong> the original installments cannot be restored; deleting the settlement entry later will not bring them back. Installments <strong>already paid stay untouched</strong> in your history. On credit cards, the path remains installment anticipation.</p>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt">Empréstimo com 8 parcelas de R$ 600 em aberto (R$ 4.800). O banco ofereceu quitação por R$ 4.200 → você informa o valor final e o app registra a economia de <b>R$ 600</b>; nasce um lançamento único de R$ 4.200 pendente no mês atual.</li>
+            <li data-lang="en">A loan with 8 open installments of $600 ($4,800). The bank offered a $4,200 settlement → you enter the final amount and the app records the <b>$600</b> savings; a single $4,200 pending entry is created in the current month.</li>
           </ul>
         </div>
       </section>
@@ -161,6 +178,19 @@
         <h2 data-lang="pt">Sinal e a data certa da renda</h2><h2 data-lang="en">Down payment and the right income date</h2>
         <p data-lang="pt">Se você recebe um sinal, ele vira renda <strong>na data do sinal</strong>; o saldo restante vira renda na data em que você quita o serviço. Assim, cada valor aparece no mês em que o dinheiro realmente entrou. O sinal nunca pode ser maior que o total.</p>
         <p data-lang="en">If you take a down payment, it becomes income <strong>on the down-payment date</strong>; the remaining balance becomes income on the day you settle the service. So each amount shows up in the month the money actually arrived. The down payment can never exceed the total.</p>
+      </section>
+
+      <section id="inss">
+        <h2 data-lang="pt">Retenção de INSS (RPA): o recibo cobra o líquido</h2><h2 data-lang="en">INSS withholding (RPA): the receipt charges the net</h2>
+        <p data-lang="pt">Na OS você define <strong>quem paga</strong>. Se for uma empresa ou condomínio que, sem nota fiscal, retém por lei os <strong>11% de INSS (RPA)</strong>, o Recibo mostra o total, a linha "Referência RPA, INSS 11%" e o <strong>valor líquido</strong>. O QR Pix e o Pix copia e cola <strong>já cobram o líquido</strong>, e a renda registrada no app também é a líquida. É um cálculo de referência, sem valor fiscal; a guia do INSS é responsabilidade de quem retém.</p>
+        <p data-lang="en">On the order you set <strong>who pays</strong>. If it's a company or condo association that, without a tax invoice, legally withholds the <strong>11% INSS (RPA)</strong>, the Receipt shows the total, the "RPA reference, 11% INSS" line and the <strong>net amount</strong>. The Pix QR and the copy-and-paste Pix code <strong>already charge the net</strong>, and the income recorded in the app is the net too. It's a reference calculation with no tax validity; the INSS payment slip is the withholder's responsibility.</p>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt">Serviço de R$ 285,00 para uma administradora de condomínios → INSS retido R$ 31,35 → o recibo destaca o líquido de <b>R$ 253,65</b> e o QR Pix cobra exatamente esse valor.</li>
+            <li data-lang="en">A $285.00 service for a condo management company → $31.35 INSS withheld → the receipt highlights the <b>$253.65</b> net and the Pix QR charges exactly that.</li>
+          </ul>
+        </div>
       </section>
 
       <section id="gating">
