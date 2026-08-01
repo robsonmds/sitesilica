@@ -6,14 +6,14 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-20L3DRpUYD6utBVDAzKVXoiAlUXmyfAu+vP4Q2s3050='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Silica Vendas · Silica</title>
-<meta name="description" content="Silica Vendas: estoque, vendas parceladas, lucro automático, abatimento, comissões de vendedores e relatório do Gerente em PDF.">
+<meta name="description" content="Silica Vendas: estoque, vendas parceladas, lucro automático, pagamento parcial, multa e juros, comissões de vendedores e relatório do Gerente em PDF.">
 <link rel="icon" href="assets/img/logo-mark.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
 <link rel="canonical" href="https://silica.app.br/vendas.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Silica">
 <meta property="og:title" content="Silica Vendas · Silica">
-<meta property="og:description" content="Silica Vendas: estoque, vendas parceladas, lucro automático, abatimento, comissões de vendedores e relatório do Gerente em PDF.">
+<meta property="og:description" content="Silica Vendas: estoque, vendas parceladas, lucro automático, pagamento parcial, multa e juros, comissões de vendedores e relatório do Gerente em PDF.">
 <meta property="og:url" content="https://silica.app.br/vendas.html">
 <meta property="og:image" content="https://silica.app.br/assets/img/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -43,7 +43,8 @@
         <a href="#estoque" data-lang="pt">Estoque</a><a href="#estoque" data-lang="en">Stock</a>
         <a href="#venda" data-lang="pt">Cadastrar uma venda</a><a href="#venda" data-lang="en">Register a sale</a>
         <a href="#lucro" data-lang="pt">Lucro automático</a><a href="#lucro" data-lang="en">Automatic profit</a>
-        <a href="#abatimento" data-lang="pt">Abatimento & resíduo</a><a href="#abatimento" data-lang="en">Partial payment</a>
+        <a href="#abatimento" data-lang="pt">Pagamento parcial</a><a href="#abatimento" data-lang="en">Partial payment</a>
+        <a href="#multa" data-lang="pt">Multa & juros</a><a href="#multa" data-lang="en">Late fee & interest</a>
         <a href="#cobranca" data-lang="pt">Cobrança & recibo</a><a href="#cobranca" data-lang="en">Reminders & receipt</a>
         <a href="#comissoes" data-lang="pt">Comissões (Gerentes)</a><a href="#comissoes" data-lang="en">Commissions</a>
         <a href="#relatorio" data-lang="pt">Relatório do Gerente</a><a href="#relatorio" data-lang="en">Manager report</a>
@@ -63,9 +64,9 @@
         </div>
         <div class="split-media">
           <figure class="shot">
-            <div class="device"><img src="assets/img/estoque.webp" alt="Aba de estoque do Silica Vendas" loading="lazy" width="720" height="1468"></div>
-            <figcaption data-lang="pt">Estoque com valor total, busca e alerta de estoque baixo.</figcaption>
-            <figcaption data-lang="en">Stock with total value, search and low-stock flags.</figcaption>
+            <div class="device"><img src="assets/img/estoque.webp?v=20260801" alt="Aba de estoque do Silica Vendas" loading="lazy" width="720" height="1480"></div>
+            <figcaption data-lang="pt">Estoque com valor total, busca e os avisos de <em>baixo</em> e <em>esgotado</em>.</figcaption>
+            <figcaption data-lang="en">Stock with total value, search and the <em>low</em> and <em>out of stock</em> flags.</figcaption>
           </figure>
         </div>
         </div>
@@ -108,9 +109,57 @@
       </section>
 
       <section id="abatimento">
-        <h2 data-lang="pt">Abatimento & resíduo</h2><h2 data-lang="en">Partial payment & residual</h2>
-        <p data-lang="pt">Se um cliente paga só parte de uma venda, use <strong>Abater Valor</strong>: o app quita a parcela atual e <strong>redistribui o saldo restante</strong> nas parcelas futuras pendentes. Quando um pagamento parcial deixa um resíduo, você pode estendê-lo para uma nova data.</p>
-        <p data-lang="en">If a client pays only part of a sale, use <strong>Partial Payment</strong>: the app settles the current installment and <strong>redistributes the remaining balance</strong> across the future pending installments. When a partial payment leaves a residual, you can extend it to a new date.</p>
+        <h2 data-lang="pt">Pagamento parcial</h2><h2 data-lang="en">Partial payment</h2>
+        <p data-lang="pt">Cliente pagou só uma parte? Use <strong>Pagamento parcial</strong>. O app fecha a parcela com o valor que entrou e <strong>cria uma parcela nova com o que faltou</strong>, no vencimento que você escolher. Nada é somado nas outras parcelas.</p>
+        <p data-lang="en">Did the client pay only part of it? Use <strong>Partial payment</strong>. The app closes the installment with the amount received and <strong>creates a new installment for what is left</strong>, due on the date you pick. Nothing is added to the other installments.</p>
+        <ul>
+          <li data-lang="pt"><strong>A data:</strong> precisa cair depois desta parcela e antes da próxima. Os dias fora disso ficam desabilitados no calendário, então não tem como errar.</li>
+          <li data-lang="en"><strong>The date:</strong> it must fall after this installment and before the next one. Days outside that range are disabled in the calendar, so you cannot get it wrong.</li>
+          <li data-lang="pt"><strong>Pagou adiantado?</strong> A parcela passa a valer para o dia do pagamento. Pagou atrasado? O vencimento original continua lá, o atraso não é apagado.</li>
+          <li data-lang="en"><strong>Paid early?</strong> The installment moves to the payment day. Paid late? The original due date stays, the delay is not erased.</li>
+          <li data-lang="pt"><strong>Errou o valor?</strong> Use <strong>Desfazer pagamento parcial</strong> no menu do card: a parcela volta ao valor combinado e a parcela do restante some.</li>
+          <li data-lang="en"><strong>Wrong amount?</strong> Use <strong>Undo partial payment</strong> in the card menu: the installment goes back to its agreed amount and the remaining installment disappears.</li>
+        </ul>
+      </section>
+
+      <section id="multa">
+        <h2 data-lang="pt">Multa e juros de quem paga atrasado</h2><h2 data-lang="en">Late fee and interest</h2>
+        <p data-lang="pt">Em <strong>Menu › Dados da loja</strong> você liga a cobrança e ajusta os percentuais. O padrão do varejo já vem preenchido: <strong>multa de 2%</strong> cobrada uma vez, no primeiro dia de atraso, e <strong>juros de 1% ao mês</strong> rateados por dia. Dá para dar alguns dias de carência antes de começar. Quem não ligar a função não vê nada mudar.</p>
+        <p data-lang="en">In <strong>Menu › Store details</strong> you turn charging on and set the percentages. Common retail defaults are prefilled: a <strong>2% fee</strong> charged once, on the first day of delay, and <strong>1% monthly interest</strong> prorated per day. You can allow a few grace days before it starts. If you never turn it on, nothing changes for you.</p>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt">Parcela de <b>R$ 100,00</b> vencida em 30/07, paga em <b>15/08</b> (16 dias): multa R$ 2,00 + juros R$ 0,53 = <b>R$ 102,53</b>.</li>
+            <li data-lang="en">A <b>$100.00</b> installment due Jul 30, paid on <b>Aug 15</b> (16 days): fee $2.00 + interest $0.53 = <b>$102.53</b>.</li>
+          </ul>
+        </div>
+        <ul>
+          <li data-lang="pt"><strong>O valor cresce sozinho:</strong> o card da parcela atrasada já mostra o total de hoje, e o app recalcula a cada dia que passa.</li>
+          <li data-lang="en"><strong>The amount grows on its own:</strong> the overdue card already shows today's total, and the app recalculates every day.</li>
+          <li data-lang="pt"><strong>Você decide na hora de receber:</strong> ao marcar como paga, escolha a data em que o cliente pagou. Se foi depois do vencimento, o app pergunta se aplica a multa e os juros — mostrando o valor. Perdoar é um toque.</li>
+          <li data-lang="en"><strong>You decide when the money arrives:</strong> when marking it paid, pick the date the client actually paid. If it was after the due date, the app asks whether to apply the fee and interest — showing the amount. Waiving it is one tap.</li>
+          <li data-lang="pt"><strong>No recibo, tudo ou nada:</strong> um switch decide se multa e juros aparecem. Desligado, o recibo sai com os valores limpos, sem qualquer menção a encargos.</li>
+          <li data-lang="en"><strong>On the receipt, all or nothing:</strong> a switch decides whether fee and interest show up. When off, the receipt shows clean amounts, with no mention of charges.</li>
+          <li data-lang="pt"><strong>Separado do lucro do produto:</strong> nas Rendas o acréscimo entra numa linha própria, então você sabe quanto do mês veio de venda e quanto veio de atraso. A comissão do Gerente não incide sobre encargos.</li>
+          <li data-lang="en"><strong>Separate from product profit:</strong> in Income the charge gets its own line, so you know how much of the month came from sales and how much from delays. Manager commission doesn't apply to charges.</li>
+        </ul>
+        <div class="shot-row">
+          <figure class="shot">
+            <div class="device"><img src="assets/img/menu-vendas.webp" alt="Menu Mais Opções do Silica Vendas, com o item Dados da loja" loading="lazy" width="720" height="1481"></div>
+            <figcaption data-lang="pt">O caminho: <strong>Menu › Dados da loja</strong>.</figcaption>
+            <figcaption data-lang="en">The path: <strong>Menu › Store details</strong>.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="device"><img src="assets/img/dados-loja-multa.webp" alt="Configuração de multa e juros por atraso em Dados da loja" loading="lazy" width="720" height="1462"></div>
+            <figcaption data-lang="pt">Liga, ajusta os percentuais e a carência — e escolhe se sai no recibo.</figcaption>
+            <figcaption data-lang="en">Turn it on, set the percentages and grace — and choose whether it shows on the receipt.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="device"><img src="assets/img/vendas-multa-juros.webp" alt="Card de parcela atrasada mostrando o valor com multa e juros" loading="lazy" width="720" height="1498"></div>
+            <figcaption data-lang="pt">Na parcela atrasada, o valor de hoje aparece já com o acréscimo.</figcaption>
+            <figcaption data-lang="en">On an overdue installment, today's amount already includes the charge.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section id="cobranca">
