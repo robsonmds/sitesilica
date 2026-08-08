@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-OQUgtc9aexau6v65aGPcw6z5b1hxyKtnvMh1T3MK/AU='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msvalidate.01" content="0322525388BC71BBFA7280E2E74C20B3" />
 <title>Regras de negócio · Silica</title>
 <meta name="description" content="As regras que o Silica segue para calcular saldo, lucro, comprometimento, faturas, parcelas, recorrência e documentos — explicadas com exemplos.">
 <link rel="icon" href="assets/img/logo-mark.png" type="image/png">
@@ -12,6 +13,8 @@
 <link rel="canonical" href="https://silica.app.br/regras-de-negocio.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Silica">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:title" content="Regras de negócio · Silica">
 <meta property="og:description" content="As regras que o Silica segue para calcular saldo, lucro, comprometimento, faturas, parcelas, recorrência e documentos — explicadas com exemplos.">
 <meta property="og:url" content="https://silica.app.br/regras-de-negocio.html">
@@ -19,207 +22,213 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Regras de negócio · Silica">
+<meta name="twitter:description" content="As regras que o Silica segue para calcular saldo, lucro, comprometimento, faturas, parcelas, recorrência e documentos — explicadas com exemplos.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Silica","url":"https://silica.app.br/","logo":"https://silica.app.br/assets/img/logo-mark.png","founder":{"@type":"Person","name":"Robson Mesquita"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Silica","item":"https://silica.app.br/"},{"@type":"ListItem","position":2,"name":"Regras de negócio","item":"https://silica.app.br/regras-de-negocio.html"}]}</script>
 <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css?v=20260808">
 <script>(function(){try{var t=localStorage.getItem('silica-theme')||'grafite';document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
 <script src="assets/js/site.js?v=20260808" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#conteudo"><span data-lang="pt">Pular para o conteúdo</span><span data-lang="en">Skip to content</span></a>
+<a class="skip-link" href="#conteudo"><span data-lang="pt" lang="pt-BR">Pular para o conteúdo</span><span data-lang="en" lang="en">Skip to content</span></a>
+<header class="site-header"><div class="container"><div class="nav"><a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a><button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a class="" href="index.html"><span data-lang="pt" lang="pt-BR">Início</span><span data-lang="en" lang="en">Home</span></a><a class="" href="comecar.html"><span data-lang="pt" lang="pt-BR">Começar</span><span data-lang="en" lang="en">Get started</span></a><a class="" href="perfis.html"><span data-lang="pt" lang="pt-BR">Perfis</span><span data-lang="en" lang="en">Profiles</span></a><div class="nav-drop"><button type="button" aria-haspopup="true" aria-expanded="false"><span data-lang="pt" lang="pt-BR">Recursos</span><span data-lang="en" lang="en">Features</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-drop-menu"><a href="financas.html"><span class="ic">💰</span><span data-lang="pt" lang="pt-BR">Finanças (Pessoal & Negócios)</span><span data-lang="en" lang="en">Finances (Personal & Business)</span></a><a href="vendas.html"><span class="ic">📦</span><span data-lang="pt" lang="pt-BR">Silica Vendas</span><span data-lang="en" lang="en">Silica Sales</span></a><a href="servicos.html"><span class="ic">🔧</span><span data-lang="pt" lang="pt-BR">Silica Serviços</span><span data-lang="en" lang="en">Silica Services</span></a><a href="raiox.html"><span class="ic">📊</span><span data-lang="pt" lang="pt-BR">Raio-X</span><span data-lang="en" lang="en">X-Ray</span></a><a href="notificacoes.html"><span class="ic">🔔</span><span data-lang="pt" lang="pt-BR">Notificações (Sentinela)</span><span data-lang="en" lang="en">Notifications (Sentinel)</span></a><a href="seguranca-backup.html"><span class="ic">🔒</span><span data-lang="pt" lang="pt-BR">Segurança & Backup</span><span data-lang="en" lang="en">Security & Backup</span></a><a href="temas.html"><span class="ic">🎨</span><span data-lang="pt" lang="pt-BR">Temas & Modo Zen</span><span data-lang="en" lang="en">Themes & Zen Mode</span></a></div></div><a class="active" href="regras-de-negocio.html"><span data-lang="pt" lang="pt-BR">Regras</span><span data-lang="en" lang="en">Business rules</span></a><a class="" href="planos.html"><span data-lang="pt" lang="pt-BR">Planos</span><span data-lang="en" lang="en">Plans</span></a><a class="" href="faq.html"><span data-lang="pt" lang="pt-BR">FAQ</span><span data-lang="en" lang="en">FAQ</span></a><a class="" href="contato.html"><span data-lang="pt" lang="pt-BR">Contato</span><span data-lang="en" lang="en">Contact</span></a></nav><div class="nav-actions"><button class="icon-btn lang-btn" id="langBtn" aria-label="Trocar idioma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span data-lang="pt" lang="pt-BR">EN</span><span data-lang="en" lang="en">PT</span></button><div class="nav-drop theme-drop"><button class="icon-btn theme-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-1.1-.9-1.7-2-1.7h-1.8a2.5 2.5 0 0 1 0-5H18a1.8 1.8 0 0 0 1.6-2.7A9 9 0 0 0 12 3Z"/><circle cx="7.3" cy="10.2" r="1.15" fill="currentColor" stroke="none"/><circle cx="9.3" cy="15.3" r="1.15" fill="currentColor" stroke="none"/><circle cx="14.5" cy="16.4" r="1.15" fill="currentColor" stroke="none"/></svg></button><div class="nav-drop-menu theme-menu"><button type="button" data-theme-choice="light"><span class="theme-dot" style="background:#16a34a"></span><span data-lang="pt" lang="pt-BR">Claro</span><span data-lang="en" lang="en">Light</span></button><button type="button" data-theme-choice="dark"><span class="theme-dot" style="background:#34d399"></span><span data-lang="pt" lang="pt-BR">Escuro</span><span data-lang="en" lang="en">Dark</span></button><button type="button" data-theme-choice="zen"><span class="theme-dot" style="background:#5C7A63"></span><span data-lang="pt" lang="pt-BR">Zen</span><span data-lang="en" lang="en">Zen</span></button><button type="button" data-theme-choice="ouro"><span class="theme-dot" style="background:#D6A94A"></span><span data-lang="pt" lang="pt-BR">Ouro</span><span data-lang="en" lang="en">Gold</span></button><button type="button" data-theme-choice="rosa"><span class="theme-dot" style="background:#C6685C"></span><span data-lang="pt" lang="pt-BR">Rosa</span><span data-lang="en" lang="en">Pink</span></button><button type="button" data-theme-choice="grafite" class="active" aria-current="true"><span class="theme-dot" style="background:#2FBF8F"></span><span data-lang="pt" lang="pt-BR">Grafite & Esmeralda</span><span data-lang="en" lang="en">Graphite & Emerald</span></button></div></div></div></div></div></header>
 <main id="conteudo" class="container">
   <div class="page-hero">
-    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt">Regras de negócio</span><span data-lang="en">Business rules</span></div>
-    <span class="eyebrow" data-lang="pt">Como o app pensa</span><span class="eyebrow" data-lang="en">How the app thinks</span>
-    <h1 data-lang="pt">Regras de negócio, com exemplos</h1>
-    <h1 data-lang="en">Business rules, with examples</h1>
-    <p class="lead" data-lang="pt">O Silica é opinativo: ele tem regras claras para calcular tudo de forma consistente. Aqui estão as principais, com exemplos práticos.</p>
-    <p class="lead" data-lang="en">Silica is opinionated: it follows clear rules to calculate everything consistently. Here are the main ones, with practical examples.</p>
+    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt" lang="pt-BR">Regras de negócio</span><span data-lang="en" lang="en">Business rules</span></div>
+    <span class="eyebrow" data-lang="pt" lang="pt-BR">Como o app pensa</span><span class="eyebrow" data-lang="en" lang="en">How the app thinks</span>
+    <h1 data-lang="pt" lang="pt-BR">Regras de negócio, com exemplos</h1>
+    <h1 data-lang="en" lang="en">Business rules, with examples</h1>
+    <p class="lead" data-lang="pt" lang="pt-BR">O Silica é opinativo: ele tem regras claras para calcular tudo de forma consistente. Aqui estão as principais, com exemplos práticos.</p>
+    <p class="lead" data-lang="en" lang="en">Silica is opinionated: it follows clear rules to calculate everything consistently. Here are the main ones, with practical examples.</p>
   </div>
 
   <div class="doc">
     <aside class="doc-side">
       <nav>
-        <span class="side-title" data-lang="pt">Nesta página</span><span class="side-title" data-lang="en">On this page</span>
-        <a href="#saldo" data-lang="pt">Saldo & comprometimento</a><a href="#saldo" data-lang="en">Balance & commitment</a>
-        <a href="#lucro" data-lang="pt">Lucro só quando entra</a><a href="#lucro" data-lang="en">Profit only when paid</a>
-        <a href="#parcelas" data-lang="pt">Parcelas exatas</a><a href="#parcelas" data-lang="en">Exact installments</a>
-        <a href="#quitacao" data-lang="pt">Quitação de parcelado</a><a href="#quitacao" data-lang="en">Installment settlement</a>
-        <a href="#faturas" data-lang="pt">Faturas de cartão</a><a href="#faturas" data-lang="en">Card invoices</a>
-        <a href="#recorrencia" data-lang="pt">Recorrência & histórico</a><a href="#recorrencia" data-lang="en">Recurrence & history</a>
-        <a href="#orcamento" data-lang="pt">Orçamento vs recibo</a><a href="#orcamento" data-lang="en">Quote vs receipt</a>
-        <a href="#os" data-lang="pt">Numeração de OS</a><a href="#os" data-lang="en">Order numbering</a>
-        <a href="#os-ciclo" data-lang="pt">Cancelar & OS paga</a><a href="#os-ciclo" data-lang="en">Cancel & paid orders</a>
-        <a href="#sinal" data-lang="pt">Sinal & data da renda</a><a href="#sinal" data-lang="en">Down payment & income date</a>
-        <a href="#inss" data-lang="pt">Retenção de INSS (RPA)</a><a href="#inss" data-lang="en">INSS withholding (RPA)</a>
-        <a href="#gating" data-lang="pt">Grátis vs PRO</a><a href="#gating" data-lang="en">Free vs PRO</a>
+        <span class="side-title" data-lang="pt" lang="pt-BR">Nesta página</span><span class="side-title" data-lang="en" lang="en">On this page</span>
+        <a href="#saldo" data-lang="pt" lang="pt-BR">Saldo & comprometimento</a><a href="#saldo" data-lang="en" lang="en">Balance & commitment</a>
+        <a href="#lucro" data-lang="pt" lang="pt-BR">Lucro só quando entra</a><a href="#lucro" data-lang="en" lang="en">Profit only when paid</a>
+        <a href="#parcelas" data-lang="pt" lang="pt-BR">Parcelas exatas</a><a href="#parcelas" data-lang="en" lang="en">Exact installments</a>
+        <a href="#quitacao" data-lang="pt" lang="pt-BR">Quitação de parcelado</a><a href="#quitacao" data-lang="en" lang="en">Installment settlement</a>
+        <a href="#faturas" data-lang="pt" lang="pt-BR">Faturas de cartão</a><a href="#faturas" data-lang="en" lang="en">Card invoices</a>
+        <a href="#recorrencia" data-lang="pt" lang="pt-BR">Recorrência & histórico</a><a href="#recorrencia" data-lang="en" lang="en">Recurrence & history</a>
+        <a href="#orcamento" data-lang="pt" lang="pt-BR">Orçamento vs recibo</a><a href="#orcamento" data-lang="en" lang="en">Quote vs receipt</a>
+        <a href="#os" data-lang="pt" lang="pt-BR">Numeração de OS</a><a href="#os" data-lang="en" lang="en">Order numbering</a>
+        <a href="#os-ciclo" data-lang="pt" lang="pt-BR">Cancelar & OS paga</a><a href="#os-ciclo" data-lang="en" lang="en">Cancel & paid orders</a>
+        <a href="#sinal" data-lang="pt" lang="pt-BR">Sinal & data da renda</a><a href="#sinal" data-lang="en" lang="en">Down payment & income date</a>
+        <a href="#inss" data-lang="pt" lang="pt-BR">Retenção de INSS (RPA)</a><a href="#inss" data-lang="en" lang="en">INSS withholding (RPA)</a>
+        <a href="#gating" data-lang="pt" lang="pt-BR">Grátis vs PRO</a><a href="#gating" data-lang="en" lang="en">Free vs PRO</a>
       </nav>
     </aside>
 
     <div class="doc-main">
       <section id="saldo">
-        <h2 data-lang="pt">Saldo livre & comprometimento</h2><h2 data-lang="en">Free balance & commitment</h2>
+        <h2 data-lang="pt" lang="pt-BR">Saldo livre & comprometimento</h2><h2 data-lang="en" lang="en">Free balance & commitment</h2>
         <ul>
-          <li data-lang="pt"><strong>Saldo livre</strong> = saldo anterior + renda do mês − despesas do mês.</li>
-          <li data-lang="en"><strong>Free balance</strong> = previous balance + month income − month expenses.</li>
-          <li data-lang="pt"><strong>Comprometimento</strong> = despesas do mês ÷ (saldo anterior + renda do mês). Se não há saldo positivo mas há contas, é 100%.</li>
-          <li data-lang="en"><strong>Commitment</strong> = month expenses ÷ (previous balance + month income). With no positive balance but bills pending, it's 100%.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Saldo livre</strong> = saldo anterior + renda do mês − despesas do mês.</li>
+          <li data-lang="en" lang="en"><strong>Free balance</strong> = previous balance + month income − month expenses.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Comprometimento</strong> = despesas do mês ÷ (saldo anterior + renda do mês). Se não há saldo positivo mas há contas, é 100%.</li>
+          <li data-lang="en" lang="en"><strong>Commitment</strong> = month expenses ÷ (previous balance + month income). With no positive balance but bills pending, it's 100%.</li>
         </ul>
         <div class="example">
-          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt">Saldo anterior R$ 1.000 + renda R$ 4.000 = R$ 5.000. Despesas R$ 950.</li>
-            <li data-lang="en">Previous $200 + income $800 = $1,000. Expenses $190.</li>
-            <li data-lang="pt">→ Comprometimento = 950 ÷ 5.000 = <b>19%</b>; saldo livre = <b>R$ 4.050</b>.</li>
-            <li data-lang="en">→ Commitment = 190 ÷ 1,000 = <b>19%</b>; free balance = <b>$810</b>.</li>
+            <li data-lang="pt" lang="pt-BR">Saldo anterior R$ 1.000 + renda R$ 4.000 = R$ 5.000. Despesas R$ 950.</li>
+            <li data-lang="en" lang="en">Previous $200 + income $800 = $1,000. Expenses $190.</li>
+            <li data-lang="pt" lang="pt-BR">→ Comprometimento = 950 ÷ 5.000 = <b>19%</b>; saldo livre = <b>R$ 4.050</b>.</li>
+            <li data-lang="en" lang="en">→ Commitment = 190 ÷ 1,000 = <b>19%</b>; free balance = <b>$810</b>.</li>
           </ul>
         </div>
       </section>
 
       <section id="lucro">
-        <h2 data-lang="pt">O lucro só é real quando o dinheiro entra</h2><h2 data-lang="en">Profit only counts when the money arrives</h2>
-        <p data-lang="pt">Nos perfis Vendas e Serviços, o lucro (ou a renda) não é contado quando a venda/serviço é registrado, e sim quando você marca como <strong>recebido</strong>. Isso mantém o Raio-X honesto: mostra caixa de verdade, não promessa.</p>
-        <p data-lang="en">In Sales and Services, profit (or income) isn't counted when the sale/service is recorded, but when you mark it as <strong>received</strong>. This keeps the X-Ray honest: it shows real cash, not a promise.</p>
+        <h2 data-lang="pt" lang="pt-BR">O lucro só é real quando o dinheiro entra</h2><h2 data-lang="en" lang="en">Profit only counts when the money arrives</h2>
+        <p data-lang="pt" lang="pt-BR">Nos perfis Vendas e Serviços, o lucro (ou a renda) não é contado quando a venda/serviço é registrado, e sim quando você marca como <strong>recebido</strong>. Isso mantém o Raio-X honesto: mostra caixa de verdade, não promessa.</p>
+        <p data-lang="en" lang="en">In Sales and Services, profit (or income) isn't counted when the sale/service is recorded, but when you mark it as <strong>received</strong>. This keeps the X-Ray honest: it shows real cash, not a promise.</p>
         <div class="example">
-          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt">Venda de R$ 100 (custo R$ 60) em 2×. Ao receber a 1ª parcela, metade do lucro entra como renda; ao receber a 2ª, o restante.</li>
-            <li data-lang="en">A $100 sale (cost $60) in 2×. When you receive the 1st installment, half the profit becomes income; the 2nd brings the rest.</li>
+            <li data-lang="pt" lang="pt-BR">Venda de R$ 100 (custo R$ 60) em 2×. Ao receber a 1ª parcela, metade do lucro entra como renda; ao receber a 2ª, o restante.</li>
+            <li data-lang="en" lang="en">A $100 sale (cost $60) in 2×. When you receive the 1st installment, half the profit becomes income; the 2nd brings the rest.</li>
           </ul>
         </div>
       </section>
 
       <section id="parcelas">
-        <h2 data-lang="pt">Parcelas que somam exatamente o total</h2><h2 data-lang="en">Installments that add up exactly</h2>
-        <p data-lang="pt">A divisão é feita por centavos e o resíduo vai para a última parcela.</p>
-        <p data-lang="en">The split is by cents and the remainder goes to the last installment.</p>
+        <h2 data-lang="pt" lang="pt-BR">Parcelas que somam exatamente o total</h2><h2 data-lang="en" lang="en">Installments that add up exactly</h2>
+        <p data-lang="pt" lang="pt-BR">A divisão é feita por centavos e o resíduo vai para a última parcela.</p>
+        <p data-lang="en" lang="en">The split is by cents and the remainder goes to the last installment.</p>
         <div class="example">
-          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt"><b>R$ 100 em 3×</b> → 33,33 + 33,33 + <b>33,34</b> = 100,00.</li>
-            <li data-lang="en"><b>$100 in 3×</b> → 33.33 + 33.33 + <b>33.34</b> = 100.00.</li>
+            <li data-lang="pt" lang="pt-BR"><b>R$ 100 em 3×</b> → 33,33 + 33,33 + <b>33,34</b> = 100,00.</li>
+            <li data-lang="en" lang="en"><b>$100 in 3×</b> → 33.33 + 33.33 + <b>33.34</b> = 100.00.</li>
           </ul>
         </div>
       </section>
 
       <section id="multa-juros">
-        <h2 data-lang="pt">Multa e juros: uma vez a multa, os juros por dia</h2><h2 data-lang="en">Late fee and interest: fee once, interest per day</h2>
-        <p data-lang="pt">Quando a loja liga a cobrança, a <b>multa</b> incide uma única vez, no primeiro dia de atraso, e os <b>juros do mês</b> são divididos por 30 e cobrados por dia corrido. A conta usa o valor da parcela, nunca o total da venda, e o resultado é <b>congelado</b> no momento do pagamento — mudar o percentual depois não mexe no que já foi cobrado.</p>
-        <p data-lang="en">When the store turns charging on, the <b>fee</b> applies once, on the first day of delay, and the <b>monthly interest</b> is divided by 30 and charged per calendar day. The math uses the installment amount, never the sale total, and the result is <b>frozen</b> at payment time — changing the percentage later doesn't touch what was already charged.</p>
+        <h2 data-lang="pt" lang="pt-BR">Multa e juros: uma vez a multa, os juros por dia</h2><h2 data-lang="en" lang="en">Late fee and interest: fee once, interest per day</h2>
+        <p data-lang="pt" lang="pt-BR">Quando a loja liga a cobrança, a <b>multa</b> incide uma única vez, no primeiro dia de atraso, e os <b>juros do mês</b> são divididos por 30 e cobrados por dia corrido. A conta usa o valor da parcela, nunca o total da venda, e o resultado é <b>congelado</b> no momento do pagamento — mudar o percentual depois não mexe no que já foi cobrado.</p>
+        <p data-lang="en" lang="en">When the store turns charging on, the <b>fee</b> applies once, on the first day of delay, and the <b>monthly interest</b> is divided by 30 and charged per calendar day. The math uses the installment amount, never the sale total, and the result is <b>frozen</b> at payment time — changing the percentage later doesn't touch what was already charged.</p>
         <div class="example">
-          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt"><b>R$ 100</b>, 16 dias de atraso, 2% + 1%/mês → 2,00 + (100 × 1% ÷ 30 × 16) = <b>R$ 102,53</b>.</li>
-            <li data-lang="en"><b>$100</b>, 16 days late, 2% + 1%/month → 2.00 + (100 × 1% ÷ 30 × 16) = <b>$102.53</b>.</li>
+            <li data-lang="pt" lang="pt-BR"><b>R$ 100</b>, 16 dias de atraso, 2% + 1%/mês → 2,00 + (100 × 1% ÷ 30 × 16) = <b>R$ 102,53</b>.</li>
+            <li data-lang="en" lang="en"><b>$100</b>, 16 days late, 2% + 1%/month → 2.00 + (100 × 1% ÷ 30 × 16) = <b>$102.53</b>.</li>
           </ul>
         </div>
         <ul>
-          <li data-lang="pt">Pagamento parcial de parcela atrasada quita <b>primeiro os encargos</b> e só depois abate o principal. O que faltar vira uma parcela nova, sem juros sobre juros.</li>
-          <li data-lang="en">A partial payment on an overdue installment clears the <b>charges first</b> and only then reduces the principal. What is left becomes a new installment, with no interest on interest.</li>
-          <li data-lang="pt">Desligar a cobrança não apaga o histórico: parcelas já recebidas com encargo continuam registradas.</li>
-          <li data-lang="en">Turning charging off doesn't erase history: installments already received with charges stay on the record.</li>
+          <li data-lang="pt" lang="pt-BR">Pagamento parcial de parcela atrasada quita <b>primeiro os encargos</b> e só depois abate o principal. O que faltar vira uma parcela nova, sem juros sobre juros.</li>
+          <li data-lang="en" lang="en">A partial payment on an overdue installment clears the <b>charges first</b> and only then reduces the principal. What is left becomes a new installment, with no interest on interest.</li>
+          <li data-lang="pt" lang="pt-BR">Desligar a cobrança não apaga o histórico: parcelas já recebidas com encargo continuam registradas.</li>
+          <li data-lang="en" lang="en">Turning charging off doesn't erase history: installments already received with charges stay on the record.</li>
         </ul>
       </section>
 
       <section id="quitacao">
-        <h2 data-lang="pt">Quitar dívida parcelada: como no banco, sem volta</h2><h2 data-lang="en">Settling an installment debt: like at a bank, no going back</h2>
-        <p data-lang="pt">Dívidas parceladas fora do cartão (empréstimo, financiamento, carnê) podem ser <strong>quitadas de uma vez</strong>. O app mostra o somatório das parcelas em aberto e pergunta se houve <strong>redução pela quitação antecipada</strong>; se sim, você informa o valor final negociado e o Silica mostra a economia. As parcelas em aberto são substituídas por um <strong>único lançamento pendente no mês atual</strong>, com vencimento hoje.</p>
-        <p data-lang="en">Installment debts outside the card (loan, financing, payment book) can be <strong>settled at once</strong>. The app shows the total of the open installments and asks whether the amount was <strong>reduced for settling early</strong>; if so, you enter the negotiated final amount and Silica shows the savings. The open installments are replaced by a <strong>single pending entry in the current month</strong>, due today.</p>
-        <p data-lang="pt"><strong>Sem volta, como no banco:</strong> as parcelas originais não são restauráveis; excluir o lançamento de quitação depois não as traz de volta. As parcelas <strong>já pagas ficam intocadas</strong> no histórico. No cartão de crédito, o caminho continua sendo a antecipação de parcelas.</p>
-        <p data-lang="en"><strong>No going back, like at a bank:</strong> the original installments cannot be restored; deleting the settlement entry later will not bring them back. Installments <strong>already paid stay untouched</strong> in your history. On credit cards, the path remains installment anticipation.</p>
+        <h2 data-lang="pt" lang="pt-BR">Quitar dívida parcelada: como no banco, sem volta</h2><h2 data-lang="en" lang="en">Settling an installment debt: like at a bank, no going back</h2>
+        <p data-lang="pt" lang="pt-BR">Dívidas parceladas fora do cartão (empréstimo, financiamento, carnê) podem ser <strong>quitadas de uma vez</strong>. O app mostra o somatório das parcelas em aberto e pergunta se houve <strong>redução pela quitação antecipada</strong>; se sim, você informa o valor final negociado e o Silica mostra a economia. As parcelas em aberto são substituídas por um <strong>único lançamento pendente no mês atual</strong>, com vencimento hoje.</p>
+        <p data-lang="en" lang="en">Installment debts outside the card (loan, financing, payment book) can be <strong>settled at once</strong>. The app shows the total of the open installments and asks whether the amount was <strong>reduced for settling early</strong>; if so, you enter the negotiated final amount and Silica shows the savings. The open installments are replaced by a <strong>single pending entry in the current month</strong>, due today.</p>
+        <p data-lang="pt" lang="pt-BR"><strong>Sem volta, como no banco:</strong> as parcelas originais não são restauráveis; excluir o lançamento de quitação depois não as traz de volta. As parcelas <strong>já pagas ficam intocadas</strong> no histórico. No cartão de crédito, o caminho continua sendo a antecipação de parcelas.</p>
+        <p data-lang="en" lang="en"><strong>No going back, like at a bank:</strong> the original installments cannot be restored; deleting the settlement entry later will not bring them back. Installments <strong>already paid stay untouched</strong> in your history. On credit cards, the path remains installment anticipation.</p>
         <div class="example">
-          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt">Empréstimo com 8 parcelas de R$ 600 em aberto (R$ 4.800). O banco ofereceu quitação por R$ 4.200 → você informa o valor final e o app registra a economia de <b>R$ 600</b>; nasce um lançamento único de R$ 4.200 pendente no mês atual.</li>
-            <li data-lang="en">A loan with 8 open installments of $600 ($4,800). The bank offered a $4,200 settlement → you enter the final amount and the app records the <b>$600</b> savings; a single $4,200 pending entry is created in the current month.</li>
+            <li data-lang="pt" lang="pt-BR">Empréstimo com 8 parcelas de R$ 600 em aberto (R$ 4.800). O banco ofereceu quitação por R$ 4.200 → você informa o valor final e o app registra a economia de <b>R$ 600</b>; nasce um lançamento único de R$ 4.200 pendente no mês atual.</li>
+            <li data-lang="en" lang="en">A loan with 8 open installments of $600 ($4,800). The bank offered a $4,200 settlement → you enter the final amount and the app records the <b>$600</b> savings; a single $4,200 pending entry is created in the current month.</li>
           </ul>
         </div>
       </section>
 
       <section id="faturas">
-        <h2 data-lang="pt">Faturas de cartão</h2><h2 data-lang="en">Card invoices</h2>
+        <h2 data-lang="pt" lang="pt-BR">Faturas de cartão</h2><h2 data-lang="en" lang="en">Card invoices</h2>
         <ul>
-          <li data-lang="pt"><strong>Mês da fatura:</strong> compra a partir do dia de fechamento entra na fatura do mês seguinte.</li>
-          <li data-lang="en"><strong>Invoice month:</strong> a purchase on/after the closing day goes to next month's invoice.</li>
-          <li data-lang="pt"><strong>Fatura reaberta:</strong> se você compra de novo após pagar, a timeline mostra só o valor não pago.</li>
-          <li data-lang="en"><strong>Reopened invoice:</strong> if you buy again after paying, the timeline shows only the unpaid amount.</li>
-          <li data-lang="pt"><strong>Limite disponível</strong> = limite − despesas não pagas.</li>
-          <li data-lang="en"><strong>Available limit</strong> = limit − unpaid expenses.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Mês da fatura:</strong> compra a partir do dia de fechamento entra na fatura do mês seguinte.</li>
+          <li data-lang="en" lang="en"><strong>Invoice month:</strong> a purchase on/after the closing day goes to next month's invoice.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Fatura reaberta:</strong> se você compra de novo após pagar, a timeline mostra só o valor não pago.</li>
+          <li data-lang="en" lang="en"><strong>Reopened invoice:</strong> if you buy again after paying, the timeline shows only the unpaid amount.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Limite disponível</strong> = limite − despesas não pagas.</li>
+          <li data-lang="en" lang="en"><strong>Available limit</strong> = limit − unpaid expenses.</li>
         </ul>
       </section>
 
       <section id="recorrencia">
-        <h2 data-lang="pt">Recorrência protege seu histórico</h2><h2 data-lang="en">Recurrence protects your history</h2>
+        <h2 data-lang="pt" lang="pt-BR">Recorrência protege seu histórico</h2><h2 data-lang="en" lang="en">Recurrence protects your history</h2>
         <ul>
-          <li data-lang="pt"><strong>Uma série ativa por descrição</strong> em cada perfil: o app impede duplicar a mesma conta.</li>
-          <li data-lang="en"><strong>One active series per description</strong> in each profile: the app prevents duplicating the same bill.</li>
-          <li data-lang="pt"><strong>Encerrar nunca apaga o pago:</strong> ao encerrar uma recorrência, cobranças futuras somem, mas as parcelas já pagas viram avulsas e permanecem no histórico.</li>
-          <li data-lang="en"><strong>Ending never erases the paid:</strong> when you end a recurrence, future charges disappear, but already-paid entries stay in history.</li>
-          <li data-lang="pt"><strong>12 meses à frente:</strong> a série é sempre mantida com ~12 meses projetados.</li>
-          <li data-lang="en"><strong>12 months ahead:</strong> the series is always kept with ~12 months projected.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Uma série ativa por descrição</strong> em cada perfil: o app impede duplicar a mesma conta.</li>
+          <li data-lang="en" lang="en"><strong>One active series per description</strong> in each profile: the app prevents duplicating the same bill.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Encerrar nunca apaga o pago:</strong> ao encerrar uma recorrência, cobranças futuras somem, mas as parcelas já pagas viram avulsas e permanecem no histórico.</li>
+          <li data-lang="en" lang="en"><strong>Ending never erases the paid:</strong> when you end a recurrence, future charges disappear, but already-paid entries stay in history.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>12 meses à frente:</strong> a série é sempre mantida com ~12 meses projetados.</li>
+          <li data-lang="en" lang="en"><strong>12 months ahead:</strong> the series is always kept with ~12 months projected.</li>
         </ul>
       </section>
 
       <section id="orcamento">
-        <h2 data-lang="pt">Orçamento não entra nos números</h2><h2 data-lang="en">A quote doesn't enter the numbers</h2>
-        <p data-lang="pt">Um orçamento é uma proposta: não conta como faturamento nem lucro até ser convertido em serviço. Ao converter, o <strong>número da OS é mantido</strong> e o app registra a conversão (métrica de taxa de conversão no Raio-X).</p>
-        <p data-lang="en">A quote is a proposal: it doesn't count as revenue or profit until converted into a service. On conversion, the <strong>order number is kept</strong> and the app records it (conversion-rate metric in the X-Ray).</p>
+        <h2 data-lang="pt" lang="pt-BR">Orçamento não entra nos números</h2><h2 data-lang="en" lang="en">A quote doesn't enter the numbers</h2>
+        <p data-lang="pt" lang="pt-BR">Um orçamento é uma proposta: não conta como faturamento nem lucro até ser convertido em serviço. Ao converter, o <strong>número da OS é mantido</strong> e o app registra a conversão (métrica de taxa de conversão no Raio-X).</p>
+        <p data-lang="en" lang="en">A quote is a proposal: it doesn't count as revenue or profit until converted into a service. On conversion, the <strong>order number is kept</strong> and the app records it (conversion-rate metric in the X-Ray).</p>
       </section>
 
       <section id="os">
-        <h2 data-lang="pt">Numeração de OS: AAMMDD-NNNN</h2><h2 data-lang="en">Order numbering: YYMMDD-NNNN</h2>
-        <p data-lang="pt">Cada ordem recebe um número no formato ano-mês-dia + uma sequência que reinicia a cada dia. É atribuído na criação (mesmo em orçamento) e nunca muda, nem na conversão para recibo.</p>
-        <p data-lang="en">Each order gets a number as year-month-day + a sequence that restarts each day. It's assigned on creation (even for quotes) and never changes, not even when converted to a receipt.</p>
+        <h2 data-lang="pt" lang="pt-BR">Numeração de OS: AAMMDD-NNNN</h2><h2 data-lang="en" lang="en">Order numbering: YYMMDD-NNNN</h2>
+        <p data-lang="pt" lang="pt-BR">Cada ordem recebe um número no formato ano-mês-dia + uma sequência que reinicia a cada dia. É atribuído na criação (mesmo em orçamento) e nunca muda, nem na conversão para recibo.</p>
+        <p data-lang="en" lang="en">Each order gets a number as year-month-day + a sequence that restarts each day. It's assigned on creation (even for quotes) and never changes, not even when converted to a receipt.</p>
         <div class="example">
-          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt">2ª OS criada em 26/04/2026 → <code>260426-0002</code>.</li>
-            <li data-lang="en">2nd order created on 2026-04-26 → <code>260426-0002</code>.</li>
+            <li data-lang="pt" lang="pt-BR">2ª OS criada em 26/04/2026 → <code>260426-0002</code>.</li>
+            <li data-lang="en" lang="en">2nd order created on 2026-04-26 → <code>260426-0002</code>.</li>
           </ul>
         </div>
       </section>
 
       <section id="os-ciclo">
-        <h2 data-lang="pt">OS não se exclui: cancela. E OS recebida é protegida</h2><h2 data-lang="en">Orders aren't deleted: they're canceled. And paid orders are protected</h2>
-        <p data-lang="pt">Uma ordem de serviço <strong>nunca é apagada</strong>. Ela é <strong>cancelada</strong>: o número e o histórico ficam guardados, ela sai dos totais, do Raio-X e dos avisos da Sentinela, e a repetição (se houver) é encerrada. Se mudar de ideia, você pode <strong>reativar</strong>: a OS volta exatamente ao estado em que estava (serviço ou orçamento).</p>
-        <p data-lang="en">A work order is <strong>never erased</strong>. It is <strong>canceled</strong>: its number and history are kept, it leaves the totals, the X-Ray and Sentinel alerts, and any recurrence is ended. If you change your mind, you can <strong>reactivate</strong> it: the order returns to exactly the state it was in (service or quote).</p>
-        <p data-lang="pt">Uma OS <strong>já recebida é imutável</strong>: editar ou cancelar exige <strong>reabrir</strong> antes (o valor sai do "Recebido" ao reabrir). E um <strong>orçamento não aceita sinal nem recorrência</strong>: esses recursos passam a valer quando ele é convertido em serviço.</p>
-        <p data-lang="en">A <strong>paid order is immutable</strong>: editing or canceling requires <strong>reopening</strong> it first (the amount leaves "Received" when you do). And a <strong>quote takes no down payment or recurrence</strong>: those apply once it's converted into a service.</p>
+        <h2 data-lang="pt" lang="pt-BR">OS não se exclui: cancela. E OS recebida é protegida</h2><h2 data-lang="en" lang="en">Orders aren't deleted: they're canceled. And paid orders are protected</h2>
+        <p data-lang="pt" lang="pt-BR">Uma ordem de serviço <strong>nunca é apagada</strong>. Ela é <strong>cancelada</strong>: o número e o histórico ficam guardados, ela sai dos totais, do Raio-X e dos avisos da Sentinela, e a repetição (se houver) é encerrada. Se mudar de ideia, você pode <strong>reativar</strong>: a OS volta exatamente ao estado em que estava (serviço ou orçamento).</p>
+        <p data-lang="en" lang="en">A work order is <strong>never erased</strong>. It is <strong>canceled</strong>: its number and history are kept, it leaves the totals, the X-Ray and Sentinel alerts, and any recurrence is ended. If you change your mind, you can <strong>reactivate</strong> it: the order returns to exactly the state it was in (service or quote).</p>
+        <p data-lang="pt" lang="pt-BR">Uma OS <strong>já recebida é imutável</strong>: editar ou cancelar exige <strong>reabrir</strong> antes (o valor sai do "Recebido" ao reabrir). E um <strong>orçamento não aceita sinal nem recorrência</strong>: esses recursos passam a valer quando ele é convertido em serviço.</p>
+        <p data-lang="en" lang="en">A <strong>paid order is immutable</strong>: editing or canceling requires <strong>reopening</strong> it first (the amount leaves "Received" when you do). And a <strong>quote takes no down payment or recurrence</strong>: those apply once it's converted into a service.</p>
         <div class="example">
-          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt">A OS <code>260426-0002</code> foi cancelada por desistência do cliente. O número não é reaproveitado; a OS fica na seção "Canceladas". Semanas depois o cliente voltou → <b>Reativar</b> e ela volta como estava.</li>
-            <li data-lang="en">Order <code>260426-0002</code> was canceled because the client backed out. The number isn't reused; the order sits under "Canceled". Weeks later the client returned → <b>Reactivate</b> and it's back as it was.</li>
+            <li data-lang="pt" lang="pt-BR">A OS <code>260426-0002</code> foi cancelada por desistência do cliente. O número não é reaproveitado; a OS fica na seção "Canceladas". Semanas depois o cliente voltou → <b>Reativar</b> e ela volta como estava.</li>
+            <li data-lang="en" lang="en">Order <code>260426-0002</code> was canceled because the client backed out. The number isn't reused; the order sits under "Canceled". Weeks later the client returned → <b>Reactivate</b> and it's back as it was.</li>
           </ul>
         </div>
       </section>
 
       <section id="sinal">
-        <h2 data-lang="pt">Sinal e a data certa da renda</h2><h2 data-lang="en">Down payment and the right income date</h2>
-        <p data-lang="pt">Se você recebe um sinal, ele vira renda <strong>na data do sinal</strong>; o saldo restante vira renda na data em que você quita o serviço. Assim, cada valor aparece no mês em que o dinheiro realmente entrou. O sinal nunca pode ser maior que o total.</p>
-        <p data-lang="en">If you take a down payment, it becomes income <strong>on the down-payment date</strong>; the remaining balance becomes income on the day you settle the service. So each amount shows up in the month the money actually arrived. The down payment can never exceed the total.</p>
+        <h2 data-lang="pt" lang="pt-BR">Sinal e a data certa da renda</h2><h2 data-lang="en" lang="en">Down payment and the right income date</h2>
+        <p data-lang="pt" lang="pt-BR">Se você recebe um sinal, ele vira renda <strong>na data do sinal</strong>; o saldo restante vira renda na data em que você quita o serviço. Assim, cada valor aparece no mês em que o dinheiro realmente entrou. O sinal nunca pode ser maior que o total.</p>
+        <p data-lang="en" lang="en">If you take a down payment, it becomes income <strong>on the down-payment date</strong>; the remaining balance becomes income on the day you settle the service. So each amount shows up in the month the money actually arrived. The down payment can never exceed the total.</p>
       </section>
 
       <section id="inss">
-        <h2 data-lang="pt">Retenção de INSS (RPA): o recibo cobra o líquido</h2><h2 data-lang="en">INSS withholding (RPA): the receipt charges the net</h2>
-        <p data-lang="pt">Na OS você define <strong>quem paga</strong>. Se for uma empresa ou condomínio que, sem nota fiscal, retém por lei os <strong>11% de INSS (RPA)</strong>, o Recibo mostra o total, a linha "Referência RPA, INSS 11%" e o <strong>valor líquido</strong>. O QR Pix e o Pix copia e cola <strong>já cobram o líquido</strong>, e a renda registrada no app também é a líquida. É um cálculo de referência, sem valor fiscal; a guia do INSS é responsabilidade de quem retém.</p>
-        <p data-lang="en">On the order you set <strong>who pays</strong>. If it's a company or condo association that, without a tax invoice, legally withholds the <strong>11% INSS (RPA)</strong>, the Receipt shows the total, the "RPA reference, 11% INSS" line and the <strong>net amount</strong>. The Pix QR and the copy-and-paste Pix code <strong>already charge the net</strong>, and the income recorded in the app is the net too. It's a reference calculation with no tax validity; the INSS payment slip is the withholder's responsibility.</p>
+        <h2 data-lang="pt" lang="pt-BR">Retenção de INSS (RPA): o recibo cobra o líquido</h2><h2 data-lang="en" lang="en">INSS withholding (RPA): the receipt charges the net</h2>
+        <p data-lang="pt" lang="pt-BR">Na OS você define <strong>quem paga</strong>. Se for uma empresa ou condomínio que, sem nota fiscal, retém por lei os <strong>11% de INSS (RPA)</strong>, o Recibo mostra o total, a linha "Referência RPA, INSS 11%" e o <strong>valor líquido</strong>. O QR Pix e o Pix copia e cola <strong>já cobram o líquido</strong>, e a renda registrada no app também é a líquida. É um cálculo de referência, sem valor fiscal; a guia do INSS é responsabilidade de quem retém.</p>
+        <p data-lang="en" lang="en">On the order you set <strong>who pays</strong>. If it's a company or condo association that, without a tax invoice, legally withholds the <strong>11% INSS (RPA)</strong>, the Receipt shows the total, the "RPA reference, 11% INSS" line and the <strong>net amount</strong>. The Pix QR and the copy-and-paste Pix code <strong>already charge the net</strong>, and the income recorded in the app is the net too. It's a reference calculation with no tax validity; the INSS payment slip is the withholder's responsibility.</p>
         <div class="example">
-          <div class="ex-label">🔎 <span data-lang="pt">Exemplo</span><span data-lang="en">Example</span></div>
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt">Serviço de R$ 285,00 para uma administradora de condomínios → INSS retido R$ 31,35 → o recibo destaca o líquido de <b>R$ 253,65</b> e o QR Pix cobra exatamente esse valor.</li>
-            <li data-lang="en">A $285.00 service for a condo management company → $31.35 INSS withheld → the receipt highlights the <b>$253.65</b> net and the Pix QR charges exactly that.</li>
+            <li data-lang="pt" lang="pt-BR">Serviço de R$ 285,00 para uma administradora de condomínios → INSS retido R$ 31,35 → o recibo destaca o líquido de <b>R$ 253,65</b> e o QR Pix cobra exatamente esse valor.</li>
+            <li data-lang="en" lang="en">A $285.00 service for a condo management company → $31.35 INSS withheld → the receipt highlights the <b>$253.65</b> net and the Pix QR charges exactly that.</li>
           </ul>
         </div>
       </section>
 
       <section id="gating">
-        <h2 data-lang="pt">Grátis vs PRO (e o que acontece ao perder o PRO)</h2><h2 data-lang="en">Free vs PRO (and what happens if PRO ends)</h2>
-        <p data-lang="pt">Sem PRO, você usa só o perfil Pessoal, o tema do Sistema e nada de texturas, backup ou exportação. Se o PRO expira, <strong>nenhum dado é apagado</strong>: o app apenas volta ao modo gratuito e reativa tudo quando você renova.</p>
-        <p data-lang="en">Without PRO you use only the Personal profile, the System theme and no textures, backup or export. If PRO expires, <strong>no data is deleted</strong>: the app simply returns to free mode and reactivates everything when you renew.</p>
-        <a class="card-link" href="planos.html">→ <span data-lang="pt">Comparar Grátis e PRO</span><span data-lang="en">Compare Free and PRO</span></a>
+        <h2 data-lang="pt" lang="pt-BR">Grátis vs PRO (e o que acontece ao perder o PRO)</h2><h2 data-lang="en" lang="en">Free vs PRO (and what happens if PRO ends)</h2>
+        <p data-lang="pt" lang="pt-BR">Sem PRO, você usa só o perfil Pessoal, o tema do Sistema e nada de texturas, backup ou exportação. Se o PRO expira, <strong>nenhum dado é apagado</strong>: o app apenas volta ao modo gratuito e reativa tudo quando você renova.</p>
+        <p data-lang="en" lang="en">Without PRO you use only the Personal profile, the System theme and no textures, backup or export. If PRO expires, <strong>no data is deleted</strong>: the app simply returns to free mode and reactivates everything when you renew.</p>
+        <a class="card-link" href="planos.html">→ <span data-lang="pt" lang="pt-BR">Comparar Grátis e PRO</span><span data-lang="en" lang="en">Compare Free and PRO</span></a>
       </section>
     </div>
   </div>
 </main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a><p><span data-lang="pt" lang="pt-BR">Gestão financeira inteligente para sua vida pessoal, seu negócio, suas vendas e seus serviços: tudo em espaços isolados, no seu Android.</span><span data-lang="en" lang="en">Smart money management for your personal life, business, sales and services: all in isolated spaces, on your Android.</span></p><div style="margin-top:16px"><a class="btn-store" href="https://play.google.com/store/apps/details?id=com.nosbor.silica&hl=pt_BR" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#00C3FF" d="M3.4 2.3c-.25.26-.4.66-.4 1.17v17.06c0 .5.15.9.4 1.17l.06.05L13 12.06v-.11L3.46 2.25l-.06.05z"/><path fill="#00E676" d="M16.2 15.28 13 12.06v-.11l3.2-3.22.07.04 3.79 2.15c1.08.61 1.08 1.62 0 2.24l-3.79 2.15-.07.04z"/><path fill="#FF3D57" d="m16.27 15.24-3.27-3.24-9.6 9.6c.36.37.94.42 1.6.05l11.27-6.41"/><path fill="#FFC400" d="M16.27 8.76 5 2.35C4.34 1.98 3.76 2.03 3.4 2.4l9.6 9.6 3.27-3.24z"/></svg><span><small><span data-lang="pt" lang="pt-BR">Baixar na</span><span data-lang="en" lang="en">Get it on</span></small><b>Google Play</b></span></a></div></div><div class="footer-col"><h4><span data-lang="pt" lang="pt-BR">Produto</span><span data-lang="en" lang="en">Product</span></h4><a href="index.html"><span data-lang="pt" lang="pt-BR">Início</span><span data-lang="en" lang="en">Home</span></a><a href="comecar.html"><span data-lang="pt" lang="pt-BR">Começar</span><span data-lang="en" lang="en">Get started</span></a><a href="perfis.html"><span data-lang="pt" lang="pt-BR">Perfis</span><span data-lang="en" lang="en">Profiles</span></a><a href="planos.html"><span data-lang="pt" lang="pt-BR">Planos</span><span data-lang="en" lang="en">Plans</span></a></div><div class="footer-col"><h4><span data-lang="pt" lang="pt-BR">Recursos</span><span data-lang="en" lang="en">Features</span></h4><a href="financas.html"><span data-lang="pt" lang="pt-BR">Finanças</span><span data-lang="en" lang="en">Finances</span></a><a href="vendas.html"><span data-lang="pt" lang="pt-BR">Vendas</span><span data-lang="en" lang="en">Sales</span></a><a href="servicos.html"><span data-lang="pt" lang="pt-BR">Serviços</span><span data-lang="en" lang="en">Services</span></a><a href="raiox.html"><span data-lang="pt" lang="pt-BR">Raio-X</span><span data-lang="en" lang="en">X-Ray</span></a><a href="notificacoes.html"><span data-lang="pt" lang="pt-BR">Notificações</span><span data-lang="en" lang="en">Notifications</span></a><a href="seguranca-backup.html"><span data-lang="pt" lang="pt-BR">Segurança & Backup</span><span data-lang="en" lang="en">Security & Backup</span></a><a href="temas.html"><span data-lang="pt" lang="pt-BR">Temas</span><span data-lang="en" lang="en">Themes</span></a></div><div class="footer-col"><h4><span data-lang="pt" lang="pt-BR">Ajuda & Legal</span><span data-lang="en" lang="en">Help & Legal</span></h4><a href="regras-de-negocio.html"><span data-lang="pt" lang="pt-BR">Regras de negócio</span><span data-lang="en" lang="en">Business rules</span></a><a href="faq.html">FAQ</a><a href="contato.html"><span data-lang="pt" lang="pt-BR">Contato</span><span data-lang="en" lang="en">Contact</span></a><a href="privacidade.html"><span data-lang="pt" lang="pt-BR">Privacidade</span><span data-lang="en" lang="en">Privacy</span></a><a href="termos.html"><span data-lang="pt" lang="pt-BR">Termos de Uso</span><span data-lang="en" lang="en">Terms of Use</span></a></div></div><div class="footer-bottom"><span>© <span id="footYear">2026</span> Silica · <span data-lang="pt" lang="pt-BR">Feito com foco e simplicidade.</span><span data-lang="en" lang="en">Built with focus and simplicity.</span></span><span><span data-lang="pt" lang="pt-BR">Disponível para Android.</span><span data-lang="en" lang="en">Available for Android.</span></span></div></div></footer>
 </body>
 </html>

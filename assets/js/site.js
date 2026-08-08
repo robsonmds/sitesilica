@@ -1,146 +1,12 @@
 /* ============================================================================
    Silica site — script único (self-contained).
-   Injeta header/footer compartilhados e liga tema, idioma, menu, FAQ, scroll-spy.
+   Header/rodapé já vêm prontos no HTML (ver tools/gen-static-header.mjs);
+   este script só liga a interatividade: tema, idioma, menu, FAQ, scroll-spy.
    ========================================================================== */
 (function () {
   "use strict";
 
-  var STORE_URL = "https://play.google.com/store/apps/details?id=com.nosbor.silica&hl=pt_BR";
-  var SUPPORT_EMAIL = "ro_bs_on@outlook.com";
-
-  // ---- ícones (SVG inline) --------------------------------------------------
-  var IC = {
-    logo: '<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2 3 9v14l13 7 13-7V9L16 2Z" fill="url(#lg)"/><path d="M16 9.5 9 13v6l7 3.5 7-3.5v-6L16 9.5Z" fill="#fff" fill-opacity=".22"/><path d="M13 12.5c-1.6 0-2.6 1-2.6 2.2 0 2.6 5 1.6 5 3.2 0 .6-.6 1-1.5 1-1 0-1.6-.5-1.7-1.2H10c.1 1.9 1.6 3 3.9 3 2.1 0 3.6-1.1 3.6-2.9 0-2.8-5-1.8-5-3.3 0-.5.5-.8 1.3-.8.8 0 1.4.4 1.5 1.1h2.2c-.1-1.7-1.5-2.8-3.5-2.8Z" fill="#fff"/><defs><linearGradient id="lg" x1="3" y1="2" x2="29" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#16a34a"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs></svg>',
-    palette: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-1.1-.9-1.7-2-1.7h-1.8a2.5 2.5 0 0 1 0-5H18a1.8 1.8 0 0 0 1.6-2.7A9 9 0 0 0 12 3Z"/><circle cx="7.3" cy="10.2" r="1.15" fill="currentColor" stroke="none"/><circle cx="9.3" cy="15.3" r="1.15" fill="currentColor" stroke="none"/><circle cx="14.5" cy="16.4" r="1.15" fill="currentColor" stroke="none"/></svg>',
-    globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>',
-    menu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>',
-    chevDown: '<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>',
-    arrow: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-    play: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#00C3FF" d="M3.4 2.3c-.25.26-.4.66-.4 1.17v17.06c0 .5.15.9.4 1.17l.06.05L13 12.06v-.11L3.46 2.25l-.06.05z"/><path fill="#00E676" d="M16.2 15.28 13 12.06v-.11l3.2-3.22.07.04 3.79 2.15c1.08.61 1.08 1.62 0 2.24l-3.79 2.15-.07.04z"/><path fill="#FF3D57" d="m16.27 15.24-3.27-3.24-9.6 9.6c.36.37.94.42 1.6.05l11.27-6.41"/><path fill="#FFC400" d="M16.27 8.76 5 2.35C4.34 1.98 3.76 2.03 3.4 2.4l9.6 9.6 3.27-3.24z"/></svg>'
-  };
-
-  var NAV = [
-    { href: "index.html", pt: "Início", en: "Home" },
-    { href: "comecar.html", pt: "Começar", en: "Get started" },
-    { href: "perfis.html", pt: "Perfis", en: "Profiles" },
-    { drop: true, pt: "Recursos", en: "Features", items: [
-      { href: "financas.html", ic: "💰", pt: "Finanças (Pessoal & Negócios)", en: "Finances (Personal & Business)" },
-      { href: "vendas.html", ic: "📦", pt: "Silica Vendas", en: "Silica Sales" },
-      { href: "servicos.html", ic: "🔧", pt: "Silica Serviços", en: "Silica Services" },
-      { href: "raiox.html", ic: "📊", pt: "Raio-X", en: "X-Ray" },
-      { href: "notificacoes.html", ic: "🔔", pt: "Notificações (Sentinela)", en: "Notifications (Sentinel)" },
-      { href: "seguranca-backup.html", ic: "🔒", pt: "Segurança & Backup", en: "Security & Backup" },
-      { href: "temas.html", ic: "🎨", pt: "Temas & Modo Zen", en: "Themes & Zen Mode" }
-    ]},
-    { href: "regras-de-negocio.html", pt: "Regras", en: "Business rules" },
-    { href: "planos.html", pt: "Planos", en: "Plans" },
-    { href: "faq.html", pt: "FAQ", en: "FAQ" },
-    { href: "contato.html", pt: "Contato", en: "Contact" }
-  ];
-
-  // Temas disponíveis no menu (Claro/Escuro = a base original; os 4 seguintes são as leituras novas)
-  var THEMES = [
-    { id: "light", color: "#16a34a", pt: "Claro", en: "Light" },
-    { id: "dark", color: "#34d399", pt: "Escuro", en: "Dark" },
-    { id: "zen", color: "#5C7A63", pt: "Zen", en: "Zen" },
-    { id: "ouro", color: "#D6A94A", pt: "Ouro", en: "Gold" },
-    { id: "rosa", color: "#C6685C", pt: "Rosa", en: "Pink" },
-    { id: "grafite", color: "#2FBF8F", pt: "Grafite & Esmeralda", en: "Graphite & Emerald" }
-  ];
-
   function t(pt, en) { return '<span data-lang="pt">' + pt + '</span><span data-lang="en">' + en + '</span>'; }
-  var current = (location.pathname.split("/").pop() || "index.html") || "index.html";
-
-  // ---- Header ---------------------------------------------------------------
-  function themeMenuHTML() {
-    return THEMES.map(function (th) {
-      return '<button type="button" data-theme-choice="' + th.id + '">' +
-        '<span class="theme-dot" style="background:' + th.color + '"></span>' + t(th.pt, th.en) + "</button>";
-    }).join("");
-  }
-
-  function buildHeader() {
-    var links = "";
-    NAV.forEach(function (n) {
-      if (n.drop) {
-        var items = n.items.map(function (it) {
-          return '<a href="' + it.href + '"><span class="ic">' + it.ic + '</span>' + t(it.pt, it.en) + "</a>";
-        }).join("");
-        var activeChild = n.items.some(function (it) { return it.href === current; });
-        links += '<div class="nav-drop' + (activeChild ? " has-active" : "") + '">' +
-          '<button type="button" aria-haspopup="true" aria-expanded="false">' + t(n.pt, n.en) + IC.chevDown + "</button>" +
-          '<div class="nav-drop-menu">' + items + "</div></div>";
-      } else {
-        var active = n.href === current ? " active" : "";
-        links += '<a class="' + active.trim() + '" href="' + n.href + '">' + t(n.pt, n.en) + "</a>";
-      }
-    });
-
-    var header = document.createElement("header");
-    header.className = "site-header";
-    header.innerHTML =
-      '<div class="container"><div class="nav">' +
-        '<a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a>' +
-        '<button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">' + IC.menu + "</button>" +
-        '<nav class="nav-links">' + links + "</nav>" +
-        '<div class="nav-actions">' +
-          '<button class="icon-btn lang-btn" id="langBtn" aria-label="Trocar idioma">' + IC.globe +
-            '<span data-lang="pt">EN</span><span data-lang="en">PT</span></button>' +
-          '<div class="nav-drop theme-drop">' +
-            '<button class="icon-btn theme-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Tema">' + IC.palette + "</button>" +
-            '<div class="nav-drop-menu theme-menu">' + themeMenuHTML() + "</div>" +
-          "</div>" +
-        "</div>" +
-      "</div></div>";
-    document.body.prepend(header);
-  }
-
-  // ---- Footer ---------------------------------------------------------------
-  function buildFooter() {
-    var year = new Date().getFullYear();
-    var footer = document.createElement("footer");
-    footer.className = "site-footer";
-    footer.innerHTML =
-      '<div class="container"><div class="footer-grid">' +
-        '<div class="footer-brand">' +
-          '<a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a>' +
-          "<p>" + t(
-            "Gestão financeira inteligente para sua vida pessoal, seu negócio, suas vendas e seus serviços: tudo em espaços isolados, no seu Android.",
-            "Smart money management for your personal life, business, sales and services: all in isolated spaces, on your Android."
-          ) + "</p>" +
-          '<div style="margin-top:16px">' + storeButton() + "</div>" +
-        "</div>" +
-        '<div class="footer-col"><h4>' + t("Produto", "Product") + "</h4>" +
-          '<a href="index.html">' + t("Início", "Home") + "</a>" +
-          '<a href="comecar.html">' + t("Começar", "Get started") + "</a>" +
-          '<a href="perfis.html">' + t("Perfis", "Profiles") + "</a>" +
-          '<a href="planos.html">' + t("Planos", "Plans") + "</a></div>" +
-        '<div class="footer-col"><h4>' + t("Recursos", "Features") + "</h4>" +
-          '<a href="financas.html">' + t("Finanças", "Finances") + "</a>" +
-          '<a href="vendas.html">' + t("Vendas", "Sales") + "</a>" +
-          '<a href="servicos.html">' + t("Serviços", "Services") + "</a>" +
-          '<a href="raiox.html">' + t("Raio-X", "X-Ray") + "</a>" +
-          '<a href="notificacoes.html">' + t("Notificações", "Notifications") + "</a>" +
-          '<a href="seguranca-backup.html">' + t("Segurança & Backup", "Security & Backup") + "</a>" +
-          '<a href="temas.html">' + t("Temas", "Themes") + "</a></div>" +
-        '<div class="footer-col"><h4>' + t("Ajuda & Legal", "Help & Legal") + "</h4>" +
-          '<a href="regras-de-negocio.html">' + t("Regras de negócio", "Business rules") + "</a>" +
-          '<a href="faq.html">FAQ</a>' +
-          '<a href="contato.html">' + t("Contato", "Contact") + "</a>" +
-          '<a href="privacidade.html">' + t("Privacidade", "Privacy") + "</a>" +
-          '<a href="termos.html">' + t("Termos de Uso", "Terms of Use") + "</a></div>" +
-      "</div>" +
-      '<div class="footer-bottom">' +
-        "<span>© " + year + ' Silica · ' + t("Feito com foco e simplicidade.", "Built with focus and simplicity.") + "</span>" +
-        "<span>" + t("Disponível para Android.", "Available for Android.") + "</span>" +
-      "</div></div>";
-    document.body.appendChild(footer);
-  }
-
-  function storeButton() {
-    return '<a class="btn-store" href="' + STORE_URL + '" target="_blank" rel="noopener">' + IC.play +
-      "<span><small>" + t("Baixar na", "Get it on") + '</small><b>Google Play</b></span></a>';
-  }
 
   // ---- Interações -----------------------------------------------------------
   function wire() {
@@ -418,16 +284,10 @@
 
   // ---- Boot -----------------------------------------------------------------
   function boot() {
-    buildHeader();
-    buildFooter();
-    // Insere botão da loja em quaisquer slots [data-store]
-    document.querySelectorAll("[data-store]").forEach(function (el) { el.innerHTML = storeButton(); });
-    // E-mail de suporte com assunto pré-preenchido (facilita a triagem)
-    var subj = encodeURIComponent("Silica — Suporte");
-    document.querySelectorAll("[data-email]").forEach(function (el) {
-      el.textContent = SUPPORT_EMAIL;
-      el.setAttribute("href", "mailto:" + SUPPORT_EMAIL + "?subject=" + subj);
-    });
+    // Ano do rodapé (o HTML já traz um valor estático correto; isto só mantém
+    // em dia quando o JS roda, sem precisar reconstruir o rodapé inteiro).
+    var footYear = document.getElementById("footYear");
+    if (footYear) footYear.textContent = new Date().getFullYear();
     wire();
   }
 

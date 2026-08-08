@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-OQUgtc9aexau6v65aGPcw6z5b1hxyKtnvMh1T3MK/AU='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msvalidate.01" content="0322525388BC71BBFA7280E2E74C20B3" />
 <title>Raio-X · Silica</title>
 <meta name="description" content="O Raio-X do Silica: gastos e lucros por categoria, mês ou ano, com médias, ROI, Conversão em Caixa e relatório do Gerente em PDF.">
 <link rel="icon" href="assets/img/logo-mark.png" type="image/png">
@@ -12,6 +13,8 @@
 <link rel="canonical" href="https://silica.app.br/raiox.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Silica">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:title" content="Raio-X · Silica">
 <meta property="og:description" content="O Raio-X do Silica: gastos e lucros por categoria, mês ou ano, com médias, ROI, Conversão em Caixa e relatório do Gerente em PDF.">
 <meta property="og:url" content="https://silica.app.br/raiox.html">
@@ -19,88 +22,94 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Raio-X · Silica">
+<meta name="twitter:description" content="O Raio-X do Silica: gastos e lucros por categoria, mês ou ano, com médias, ROI, Conversão em Caixa e relatório do Gerente em PDF.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Silica","url":"https://silica.app.br/","logo":"https://silica.app.br/assets/img/logo-mark.png","founder":{"@type":"Person","name":"Robson Mesquita"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Silica","item":"https://silica.app.br/"},{"@type":"ListItem","position":2,"name":"Raio-X","item":"https://silica.app.br/raiox.html"}]}</script>
 <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css?v=20260808">
 <script>(function(){try{var t=localStorage.getItem('silica-theme')||'grafite';document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('silica-lang')||'pt';document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='en'?'en':'pt-BR');}catch(e){}})();</script>
 <script src="assets/js/site.js?v=20260808" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#conteudo"><span data-lang="pt">Pular para o conteúdo</span><span data-lang="en">Skip to content</span></a>
+<a class="skip-link" href="#conteudo"><span data-lang="pt" lang="pt-BR">Pular para o conteúdo</span><span data-lang="en" lang="en">Skip to content</span></a>
+<header class="site-header"><div class="container"><div class="nav"><a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a><button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a class="" href="index.html"><span data-lang="pt" lang="pt-BR">Início</span><span data-lang="en" lang="en">Home</span></a><a class="" href="comecar.html"><span data-lang="pt" lang="pt-BR">Começar</span><span data-lang="en" lang="en">Get started</span></a><a class="" href="perfis.html"><span data-lang="pt" lang="pt-BR">Perfis</span><span data-lang="en" lang="en">Profiles</span></a><div class="nav-drop has-active"><button type="button" aria-haspopup="true" aria-expanded="false"><span data-lang="pt" lang="pt-BR">Recursos</span><span data-lang="en" lang="en">Features</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-drop-menu"><a href="financas.html"><span class="ic">💰</span><span data-lang="pt" lang="pt-BR">Finanças (Pessoal & Negócios)</span><span data-lang="en" lang="en">Finances (Personal & Business)</span></a><a href="vendas.html"><span class="ic">📦</span><span data-lang="pt" lang="pt-BR">Silica Vendas</span><span data-lang="en" lang="en">Silica Sales</span></a><a href="servicos.html"><span class="ic">🔧</span><span data-lang="pt" lang="pt-BR">Silica Serviços</span><span data-lang="en" lang="en">Silica Services</span></a><a href="raiox.html"><span class="ic">📊</span><span data-lang="pt" lang="pt-BR">Raio-X</span><span data-lang="en" lang="en">X-Ray</span></a><a href="notificacoes.html"><span class="ic">🔔</span><span data-lang="pt" lang="pt-BR">Notificações (Sentinela)</span><span data-lang="en" lang="en">Notifications (Sentinel)</span></a><a href="seguranca-backup.html"><span class="ic">🔒</span><span data-lang="pt" lang="pt-BR">Segurança & Backup</span><span data-lang="en" lang="en">Security & Backup</span></a><a href="temas.html"><span class="ic">🎨</span><span data-lang="pt" lang="pt-BR">Temas & Modo Zen</span><span data-lang="en" lang="en">Themes & Zen Mode</span></a></div></div><a class="" href="regras-de-negocio.html"><span data-lang="pt" lang="pt-BR">Regras</span><span data-lang="en" lang="en">Business rules</span></a><a class="" href="planos.html"><span data-lang="pt" lang="pt-BR">Planos</span><span data-lang="en" lang="en">Plans</span></a><a class="" href="faq.html"><span data-lang="pt" lang="pt-BR">FAQ</span><span data-lang="en" lang="en">FAQ</span></a><a class="" href="contato.html"><span data-lang="pt" lang="pt-BR">Contato</span><span data-lang="en" lang="en">Contact</span></a></nav><div class="nav-actions"><button class="icon-btn lang-btn" id="langBtn" aria-label="Trocar idioma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span data-lang="pt" lang="pt-BR">EN</span><span data-lang="en" lang="en">PT</span></button><div class="nav-drop theme-drop"><button class="icon-btn theme-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-1.1-.9-1.7-2-1.7h-1.8a2.5 2.5 0 0 1 0-5H18a1.8 1.8 0 0 0 1.6-2.7A9 9 0 0 0 12 3Z"/><circle cx="7.3" cy="10.2" r="1.15" fill="currentColor" stroke="none"/><circle cx="9.3" cy="15.3" r="1.15" fill="currentColor" stroke="none"/><circle cx="14.5" cy="16.4" r="1.15" fill="currentColor" stroke="none"/></svg></button><div class="nav-drop-menu theme-menu"><button type="button" data-theme-choice="light"><span class="theme-dot" style="background:#16a34a"></span><span data-lang="pt" lang="pt-BR">Claro</span><span data-lang="en" lang="en">Light</span></button><button type="button" data-theme-choice="dark"><span class="theme-dot" style="background:#34d399"></span><span data-lang="pt" lang="pt-BR">Escuro</span><span data-lang="en" lang="en">Dark</span></button><button type="button" data-theme-choice="zen"><span class="theme-dot" style="background:#5C7A63"></span><span data-lang="pt" lang="pt-BR">Zen</span><span data-lang="en" lang="en">Zen</span></button><button type="button" data-theme-choice="ouro"><span class="theme-dot" style="background:#D6A94A"></span><span data-lang="pt" lang="pt-BR">Ouro</span><span data-lang="en" lang="en">Gold</span></button><button type="button" data-theme-choice="rosa"><span class="theme-dot" style="background:#C6685C"></span><span data-lang="pt" lang="pt-BR">Rosa</span><span data-lang="en" lang="en">Pink</span></button><button type="button" data-theme-choice="grafite" class="active" aria-current="true"><span class="theme-dot" style="background:#2FBF8F"></span><span data-lang="pt" lang="pt-BR">Grafite & Esmeralda</span><span data-lang="en" lang="en">Graphite & Emerald</span></button></div></div></div></div></div></header>
 <main id="conteudo" class="container">
   <div class="page-hero">
-    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt">Recursos</span><span data-lang="en">Features</span> › Raio-X</div>
-    <span class="eyebrow">📊 <span data-lang="pt">Relatórios</span><span data-lang="en">Reports</span></span>
-    <h1 data-lang="pt">Raio-X: para onde vai o seu dinheiro</h1>
-    <h1 data-lang="en">X-Ray: where your money goes</h1>
-    <p class="lead" data-lang="pt">Agrupa gastos e lucros por categoria, com médias e percentuais, no mês ou no acumulado do ano.</p>
-    <p class="lead" data-lang="en">Groups spending and profit by category, with averages and percentages, monthly or year-to-date.</p>
+    <div class="breadcrumb"><a href="index.html">Silica</a> › <span data-lang="pt" lang="pt-BR">Recursos</span><span data-lang="en" lang="en">Features</span> › Raio-X</div>
+    <span class="eyebrow">📊 <span data-lang="pt" lang="pt-BR">Relatórios</span><span data-lang="en" lang="en">Reports</span></span>
+    <h1 data-lang="pt" lang="pt-BR">Raio-X: para onde vai o seu dinheiro</h1>
+    <h1 data-lang="en" lang="en">X-Ray: where your money goes</h1>
+    <p class="lead" data-lang="pt" lang="pt-BR">Agrupa gastos e lucros por categoria, com médias e percentuais, no mês ou no acumulado do ano.</p>
+    <p class="lead" data-lang="en" lang="en">Groups spending and profit by category, with averages and percentages, monthly or year-to-date.</p>
   </div>
 
   <div class="doc">
     <aside class="doc-side">
       <nav>
-        <span class="side-title" data-lang="pt">Nesta página</span><span class="side-title" data-lang="en">On this page</span>
-        <a href="#categorias" data-lang="pt">Por categoria</a><a href="#categorias" data-lang="en">By category</a>
-        <a href="#mes-ano" data-lang="pt">Mês vs Ano</a><a href="#mes-ano" data-lang="en">Month vs Year</a>
-        <a href="#vendas" data-lang="pt">No perfil Vendas</a><a href="#vendas" data-lang="en">In the Sales profile</a>
-        <a href="#servicos" data-lang="pt">No perfil Serviços</a><a href="#servicos" data-lang="en">In the Services profile</a>
-        <a href="#pdf" data-lang="pt">Relatório em PDF</a><a href="#pdf" data-lang="en">PDF report</a>
+        <span class="side-title" data-lang="pt" lang="pt-BR">Nesta página</span><span class="side-title" data-lang="en" lang="en">On this page</span>
+        <a href="#categorias" data-lang="pt" lang="pt-BR">Por categoria</a><a href="#categorias" data-lang="en" lang="en">By category</a>
+        <a href="#mes-ano" data-lang="pt" lang="pt-BR">Mês vs Ano</a><a href="#mes-ano" data-lang="en" lang="en">Month vs Year</a>
+        <a href="#vendas" data-lang="pt" lang="pt-BR">No perfil Vendas</a><a href="#vendas" data-lang="en" lang="en">In the Sales profile</a>
+        <a href="#servicos" data-lang="pt" lang="pt-BR">No perfil Serviços</a><a href="#servicos" data-lang="en" lang="en">In the Services profile</a>
+        <a href="#pdf" data-lang="pt" lang="pt-BR">Relatório em PDF</a><a href="#pdf" data-lang="en" lang="en">PDF report</a>
       </nav>
     </aside>
 
     <div class="doc-main">
       <section id="categorias">
-        <h2 data-lang="pt">Gastos por categoria</h2><h2 data-lang="en">Spending by category</h2>
+        <h2 data-lang="pt" lang="pt-BR">Gastos por categoria</h2><h2 data-lang="en" lang="en">Spending by category</h2>
         <div class="split">
           <div>
-            <p data-lang="pt">Cada categoria vira uma barra com o total, a <strong>média mensal</strong> e o <strong>percentual</strong> do todo. Toque numa categoria (Pessoal/Negócios) ou no nome do Gerente (Vendas) para expandir e ver os lançamentos que compõem aquele valor.</p>
-            <p data-lang="en">Each category becomes a bar with the total, the <strong>monthly average</strong> and the <strong>percentage</strong> of the whole. Tap a category (Personal/Business) or the Manager's name (Sales) to expand and see the entries behind that value.</p>
+            <p data-lang="pt" lang="pt-BR">Cada categoria vira uma barra com o total, a <strong>média mensal</strong> e o <strong>percentual</strong> do todo. Toque numa categoria (Pessoal/Negócios) ou no nome do Gerente (Vendas) para expandir e ver os lançamentos que compõem aquele valor.</p>
+            <p data-lang="en" lang="en">Each category becomes a bar with the total, the <strong>monthly average</strong> and the <strong>percentage</strong> of the whole. Tap a category (Personal/Business) or the Manager's name (Sales) to expand and see the entries behind that value.</p>
           </div>
           <div class="split-media"><div class="device"><img src="assets/img/raio-x.webp" alt="Raio-X do Silica por categoria" loading="lazy" width="700" height="1440"></div></div>
         </div>
       </section>
 
       <section id="mes-ano">
-        <h2 data-lang="pt">Mês atual vs acumulado do ano</h2><h2 data-lang="en">Current month vs year-to-date</h2>
-        <p data-lang="pt">Alterne entre <strong>Mês Atual</strong> e <strong>Acumulado do Ano</strong> no topo. Deslize a tela lateralmente para navegar entre os meses sem sair do Raio-X. O mês atual ainda traz o <strong>comparativo com o mês anterior</strong>, categoria a categoria, com a variação percentual.</p>
-        <p data-lang="en">Switch between <strong>Current Month</strong> and <strong>Year-to-date</strong> at the top. Swipe sideways to move between months without leaving the X-Ray. The current month also brings a <strong>comparison with the previous month</strong>, category by category, with the percentage change.</p>
+        <h2 data-lang="pt" lang="pt-BR">Mês atual vs acumulado do ano</h2><h2 data-lang="en" lang="en">Current month vs year-to-date</h2>
+        <p data-lang="pt" lang="pt-BR">Alterne entre <strong>Mês Atual</strong> e <strong>Acumulado do Ano</strong> no topo. Deslize a tela lateralmente para navegar entre os meses sem sair do Raio-X. O mês atual ainda traz o <strong>comparativo com o mês anterior</strong>, categoria a categoria, com a variação percentual.</p>
+        <p data-lang="en" lang="en">Switch between <strong>Current Month</strong> and <strong>Year-to-date</strong> at the top. Swipe sideways to move between months without leaving the X-Ray. The current month also brings a <strong>comparison with the previous month</strong>, category by category, with the percentage change.</p>
         <div class="shot-row">
           <figure class="shot">
             <div class="device"><img src="assets/img/raiox-comparativo.webp" alt="Raio-X do mês com comparativo do mês anterior" loading="lazy" width="720" height="1468"></div>
-            <figcaption data-lang="pt">Comparativo com o mês anterior, com variação por categoria.</figcaption>
-            <figcaption data-lang="en">Previous-month comparison, with per-category change.</figcaption>
+            <figcaption data-lang="pt" lang="pt-BR">Comparativo com o mês anterior, com variação por categoria.</figcaption>
+            <figcaption data-lang="en" lang="en">Previous-month comparison, with per-category change.</figcaption>
           </figure>
           <figure class="shot">
             <div class="device"><img src="assets/img/raiox-acumulado.webp" alt="Raio-X acumulado do ano com médias mensais" loading="lazy" width="720" height="1468"></div>
-            <figcaption data-lang="pt">Acumulado do ano com média mensal por categoria.</figcaption>
-            <figcaption data-lang="en">Year-to-date totals with monthly average per category.</figcaption>
+            <figcaption data-lang="pt" lang="pt-BR">Acumulado do ano com média mensal por categoria.</figcaption>
+            <figcaption data-lang="en" lang="en">Year-to-date totals with monthly average per category.</figcaption>
           </figure>
         </div>
       </section>
 
       <section id="vendas">
-        <h2 data-lang="pt">No perfil Vendas: ROI & Conversão</h2><h2 data-lang="en">In Sales: ROI & Conversion</h2>
+        <h2 data-lang="pt" lang="pt-BR">No perfil Vendas: ROI & Conversão</h2><h2 data-lang="en" lang="en">In Sales: ROI & Conversion</h2>
         <ul>
-          <li data-lang="pt"><strong>ROI:</strong> quanto seu dinheiro rendeu sobre o custo do estoque.</li>
-          <li data-lang="en"><strong>ROI:</strong> how much your money earned over the stock cost.</li>
-          <li data-lang="pt"><strong>Conversão em Caixa:</strong> quanto do que você vendeu já entrou de fato no caixa.</li>
-          <li data-lang="en"><strong>Cash Conversion:</strong> how much of what you sold has actually reached the cash.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>ROI:</strong> quanto seu dinheiro rendeu sobre o custo do estoque.</li>
+          <li data-lang="en" lang="en"><strong>ROI:</strong> how much your money earned over the stock cost.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Conversão em Caixa:</strong> quanto do que você vendeu já entrou de fato no caixa.</li>
+          <li data-lang="en" lang="en"><strong>Cash Conversion:</strong> how much of what you sold has actually reached the cash.</li>
         </ul>
       </section>
 
       <section id="servicos">
-        <h2 data-lang="pt">No perfil Serviços</h2><h2 data-lang="en">In the Services profile</h2>
-        <p data-lang="pt">O Serviços tem um Raio-X próprio: recebido no mês, a receber, lucro estimado, ticket médio, faturamento por categoria, mix de formas de pagamento, taxa de conversão de orçamento em serviço e top clientes. Veja em <a href="servicos.html#raiox">Serviços</a>.</p>
-        <p data-lang="en">Services has its own X-Ray: month received, to receive, estimated profit, average ticket, revenue by category, payment-method mix, quote-to-service conversion and top clients. See <a href="servicos.html#raiox">Services</a>.</p>
+        <h2 data-lang="pt" lang="pt-BR">No perfil Serviços</h2><h2 data-lang="en" lang="en">In the Services profile</h2>
+        <p data-lang="pt" lang="pt-BR">O Serviços tem um Raio-X próprio: recebido no mês, a receber, lucro estimado, ticket médio, faturamento por categoria, mix de formas de pagamento, taxa de conversão de orçamento em serviço e top clientes. Veja em <a href="servicos.html#raiox">Serviços</a>.</p>
+        <p data-lang="en" lang="en">Services has its own X-Ray: month received, to receive, estimated profit, average ticket, revenue by category, payment-method mix, quote-to-service conversion and top clients. See <a href="servicos.html#raiox">Services</a>.</p>
       </section>
 
       <section id="pdf">
-        <h2 data-lang="pt">Relatório em PDF</h2><h2 data-lang="en">PDF report</h2>
-        <p data-lang="pt">No perfil Vendas, o ícone de PDF gera o <strong>relatório do Gerente</strong>: escolha o vendedor, o período e o % de comissão. Cada parcela entra no mês do vencimento, separando a comissão já realizada da comissão a receber.</p>
-        <p data-lang="en">In the Sales profile, the PDF icon generates the <strong>Manager report</strong>: choose the seller, the period and the commission %. Each installment lands in its due month, separating realized commission from commission to receive.</p>
+        <h2 data-lang="pt" lang="pt-BR">Relatório em PDF</h2><h2 data-lang="en" lang="en">PDF report</h2>
+        <p data-lang="pt" lang="pt-BR">No perfil Vendas, o ícone de PDF gera o <strong>relatório do Gerente</strong>: escolha o vendedor, o período e o % de comissão. Cada parcela entra no mês do vencimento, separando a comissão já realizada da comissão a receber.</p>
+        <p data-lang="en" lang="en">In the Sales profile, the PDF icon generates the <strong>Manager report</strong>: choose the seller, the period and the commission %. Each installment lands in its due month, separating realized commission from commission to receive.</p>
       </section>
     </div>
   </div>
 </main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a><p><span data-lang="pt" lang="pt-BR">Gestão financeira inteligente para sua vida pessoal, seu negócio, suas vendas e seus serviços: tudo em espaços isolados, no seu Android.</span><span data-lang="en" lang="en">Smart money management for your personal life, business, sales and services: all in isolated spaces, on your Android.</span></p><div style="margin-top:16px"><a class="btn-store" href="https://play.google.com/store/apps/details?id=com.nosbor.silica&hl=pt_BR" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#00C3FF" d="M3.4 2.3c-.25.26-.4.66-.4 1.17v17.06c0 .5.15.9.4 1.17l.06.05L13 12.06v-.11L3.46 2.25l-.06.05z"/><path fill="#00E676" d="M16.2 15.28 13 12.06v-.11l3.2-3.22.07.04 3.79 2.15c1.08.61 1.08 1.62 0 2.24l-3.79 2.15-.07.04z"/><path fill="#FF3D57" d="m16.27 15.24-3.27-3.24-9.6 9.6c.36.37.94.42 1.6.05l11.27-6.41"/><path fill="#FFC400" d="M16.27 8.76 5 2.35C4.34 1.98 3.76 2.03 3.4 2.4l9.6 9.6 3.27-3.24z"/></svg><span><small><span data-lang="pt" lang="pt-BR">Baixar na</span><span data-lang="en" lang="en">Get it on</span></small><b>Google Play</b></span></a></div></div><div class="footer-col"><h4><span data-lang="pt" lang="pt-BR">Produto</span><span data-lang="en" lang="en">Product</span></h4><a href="index.html"><span data-lang="pt" lang="pt-BR">Início</span><span data-lang="en" lang="en">Home</span></a><a href="comecar.html"><span data-lang="pt" lang="pt-BR">Começar</span><span data-lang="en" lang="en">Get started</span></a><a href="perfis.html"><span data-lang="pt" lang="pt-BR">Perfis</span><span data-lang="en" lang="en">Profiles</span></a><a href="planos.html"><span data-lang="pt" lang="pt-BR">Planos</span><span data-lang="en" lang="en">Plans</span></a></div><div class="footer-col"><h4><span data-lang="pt" lang="pt-BR">Recursos</span><span data-lang="en" lang="en">Features</span></h4><a href="financas.html"><span data-lang="pt" lang="pt-BR">Finanças</span><span data-lang="en" lang="en">Finances</span></a><a href="vendas.html"><span data-lang="pt" lang="pt-BR">Vendas</span><span data-lang="en" lang="en">Sales</span></a><a href="servicos.html"><span data-lang="pt" lang="pt-BR">Serviços</span><span data-lang="en" lang="en">Services</span></a><a href="raiox.html"><span data-lang="pt" lang="pt-BR">Raio-X</span><span data-lang="en" lang="en">X-Ray</span></a><a href="notificacoes.html"><span data-lang="pt" lang="pt-BR">Notificações</span><span data-lang="en" lang="en">Notifications</span></a><a href="seguranca-backup.html"><span data-lang="pt" lang="pt-BR">Segurança & Backup</span><span data-lang="en" lang="en">Security & Backup</span></a><a href="temas.html"><span data-lang="pt" lang="pt-BR">Temas</span><span data-lang="en" lang="en">Themes</span></a></div><div class="footer-col"><h4><span data-lang="pt" lang="pt-BR">Ajuda & Legal</span><span data-lang="en" lang="en">Help & Legal</span></h4><a href="regras-de-negocio.html"><span data-lang="pt" lang="pt-BR">Regras de negócio</span><span data-lang="en" lang="en">Business rules</span></a><a href="faq.html">FAQ</a><a href="contato.html"><span data-lang="pt" lang="pt-BR">Contato</span><span data-lang="en" lang="en">Contact</span></a><a href="privacidade.html"><span data-lang="pt" lang="pt-BR">Privacidade</span><span data-lang="en" lang="en">Privacy</span></a><a href="termos.html"><span data-lang="pt" lang="pt-BR">Termos de Uso</span><span data-lang="en" lang="en">Terms of Use</span></a></div></div><div class="footer-bottom"><span>© <span id="footYear">2026</span> Silica · <span data-lang="pt" lang="pt-BR">Feito com foco e simplicidade.</span><span data-lang="en" lang="en">Built with focus and simplicity.</span></span><span><span data-lang="pt" lang="pt-BR">Disponível para Android.</span><span data-lang="en" lang="en">Available for Android.</span></span></div></div></footer>
 </body>
 </html>

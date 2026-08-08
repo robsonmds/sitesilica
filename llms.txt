@@ -1,0 +1,29 @@
+# Silica
+
+> Silica é um aplicativo Android de gestão financeira com quatro espaços isolados — Pessoal, Negócios, Vendas e Serviços. Funciona offline, com os dados armazenados no aparelho. Tem um plano Grátis (perfil Pessoal) e um plano PRO (R$ 49,90) que desbloqueia os demais perfis, temas premium, backup criptografado e exportação CSV.
+
+## Produto
+- [Início](https://silica.app.br/): Silica: gestão financeira com quatro espaços isolados (Pessoal, Negócios, Vendas e Serviços). Controle contas, cartões, lucro, estoque, orçamentos e recibos — tudo offline no seu Android.
+- [Começar](https://silica.app.br/comecar.html): Primeiros passos no Silica: a tela inicial, como adicionar lançamentos, gestos essenciais, as cores das contas e como alternar entre os espaços.
+- [Perfis](https://silica.app.br/perfis.html): Os quatro espaços isolados do Silica — Pessoal, Negócios, Vendas e Serviços — e como habilitar, desabilitar e definir o perfil principal.
+- [Planos](https://silica.app.br/planos.html): Silica Grátis vs PRO: compare os recursos. PRO desbloqueia os perfis Negócios, Vendas e Serviços, temas premium, backup criptografado e exportação CSV.
+
+## Recursos
+- [Finanças (Pessoal & Negócios)](https://silica.app.br/financas.html): Despesas, rendas, recorrência, assinaturas, parcelamento, cartões de crédito, categorias e saúde financeira no Silica — com regras e exemplos.
+- [Silica Vendas](https://silica.app.br/vendas.html): Silica Vendas: estoque, vendas parceladas, lucro automático, pagamento parcial, multa e juros, comissões de vendedores e relatório do Gerente em PDF.
+- [Silica Serviços](https://silica.app.br/servicos.html): Silica Serviços: catálogo, ordens de serviço, orçamentos e recibos em PDF com QR Pix, assinatura do cliente, sinal, garantia, recorrência e Raio-X para prestadores.
+- [Raio-X](https://silica.app.br/raiox.html): O Raio-X do Silica: gastos e lucros por categoria, mês ou ano, com médias, ROI, Conversão em Caixa e relatório do Gerente em PDF.
+- [Notificações (Sentinela)](https://silica.app.br/notificacoes.html): A Sentinela do Silica avisa antes dos vencimentos: despesas, faturas de cartão, vendas, ordens de serviço e orçamentos a vencer — com a antecedência que você escolher.
+- [Segurança & Backup](https://silica.app.br/seguranca-backup.html): Privacidade, biometria, dados locais criptografados, backup criptografado com senha, backup automático e import/export CSV no Silica.
+- [Temas & Modo Zen](https://silica.app.br/temas.html): Temas premium, texturas de papel personalizáveis e o Modo Zen do Silica, que celebra quando você quita tudo do mês.
+
+## Ajuda & Legal
+- [Regras de negócio](https://silica.app.br/regras-de-negocio.html): As regras que o Silica segue para calcular saldo, lucro, comprometimento, faturas, parcelas, recorrência e documentos — explicadas com exemplos.
+- [FAQ](https://silica.app.br/faq.html): Perguntas frequentes sobre o Silica: espaços isolados, cartões, faturas, assinaturas, vendas, serviços, Raio-X, segurança, backup e PRO.
+- [Contato](https://silica.app.br/contato.html): Fale com o suporte do Silica.
+- [Privacidade](https://silica.app.br/privacidade.html): Política de Privacidade do Silica: dados armazenados localmente no aparelho, sem servidores do app, backup criptografado com senha do usuário.
+- [Termos de Uso](https://silica.app.br/termos.html): Termos de Uso do aplicativo Silica: licença, assinatura PRO, isenções e responsabilidades.
+
+## Optional
+- Disponível apenas para Android, via Google Play: https://play.google.com/store/apps/details?id=com.nosbor.silica
+- Desenvolvido por Robson Mesquita (desenvolvedor individual). Contato: ro_bs_on@outlook.com
