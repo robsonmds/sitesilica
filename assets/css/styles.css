@@ -5,11 +5,11 @@
    ========================================================================== */
 
 /* ---------- Fonte da marca (self-hosted, sem CDN — CSP font-src 'self') ---------- */
-/* Sora variável (um único woff2 de 25 KB cobre os pesos usados). */
+/* Fraunces variável, recorte latino (cobre PT-BR e EN); um único woff2 cobre os pesos 600-800 usados. */
 @font-face {
-  font-family: "Sora";
-  src: url("../fonts/sora-var.woff2") format("woff2");
-  font-weight: 400 800;
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-var.woff2") format("woff2");
+  font-weight: 600 800;
   font-style: normal;
   font-display: swap;
 }
@@ -29,8 +29,8 @@ ul, ol { padding-left: 1.25rem; }
 :root {
   --font-sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
-  /* Títulos e marca: Sora (self-hosted); cai no sans do sistema se a fonte falhar */
-  --font-display: "Sora", "Segoe UI", system-ui, Roboto, sans-serif;
+  /* Títulos e marca: Fraunces (self-hosted, eixo óptico automático); cai numa serifada do sistema se falhar */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
 
   --bg: #ffffff;
   --bg-subtle: #f6f8fb;
@@ -102,6 +102,138 @@ ul, ol { padding-left: 1.25rem; }
   --grad-soft: linear-gradient(160deg, rgba(52,211,153,.10), rgba(34,211,238,.05));
 }
 
+/* ---------- Design tokens (Zen — sálvia, pedra e areia; baixo contraste, respirado) ---------- */
+:root[data-theme="zen"] {
+  --bg: #EEF1EC;
+  --bg-subtle: #E7EBE1;
+  --bg-card: #F8FAF6;
+  --surface: #E4E9DF;
+  --surface-2: #DBE2D4;
+  --text: #2B342E;
+  --text-muted: #67736A;
+  --border: #D7DED0;
+  --border-strong: #C3CDBA;
+
+  --primary: #5C7A63;
+  --primary-strong: #48604E;
+  --primary-soft: #DCE6DC;
+  --primary-contrast: #F7FAF6;
+
+  --danger: #B5504A;
+  --danger-soft: #F3DEDB;
+  --warning: #B98A3D;
+  --warning-soft: #F1E3CB;
+  --info: #4C7A96;
+  --info-soft: #DCE8ED;
+
+  --ring: rgba(92,122,99,.45);
+  --shadow-sm: 0 1px 2px rgba(43,52,46,.06), 0 1px 3px rgba(43,52,46,.05);
+  --shadow-md: 0 6px 20px rgba(43,52,46,.08), 0 2px 6px rgba(43,52,46,.05);
+  --shadow-lg: 0 20px 50px rgba(43,52,46,.12);
+
+  --grad: linear-gradient(135deg, #48604E 0%, #5C7A63 55%, #A8825A 120%);
+  --grad-soft: linear-gradient(160deg, rgba(92,122,99,.12), rgba(168,130,90,.08));
+}
+
+/* ---------- Design tokens (Ouro — grafite profundo + dourado envelhecido) ---------- */
+:root[data-theme="ouro"] {
+  --bg: #1B140C;
+  --bg-subtle: #17110A;
+  --bg-card: #241B10;
+  --surface: #2E2213;
+  --surface-2: #382A17;
+  --text: #F3E9D8;
+  --text-muted: #B9A688;
+  --border: #3B2D1A;
+  --border-strong: #4B3A22;
+
+  --primary: #D6A94A;
+  --primary-strong: #E8C36B;
+  --primary-soft: rgba(214,169,74,.16);
+  --primary-contrast: #1B140C;
+
+  --danger: #E2685C;
+  --danger-soft: rgba(226,104,92,.16);
+  --warning: #E0B450;
+  --warning-soft: rgba(224,180,80,.16);
+  --info: #6FA8C9;
+  --info-soft: rgba(111,168,201,.16);
+
+  --ring: rgba(214,169,74,.5);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 8px 26px rgba(0,0,0,.45);
+  --shadow-lg: 0 24px 60px rgba(0,0,0,.55);
+
+  --grad: linear-gradient(135deg, #D6A94A 0%, #C9832E 55%, #8C5A1E 120%);
+  --grad-soft: linear-gradient(160deg, rgba(214,169,74,.10), rgba(140,90,30,.06));
+}
+
+/* ---------- Design tokens (Rosa — rosé terroso sobre branco quente) ---------- */
+:root[data-theme="rosa"] {
+  --bg: #FBF3F1;
+  --bg-subtle: #F6EAE7;
+  --bg-card: #FFFFFF;
+  --surface: #F6E7E3;
+  --surface-2: #F0DAD3;
+  --text: #3B2622;
+  --text-muted: #8C6C65;
+  --border: #EAD5CF;
+  --border-strong: #DEBFB6;
+
+  --primary: #C6685C;
+  --primary-strong: #A94F45;
+  --primary-soft: #F3DAD5;
+  --primary-contrast: #FFFFFF;
+
+  --danger: #B23B3B;
+  --danger-soft: #F4DCDC;
+  --warning: #B9803D;
+  --warning-soft: #F1E1C8;
+  --info: #4C7A96;
+  --info-soft: #DCE8ED;
+
+  --ring: rgba(198,104,92,.45);
+  --shadow-sm: 0 1px 2px rgba(59,38,34,.06), 0 1px 3px rgba(59,38,34,.05);
+  --shadow-md: 0 6px 20px rgba(59,38,34,.08), 0 2px 6px rgba(59,38,34,.05);
+  --shadow-lg: 0 20px 50px rgba(59,38,34,.12);
+
+  --grad: linear-gradient(135deg, #C6685C 0%, #D98A73 55%, #E8B896 120%);
+  --grad-soft: linear-gradient(160deg, rgba(198,104,92,.10), rgba(232,184,150,.08));
+}
+
+/* ---------- Design tokens (Grafite & Esmeralda — tema padrão do site) ---------- */
+:root[data-theme="grafite"] {
+  --bg: #10151A;
+  --bg-subtle: #0C1013;
+  --bg-card: #171E25;
+  --surface: #1E2830;
+  --surface-2: #26323B;
+  --text: #E4ECE8;
+  --text-muted: #93A6A0;
+  --border: #2A363E;
+  --border-strong: #37454F;
+
+  --primary: #2FBF8F;
+  --primary-strong: #52D6A8;
+  --primary-soft: rgba(47,191,143,.16);
+  --primary-contrast: #071410;
+
+  --danger: #F0776B;
+  --danger-soft: rgba(240,119,107,.16);
+  --warning: #E8C15B;
+  --warning-soft: rgba(232,193,91,.16);
+  --info: #5CA6E8;
+  --info-soft: rgba(92,166,232,.16);
+
+  --ring: rgba(47,191,143,.5);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 8px 26px rgba(0,0,0,.45);
+  --shadow-lg: 0 24px 60px rgba(0,0,0,.55);
+
+  --grad: linear-gradient(135deg, #2FBF8F 0%, #1E9E9E 55%, #1C5C9E 120%);
+  --grad-soft: linear-gradient(160deg, rgba(47,191,143,.10), rgba(28,92,158,.06));
+}
+
 body {
   font-family: var(--font-sans);
   background: var(--bg);
@@ -165,9 +297,13 @@ kbd { background: var(--surface-2); border: 1px solid var(--border-strong); bord
   box-shadow: var(--shadow-lg); padding: 8px; display: none; flex-direction: column; gap: 2px;
 }
 .nav-drop:hover .nav-drop-menu, .nav-drop.open .nav-drop-menu { display: flex; }
-.nav-drop-menu a { padding: 9px 12px; border-radius: 9px; color: var(--text-muted); font-weight: 600; font-size: .93rem; display: flex; gap: 10px; align-items: center; }
-.nav-drop-menu a:hover { background: var(--surface); color: var(--text); }
+.nav-drop-menu a, .nav-drop-menu button {
+  padding: 9px 12px; border-radius: 9px; color: var(--text-muted); font-weight: 600; font-size: .93rem;
+  display: flex; gap: 10px; align-items: center; width: 100%; text-align: left;
+}
+.nav-drop-menu a:hover, .nav-drop-menu button:hover { background: var(--surface); color: var(--text); }
 .nav-drop-menu a .ic { font-size: 1.05rem; }
+.nav-drop-menu .active { color: var(--primary); background: var(--primary-soft); }
 
 .nav-actions { display: flex; align-items: center; gap: 6px; margin-left: 8px; }
 .icon-btn {
@@ -178,9 +314,15 @@ kbd { background: var(--surface-2); border: 1px solid var(--border-strong); bord
 .icon-btn:hover { background: var(--surface); border-color: var(--border-strong); }
 .icon-btn svg { width: 20px; height: 20px; }
 .lang-btn { width: auto; padding: 0 12px; font-weight: 700; font-size: .85rem; letter-spacing: .03em; gap: 6px; }
-.theme-btn .sun { display: none; }
-:root[data-theme="dark"] .theme-btn .sun { display: block; }
-:root[data-theme="dark"] .theme-btn .moon { display: none; }
+
+/* Seletor de temas (menu com 6 opções, no lugar do antigo botão claro/escuro) */
+.theme-trigger { position: relative; }
+.theme-trigger::after {
+  content: ""; position: absolute; bottom: 5px; right: 5px; width: 7px; height: 7px;
+  border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 2px var(--bg-card);
+}
+.theme-menu { left: auto; right: 0; min-width: 210px; }
+.theme-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; border: 1px solid rgba(0,0,0,.08); }
 
 .nav-toggle { display: none; }
 
@@ -202,7 +344,9 @@ kbd { background: var(--surface-2); border: 1px solid var(--border-strong); bord
 .btn-store { display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; background: #0b1220; color: #fff; border-radius: 14px; border: 1px solid transparent; transition: transform .12s ease, box-shadow .15s; }
 .btn-store:hover { box-shadow: var(--shadow-md); }
 .btn-store:active { transform: translateY(1px); }
-:root[data-theme="dark"] .btn-store { background: #fff; color: #0b1220; }
+:root[data-theme="dark"] .btn-store,
+:root[data-theme="ouro"] .btn-store,
+:root[data-theme="grafite"] .btn-store { background: #fff; color: #0b1220; }
 .btn-store svg { width: 26px; height: 26px; }
 .btn-store small { display: block; font-size: .68rem; font-weight: 600; opacity: .8; letter-spacing: .04em; text-transform: uppercase; line-height: 1; }
 .btn-store b { display: block; font-size: 1.12rem; font-weight: 800; line-height: 1.15; }
@@ -228,7 +372,9 @@ kbd { background: var(--surface-2); border: 1px solid var(--border-strong); bord
   border: 10px solid #0b1220; border-radius: 42px; overflow: hidden;
   box-shadow: var(--shadow-lg); background: #0b1220; max-width: 300px; width: 100%;
 }
-:root[data-theme="dark"] .device { border-color: #1c2b47; }
+:root[data-theme="dark"] .device,
+:root[data-theme="ouro"] .device,
+:root[data-theme="grafite"] .device { border-color: var(--border-strong); }
 .device img { width: 100%; display: block; }
 .device-tilt { transform: rotate(-3deg); }
 .device-row { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; }
@@ -416,12 +562,12 @@ td .no { color: var(--text-muted); }
     padding: 12px 16px 20px; box-shadow: var(--shadow-lg); max-height: calc(100vh - var(--header-h)); overflow-y: auto;
   }
   .nav-open .nav-links a { padding: 12px; }
-  .nav-drop { width: 100%; }
-  .nav-drop > button { width: 100%; justify-content: space-between; }
-  .nav-drop-menu { position: static; box-shadow: none; border: none; background: var(--surface); padding: 4px 4px 4px 16px; display: none; }
-  .nav-drop.open .nav-drop-menu { display: flex; }
-  .nav-drop:hover .nav-drop-menu { display: none; }
-  .nav-drop.open .nav-drop-menu { display: flex; }
+  /* Escopado a .nav-links: o dropdown de temas (em .nav-actions) fica de fora e mantém o menu flutuante normal */
+  .nav-links .nav-drop { width: 100%; }
+  .nav-links .nav-drop > button { width: 100%; justify-content: space-between; }
+  .nav-links .nav-drop-menu { position: static; box-shadow: none; border: none; background: var(--surface); padding: 4px 4px 4px 16px; display: none; }
+  .nav-links .nav-drop.open .nav-drop-menu { display: flex; }
+  .nav-links .nav-drop:hover .nav-drop-menu { display: none; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .plans { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
@@ -444,8 +590,14 @@ figure.shot figcaption { font-size: .88rem; color: var(--text-muted); text-align
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
 
-/* Devices com brilho sutil no tema escuro */
-:root[data-theme="dark"] .device { box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(52,211,153,.08), 0 0 42px rgba(52,211,153,.07); }
+/* Devices com brilho sutil nos temas escuros (a cor acompanha o --primary de cada tema) */
+:root[data-theme="dark"] .device,
+:root[data-theme="ouro"] .device,
+:root[data-theme="grafite"] .device {
+  box-shadow: 0 24px 60px rgba(0,0,0,.55),
+    0 0 0 1px color-mix(in srgb, var(--primary) 8%, transparent),
+    0 0 42px color-mix(in srgb, var(--primary) 7%, transparent);
+}
 
 /* ---------- Acabamento v3 ---------- */
 

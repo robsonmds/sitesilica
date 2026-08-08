@@ -11,8 +11,7 @@
   // ---- ícones (SVG inline) --------------------------------------------------
   var IC = {
     logo: '<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2 3 9v14l13 7 13-7V9L16 2Z" fill="url(#lg)"/><path d="M16 9.5 9 13v6l7 3.5 7-3.5v-6L16 9.5Z" fill="#fff" fill-opacity=".22"/><path d="M13 12.5c-1.6 0-2.6 1-2.6 2.2 0 2.6 5 1.6 5 3.2 0 .6-.6 1-1.5 1-1 0-1.6-.5-1.7-1.2H10c.1 1.9 1.6 3 3.9 3 2.1 0 3.6-1.1 3.6-2.9 0-2.8-5-1.8-5-3.3 0-.5.5-.8 1.3-.8.8 0 1.4.4 1.5 1.1h2.2c-.1-1.7-1.5-2.8-3.5-2.8Z" fill="#fff"/><defs><linearGradient id="lg" x1="3" y1="2" x2="29" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#16a34a"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs></svg>',
-    sun: '<svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
-    moon: '<svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>',
+    palette: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-1.1-.9-1.7-2-1.7h-1.8a2.5 2.5 0 0 1 0-5H18a1.8 1.8 0 0 0 1.6-2.7A9 9 0 0 0 12 3Z"/><circle cx="7.3" cy="10.2" r="1.15" fill="currentColor" stroke="none"/><circle cx="9.3" cy="15.3" r="1.15" fill="currentColor" stroke="none"/><circle cx="14.5" cy="16.4" r="1.15" fill="currentColor" stroke="none"/></svg>',
     globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>',
     menu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>',
     chevDown: '<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>',
@@ -39,10 +38,27 @@
     { href: "contato.html", pt: "Contato", en: "Contact" }
   ];
 
+  // Temas disponíveis no menu (Claro/Escuro = a base original; os 4 seguintes são as leituras novas)
+  var THEMES = [
+    { id: "light", color: "#16a34a", pt: "Claro", en: "Light" },
+    { id: "dark", color: "#34d399", pt: "Escuro", en: "Dark" },
+    { id: "zen", color: "#5C7A63", pt: "Zen", en: "Zen" },
+    { id: "ouro", color: "#D6A94A", pt: "Ouro", en: "Gold" },
+    { id: "rosa", color: "#C6685C", pt: "Rosa", en: "Pink" },
+    { id: "grafite", color: "#2FBF8F", pt: "Grafite & Esmeralda", en: "Graphite & Emerald" }
+  ];
+
   function t(pt, en) { return '<span data-lang="pt">' + pt + '</span><span data-lang="en">' + en + '</span>'; }
   var current = (location.pathname.split("/").pop() || "index.html") || "index.html";
 
   // ---- Header ---------------------------------------------------------------
+  function themeMenuHTML() {
+    return THEMES.map(function (th) {
+      return '<button type="button" data-theme-choice="' + th.id + '">' +
+        '<span class="theme-dot" style="background:' + th.color + '"></span>' + t(th.pt, th.en) + "</button>";
+    }).join("");
+  }
+
   function buildHeader() {
     var links = "";
     NAV.forEach(function (n) {
@@ -70,7 +86,10 @@
         '<div class="nav-actions">' +
           '<button class="icon-btn lang-btn" id="langBtn" aria-label="Trocar idioma">' + IC.globe +
             '<span data-lang="pt">EN</span><span data-lang="en">PT</span></button>' +
-          '<button class="icon-btn theme-btn" id="themeBtn" aria-label="Tema claro/escuro">' + IC.sun + IC.moon + "</button>" +
+          '<div class="nav-drop theme-drop">' +
+            '<button class="icon-btn theme-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Tema">' + IC.palette + "</button>" +
+            '<div class="nav-drop-menu theme-menu">' + themeMenuHTML() + "</div>" +
+          "</div>" +
         "</div>" +
       "</div></div>";
     document.body.prepend(header);
@@ -127,12 +146,15 @@
   function wire() {
     var root = document.documentElement;
 
-    // Tema
-    var themeBtn = document.getElementById("themeBtn");
-    if (themeBtn) themeBtn.addEventListener("click", function () {
-      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      try { localStorage.setItem("silica-theme", next); } catch (e) {}
+    // Tema — menu com as 6 opções (marca a atual e aplica a escolhida)
+    updateThemeMenu();
+    document.querySelectorAll("[data-theme-choice]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var id = btn.getAttribute("data-theme-choice");
+        root.setAttribute("data-theme", id);
+        try { localStorage.setItem("silica-theme", id); } catch (e) {}
+        updateThemeMenu();
+      });
     });
 
     // Idioma
@@ -361,6 +383,15 @@
     setTimeout(function () {
       targets.forEach(function (t) { t.classList.add("in"); });
     }, 3000);
+  }
+
+  function updateThemeMenu() {
+    var active = document.documentElement.getAttribute("data-theme");
+    document.querySelectorAll("[data-theme-choice]").forEach(function (btn) {
+      var isActive = btn.getAttribute("data-theme-choice") === active;
+      btn.classList.toggle("active", isActive);
+      if (isActive) btn.setAttribute("aria-current", "true"); else btn.removeAttribute("aria-current");
+    });
   }
 
   function setLang(lang) {
