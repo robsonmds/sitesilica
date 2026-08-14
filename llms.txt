@@ -14,7 +14,7 @@
 - [Silica Serviços](https://silica.app.br/servicos.html): Silica Serviços: catálogo, ordens de serviço, orçamentos e recibos em PDF com QR Pix, assinatura do cliente, sinal, garantia, recorrência e Raio-X para prestadores.
 - [Raio-X](https://silica.app.br/raiox.html): O Raio-X do Silica: gastos e lucros por categoria, mês ou ano, com médias, ROI, Conversão em Caixa e relatório do Gerente em PDF.
 - [Notificações (Sentinela)](https://silica.app.br/notificacoes.html): A Sentinela do Silica avisa antes dos vencimentos: despesas, faturas de cartão, vendas, ordens de serviço e orçamentos a vencer — com a antecedência que você escolher.
-- [Segurança & Backup](https://silica.app.br/seguranca-backup.html): Privacidade, biometria, dados locais criptografados, backup criptografado com senha, backup automático e import/export CSV no Silica.
+- [Segurança & Backup](https://silica.app.br/seguranca-backup.html): Privacidade, biometria, dados guardados no aparelho, backup criptografado com senha, backup automático e import/export CSV no Silica.
 - [Temas & Modo Zen](https://silica.app.br/temas.html): Temas premium, texturas de papel personalizáveis e o Modo Zen do Silica, que celebra quando você quita tudo do mês.
 
 ## Ajuda & Legal

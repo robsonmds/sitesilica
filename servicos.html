@@ -7,7 +7,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="msvalidate.01" content="0322525388BC71BBFA7280E2E74C20B3" />
 <title>Silica Serviços · Silica</title>
-<meta name="description" content="Silica Serviços: catálogo, ordens de serviço, orçamentos e recibos em PDF com QR Pix, assinatura do cliente, sinal, garantia, recorrência e Raio-X para prestadores.">
+<meta name="description" content="Silica Serviços: catálogo, ordens de serviço parceladas, orçamentos e recibos em PDF com QR Pix, assinatura do cliente, sinal, multa e juros, garantia, recorrência e Raio-X para prestadores.">
 <link rel="icon" href="assets/img/logo-mark.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
 <link rel="canonical" href="https://silica.app.br/servicos.html">
@@ -16,14 +16,14 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:title" content="Silica Serviços · Silica">
-<meta property="og:description" content="Silica Serviços: catálogo, ordens de serviço, orçamentos e recibos em PDF com QR Pix, assinatura do cliente, sinal, garantia, recorrência e Raio-X para prestadores.">
+<meta property="og:description" content="Silica Serviços: catálogo, ordens de serviço parceladas, orçamentos e recibos em PDF com QR Pix, assinatura do cliente, sinal, multa e juros, garantia, recorrência e Raio-X para prestadores.">
 <meta property="og:url" content="https://silica.app.br/servicos.html">
 <meta property="og:image" content="https://silica.app.br/assets/img/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Silica Serviços · Silica">
-<meta name="twitter:description" content="Silica Serviços: catálogo, ordens de serviço, orçamentos e recibos em PDF com QR Pix, assinatura do cliente, sinal, garantia, recorrência e Raio-X para prestadores.">
+<meta name="twitter:description" content="Silica Serviços: catálogo, ordens de serviço parceladas, orçamentos e recibos em PDF com QR Pix, assinatura do cliente, sinal, multa e juros, garantia, recorrência e Raio-X para prestadores.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Silica","url":"https://silica.app.br/","logo":"https://silica.app.br/assets/img/logo-mark.png","founder":{"@type":"Person","name":"Robson Mesquita"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Silica","item":"https://silica.app.br/"},{"@type":"ListItem","position":2,"name":"Serviços","item":"https://silica.app.br/servicos.html"}]}</script>
 <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -53,6 +53,10 @@
         <a href="#os" data-lang="pt" lang="pt-BR">Ordem de serviço</a><a href="#os" data-lang="en" lang="en">Work order</a>
         <a href="#orcamento" data-lang="pt" lang="pt-BR">Orçamento → Recibo</a><a href="#orcamento" data-lang="en" lang="en">Quote → Receipt</a>
         <a href="#valores" data-lang="pt" lang="pt-BR">Sinal, custo & lucro</a><a href="#valores" data-lang="en" lang="en">Down payment, cost & profit</a>
+        <a href="#parcelamento" data-lang="pt" lang="pt-BR">Parcelamento da OS</a><a href="#parcelamento" data-lang="en" lang="en">Order installments</a>
+        <a href="#multa" data-lang="pt" lang="pt-BR">Multa & juros</a><a href="#multa" data-lang="en" lang="en">Late fee & interest</a>
+        <a href="#pagamento-parcial" data-lang="pt" lang="pt-BR">Pagamento parcial</a><a href="#pagamento-parcial" data-lang="en" lang="en">Partial payment</a>
+        <a href="#cobranca" data-lang="pt" lang="pt-BR">Cobrança registrada</a><a href="#cobranca" data-lang="en" lang="en">Registered reminders</a>
         <a href="#documento" data-lang="pt" lang="pt-BR">O documento PDF</a><a href="#documento" data-lang="en" lang="en">The PDF document</a>
         <a href="#assinatura" data-lang="pt" lang="pt-BR">Assinatura do cliente</a><a href="#assinatura" data-lang="en" lang="en">Client signature</a>
         <a href="#recorrencia" data-lang="pt" lang="pt-BR">Recorrência</a><a href="#recorrencia" data-lang="en" lang="en">Recurrence</a>
@@ -78,8 +82,10 @@
           <li data-lang="en" lang="en"><strong>Logo</strong> and <strong>your signature</strong> (drawn on screen).</li>
           <li data-lang="pt" lang="pt-BR"><strong>Validade padrão</strong> do orçamento, <strong>garantia padrão</strong> e <strong>condições padrão</strong>, pré-preenchidas em cada nova OS.</li>
           <li data-lang="pt" lang="pt-BR"><strong>Dados bancários e data de nascimento</strong> (opcionais): na hora de gerar o recibo, você escolhe se eles saem impressos.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Multa e juros por atraso</strong> (opcional): ative, defina o percentual da multa, os juros ao mês e a carência — a mesma regra que já existe no Vendas, agora para OS.</li>
           <li data-lang="en" lang="en"><strong>Default validity</strong>, <strong>default warranty</strong> and <strong>default terms</strong>, pre-filled into every new order.</li>
           <li data-lang="en" lang="en"><strong>Bank details and date of birth</strong> (optional): when generating the receipt, you choose whether they get printed.</li>
+          <li data-lang="en" lang="en"><strong>Late fee and interest</strong> (optional): turn it on and set the fee percentage, monthly interest and grace period — the same rule that already exists in Sales, now for work orders.</li>
         </ul>
         </div>
         <div class="split-media">
@@ -146,6 +152,8 @@
           <li data-lang="en" lang="en"><strong>Down payment:</strong> record an amount received upfront, with a date. It becomes income <strong>on the down-payment date</strong>; the balance becomes income when you settle the rest.</li>
           <li data-lang="pt" lang="pt-BR"><strong>Custo de materiais:</strong> um campo interno (não sai no documento) que abate do lucro estimado.</li>
           <li data-lang="en" lang="en"><strong>Material cost:</strong> an internal field (never printed) that reduces the estimated profit.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Custo por item:</strong> além do custo de materiais do documento, cada item da OS pode ter o seu próprio custo — os dois se somam no cálculo do lucro. Itens de uma OS já existente nascem com custo zero, então nenhuma OS antiga muda de valor.</li>
+          <li data-lang="en" lang="en"><strong>Cost per item:</strong> besides the document's material cost, each order item can carry its own cost — both add up when calculating profit. Items on an existing order start at zero cost, so no past order changes value.</li>
           <li data-lang="pt" lang="pt-BR"><strong>Forma de pagamento:</strong> Pix, dinheiro, cartão ou outro, escolhida ao marcar como recebido.</li>
           <li data-lang="en" lang="en"><strong>Payment method:</strong> Pix, cash, card or other, chosen when marking as received.</li>
         </ul>
@@ -154,6 +162,48 @@
           <p data-lang="pt" lang="pt-BR">O app garante que o desconto nunca passa do subtotal e o sinal nunca passa do total. Assim, seu saldo a receber nunca fica negativo.</p>
           <p data-lang="en" lang="en">The app makes sure the discount never exceeds the subtotal and the down payment never exceeds the total. That way, your balance due never goes negative.</p>
         </div>
+      </section>
+
+      <section id="parcelamento">
+        <h2 data-lang="pt" lang="pt-BR">Parcelamento da Ordem de Serviço</h2><h2 data-lang="en" lang="en">Splitting an order into installments</h2>
+        <p data-lang="pt" lang="pt-BR">Uma OS pode ser dividida em várias parcelas, cada uma com o seu próprio vencimento — a mesma mecânica que o Vendas já usa para vendas parceladas. O <strong>número da OS é do documento</strong>: todas as parcelas carregam o mesmo número; o que distingue uma da outra é a etiqueta <strong>"Parc. 2/5"</strong> no card e no PDF. Sinal, custo de material, desconto e os itens pertencem ao documento como um todo, então ficam registrados só na <strong>1ª parcela</strong> — eles não se repetem em cada uma.</p>
+        <p data-lang="en" lang="en">An order can be split into several installments, each with its own due date — the same mechanics Sales already uses for installment sales. The <strong>order number belongs to the document</strong>: every installment carries the same number; what tells them apart is the <strong>"Inst. 2/5"</strong> tag on the card and in the PDF. Down payment, material cost, discount and the items belong to the document as a whole, so they're recorded only on the <strong>1st installment</strong> — they don't repeat on each one.</p>
+        <ul>
+          <li data-lang="pt" lang="pt-BR"><strong>Orçamento não parcela:</strong> parcelamento é para cobrança; orçamento ainda é proposta, sem valor a receber definido.</li>
+          <li data-lang="en" lang="en"><strong>Quotes can't be split:</strong> installments are for billing; a quote is still a proposal, with no amount due yet.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Voltar para 1 parcela desfaz o parcelamento:</strong> reduza o número de parcelas para 1 e a OS volta a ser uma cobrança única.</li>
+          <li data-lang="en" lang="en"><strong>Going back to 1 installment undoes it:</strong> reduce the installment count to 1 and the order becomes a single charge again.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>OS já existente não muda:</strong> uma ordem criada antes desta novidade continua sendo uma OS de 1 parcela, com o mesmo valor de sempre.</li>
+          <li data-lang="en" lang="en"><strong>Existing orders don't change:</strong> an order created before this update stays a 1-installment order, at the same amount as always.</li>
+        </ul>
+      </section>
+
+      <section id="multa">
+        <h2 data-lang="pt" lang="pt-BR">Multa e juros de quem paga atrasado</h2><h2 data-lang="en" lang="en">Late fee and interest</h2>
+        <p data-lang="pt" lang="pt-BR">Em <strong>Menu › Dados do profissional</strong> você liga a cobrança e ajusta os percentuais — a mesma regra do Vendas, agora para OS. O padrão já vem preenchido: <strong>multa de 2%</strong> cobrada uma vez, no primeiro dia de atraso, e <strong>juros de 1% ao mês</strong> rateados por dia, com dias de carência opcionais antes de começar. Quem não ligar a função não vê nada mudar.</p>
+        <p data-lang="en" lang="en">In <strong>Menu › Provider details</strong> you turn charging on and set the percentages — the same rule as in Sales, now for work orders. The default is prefilled: a <strong>2% fee</strong> charged once, on the first day of delay, and <strong>1% monthly interest</strong> prorated per day, with optional grace days before it starts. If you never turn it on, nothing changes for you.</p>
+        <ul>
+          <li data-lang="pt" lang="pt-BR"><strong>O valor cresce sozinho:</strong> o card da OS atrasada já mostra o total de hoje, e o app recalcula a cada dia que passa.</li>
+          <li data-lang="en" lang="en"><strong>The amount grows on its own:</strong> the overdue order card already shows today's total, and the app recalculates every day.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Congelado no recebimento:</strong> ao marcar a OS como recebida, o acréscimo daquele momento fica fixo — se você reimprimir o recibo depois, o valor mostrado é sempre o que o cliente pagou.</li>
+          <li data-lang="en" lang="en"><strong>Frozen when received:</strong> once you mark the order as paid, that moment's charge is locked in — if you reprint the receipt later, it always shows the amount the client actually paid.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Orçamento e OS cancelada nunca geram encargo:</strong> só a OS de serviço realizado, em aberto e vencida, acumula multa e juros.</li>
+          <li data-lang="en" lang="en"><strong>Quotes and canceled orders never carry a charge:</strong> only a completed, open and overdue order accrues fee and interest.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Você decide se aparece no documento:</strong> no compositor "O que incluir?", a opção de mostrar multa e juros só surge quando a OS de fato teve encargo.</li>
+          <li data-lang="en" lang="en"><strong>You decide if it shows on the document:</strong> in the "What to include?" composer, the option to show the fee and interest only appears when the order actually carried one.</li>
+        </ul>
+      </section>
+
+      <section id="pagamento-parcial">
+        <h2 data-lang="pt" lang="pt-BR">Pagamento parcial</h2><h2 data-lang="en" lang="en">Partial payment</h2>
+        <p data-lang="pt" lang="pt-BR">Cliente pagou só uma parte da OS? Use <strong>Pagamento parcial</strong>, do mesmo jeito que no Vendas: o app fecha a parcela com o valor recebido e cria uma <strong>parcela nova com o que faltou</strong>, no vencimento que você escolher. Se a parcela tinha multa e juros, o valor recebido abate <strong>primeiro o encargo, depois o principal</strong>; a parcela nova nasce limpa, sem encargo nem sinal. As parcelas do documento são renumeradas pelo novo vencimento. Errou o valor? Use <strong>Desfazer pagamento parcial</strong> no menu do card — só funciona enquanto a parcela do resíduo não tiver sido mexida.</p>
+        <p data-lang="en" lang="en">Did the client pay only part of the order? Use <strong>Partial payment</strong>, the same way as in Sales: the app closes the installment with the amount received and creates a <strong>new installment for what is left</strong>, due on the date you pick. If the installment carried a late fee and interest, the amount received clears the <strong>charge first, then the principal</strong>; the new installment starts clean, with no charge or down payment. The document's installments are renumbered by the new due date. Got the amount wrong? Use <strong>Undo partial payment</strong> in the card menu — it only works while the leftover installment hasn't been touched.</p>
+      </section>
+
+      <section id="cobranca">
+        <h2 data-lang="pt" lang="pt-BR">Cobrança registrada</h2><h2 data-lang="en" lang="en">Registered reminders</h2>
+        <p data-lang="pt" lang="pt-BR">Toda OS <strong>pendente e ainda não paga</strong> ganha <strong>três bolinhas</strong> no card, iguais às do Vendas. Toque para acender uma a cada contato que fizer com o cliente; ao lado aparece há quantos dias foi o último contato. A contagem some quando a OS é paga — orçamento não entra nessa contagem, já que ainda não é uma cobrança.</p>
+        <p data-lang="en" lang="en">Every <strong>pending, unpaid</strong> order gets <strong>three dots</strong> on its card, just like Sales. Tap to light one up for each contact you make with the client; next to them you see how many days ago the last contact was. The count disappears once the order is paid — quotes don't get a count, since they aren't a charge yet.</p>
       </section>
 
       <section id="documento">
@@ -165,14 +215,15 @@
           <div class="card"><h4 data-lang="pt" lang="pt-BR">QR Pix</h4><h4 data-lang="en" lang="en">Pix QR</h4><p data-lang="pt" lang="pt-BR">Um QR code Pix com o <strong>valor a receber já embutido</strong>: o cliente escaneia e paga o valor certo. Aparece quando há saldo e chave Pix cadastrada.</p><p data-lang="en" lang="en">A Pix QR with the <strong>amount due already embedded</strong>: the client scans and pays the exact value. It appears when there's a balance and a Pix key set.</p></div>
           <div class="card"><h4 data-lang="pt" lang="pt-BR">Validade, garantia & observações</h4><h4 data-lang="en" lang="en">Validity, warranty & notes</h4><p data-lang="pt" lang="pt-BR">Orçamento mostra "válido até"; recibo mostra a garantia. As observações saem impressas.</p><p data-lang="en" lang="en">Quotes show "valid until"; receipts show the warranty. Notes are printed too.</p></div>
           <div class="card"><h4 data-lang="pt" lang="pt-BR">Duas assinaturas</h4><h4 data-lang="en" lang="en">Two signatures</h4><p data-lang="pt" lang="pt-BR">A sua (cadastrada) e a do cliente (colhida na tela), centralizadas sobre a linha, como assinar no papel. Documentos longos são paginados ("Página X de Y").</p><p data-lang="en" lang="en">Yours (registered) and the client's (captured on screen), centered over the line like signing on paper. Long documents are paginated ("Page X of Y").</p></div>
+          <div class="card"><h4 data-lang="pt" lang="pt-BR">Parcelas</h4><h4 data-lang="en" lang="en">Installments</h4><p data-lang="pt" lang="pt-BR">Se a OS estiver parcelada, o cabeçalho traz "Parc. X/Y" e o documento mostra o plano completo, com o vencimento de cada parcela e as já pagas marcadas. Para não confundir num papel que o cliente lê sozinho, o PDF distingue <strong>"Total do documento"</strong> (a soma de tudo) de <strong>"Valor desta parcela"</strong> (o que essa página cobra). Uma OS à vista sai exatamente como antes, sem nenhuma dessas marcações.</p><p data-lang="en" lang="en">If the order is split into installments, the header shows "Inst. X/Y" and the document lists the full plan, with each installment's due date and the ones already paid marked. So a client reading the page alone never confuses the two, the PDF spells out <strong>"Document total"</strong> (the sum of everything) versus <strong>"This installment's amount"</strong> (what this page charges). A cash order comes out exactly as before, with none of these marks.</p></div>
         </div>
         <figure class="shot" style="margin-top:1.6rem">
           <img src="assets/img/recibo-pdf.webp" alt="Recibo de Serviço gerado pelo Silica: cabeçalho com logo, itens, sinal e saldo, QR Pix e duas assinaturas" loading="lazy" width="720" height="678" style="border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-md)">
           <figcaption data-lang="pt" lang="pt-BR">Um recibo real gerado pelo app: número da OS, sinal abatido, QR Pix com o saldo e as duas assinaturas.</figcaption>
           <figcaption data-lang="en" lang="en">A real receipt generated by the app: order number, down payment deducted, Pix QR with the balance and both signatures.</figcaption>
         </figure>
-        <p data-lang="pt" lang="pt-BR">Antes de gerar, você escolhe o que sai no documento (QR Pix, observações, garantia, dados bancários, seus dados de contato, os do cliente e a marca d'água com o seu nome) e o app lembra suas escolhas. Você compartilha o PDF direto pelo WhatsApp, envia uma <strong>versão em texto formatado</strong> (com ou sem emojis, com prévia para revisar e editar antes do envio; o <strong>código Pix copia-e-cola vai numa mensagem separada</strong>, pronta para o cliente copiar, e se o telefone do cliente estiver na OS o WhatsApp abre direto na conversa dele) ou <strong>salva o PDF no celular</strong>, na pasta que escolher. Na OS você define <strong>quem paga</strong>: cliente direto (valor total) ou <strong>empresa/condomínio</strong>, que sem nota fiscal retém 11% de INSS (RPA) e paga o líquido. Nesse caso o recibo mostra o desconto e o <strong>QR Pix já cobra o valor líquido</strong>. Cálculo de referência, sem valor fiscal.</p>
-        <p data-lang="en" lang="en">Before generating, you choose what goes into the document (Pix QR, notes, warranty, bank details, your contact info, the client's and the watermark with your name) and the app remembers your choices. You share the PDF straight to WhatsApp, send a <strong>formatted text version</strong> (with or without emojis, with a preview you can review and edit before sending; the <strong>copy-and-paste Pix code goes in a separate message</strong>, ready for the client to copy, and if the client's phone is on the order WhatsApp opens straight in their chat) or <strong>save the PDF to your phone</strong>, in a folder you pick. On the order you set <strong>who pays</strong>: the client directly (full amount) or a <strong>company/condo</strong>, which without a tax invoice withholds 11% INSS (RPA) and pays the net. In that case the receipt shows the deduction and the <strong>Pix QR already charges the net amount</strong>. Reference calculation, no tax validity.</p>
+        <p data-lang="pt" lang="pt-BR">Antes de gerar, você escolhe o que sai no documento (QR Pix, observações, garantia, dados bancários, seus dados de contato, os do cliente, a marca d'água com o seu nome, a multa e os juros por atraso — quando a OS de fato tiver encargo — e o aviso de que o documento não tem valor fiscal, que vem desligado por padrão) e o app lembra suas escolhas. Você compartilha o PDF direto pelo WhatsApp, envia uma <strong>versão em texto formatado</strong> (com ou sem emojis, com prévia para revisar e editar antes do envio; o <strong>código Pix copia-e-cola vai numa mensagem separada</strong>, pronta para o cliente copiar, e se o telefone do cliente estiver na OS o WhatsApp abre direto na conversa dele) ou <strong>salva o PDF no celular</strong>, na pasta que escolher. Na OS você define <strong>quem paga</strong>: cliente direto (valor total) ou <strong>empresa/condomínio</strong>, que sem nota fiscal retém 11% de INSS (RPA) e paga o líquido. Nesse caso o recibo mostra o desconto e o <strong>QR Pix já cobra o valor líquido</strong>. Cálculo de referência, sem valor fiscal.</p>
+        <p data-lang="en" lang="en">Before generating, you choose what goes into the document (Pix QR, notes, warranty, bank details, your contact info, the client's, the watermark with your name, the late fee and interest — when the order actually carried one — and the note that the document has no fiscal value, which starts off by default) and the app remembers your choices. You share the PDF straight to WhatsApp, send a <strong>formatted text version</strong> (with or without emojis, with a preview you can review and edit before sending; the <strong>copy-and-paste Pix code goes in a separate message</strong>, ready for the client to copy, and if the client's phone is on the order WhatsApp opens straight in their chat) or <strong>save the PDF to your phone</strong>, in a folder you pick. On the order you set <strong>who pays</strong>: the client directly (full amount) or a <strong>company/condo</strong>, which without a tax invoice withholds 11% INSS (RPA) and pays the net. In that case the receipt shows the deduction and the <strong>Pix QR already charges the net amount</strong>. Reference calculation, no tax validity.</p>
       </section>
 
       <section id="assinatura">
@@ -189,8 +240,8 @@
 
       <section id="ciclo">
         <h2 data-lang="pt" lang="pt-BR">Cancelar, reativar e por que OS não se exclui</h2><h2 data-lang="en" lang="en">Cancel, reactivate and why orders aren't deleted</h2>
-        <p data-lang="pt" lang="pt-BR">O cliente desistiu? A OS <strong>não é apagada</strong>: ela é <strong>cancelada</strong>. O número e o histórico ficam preservados (sua numeração nunca "pula"), ela sai dos totais, do Raio-X e da Sentinela, e a repetição é encerrada. As canceladas ficam numa seção própria, recolhida, e podem ser <strong>reativadas</strong> a qualquer momento. A OS volta exatamente ao estado em que estava, seja serviço ou orçamento.</p>
-        <p data-lang="en" lang="en">Client backed out? The order is <strong>not erased</strong>: it is <strong>canceled</strong>. Its number and history are preserved (your numbering never "skips"), it leaves the totals, the X-Ray and the Sentinel, and recurrence is ended. Canceled orders sit in their own collapsed section and can be <strong>reactivated</strong> anytime. The order returns to exactly the state it was in, service or quote.</p>
+        <p data-lang="pt" lang="pt-BR">O cliente desistiu? A OS <strong>não é apagada</strong>: ela é <strong>cancelada</strong>. O número e o histórico ficam preservados (sua numeração nunca "pula"), ela sai dos totais, do Raio-X e da Sentinela, e a repetição é encerrada. As canceladas ficam numa seção própria, recolhida, e podem ser <strong>reativadas</strong> a qualquer momento. A OS volta exatamente ao estado em que estava, seja serviço ou orçamento. Se a OS estiver <strong>parcelada</strong>, cancelar ou reativar vale para o <strong>documento inteiro</strong>: todas as parcelas do grupo mudam juntas.</p>
+        <p data-lang="en" lang="en">Client backed out? The order is <strong>not erased</strong>: it is <strong>canceled</strong>. Its number and history are preserved (your numbering never "skips"), it leaves the totals, the X-Ray and the Sentinel, and recurrence is ended. Canceled orders sit in their own collapsed section and can be <strong>reactivated</strong> anytime. The order returns to exactly the state it was in, service or quote. If the order is <strong>split into installments</strong>, canceling or reactivating applies to the <strong>whole document</strong>: every installment in the group changes together.</p>
         <div class="callout tip">
           <div class="callout-title">🔒 <span data-lang="pt" lang="pt-BR">OS recebida é protegida</span><span data-lang="en" lang="en">Paid orders are protected</span></div>
           <p data-lang="pt" lang="pt-BR">Depois que você marca uma OS como recebida, ela fica <strong>bloqueada para edição e cancelamento</strong>. Para mudar qualquer coisa, primeiro <strong>reabra</strong> a OS (o valor sai do "Recebido"). Assim, o documento que o cliente recebeu nunca divergiu do que está registrado.</p>
