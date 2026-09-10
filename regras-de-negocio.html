@@ -152,13 +152,22 @@
       <section id="faturas">
         <h2 data-lang="pt" lang="pt-BR">Faturas de cartão</h2><h2 data-lang="en" lang="en">Card invoices</h2>
         <ul>
-          <li data-lang="pt" lang="pt-BR"><strong>Mês da fatura:</strong> compra a partir do dia de fechamento entra na fatura do mês seguinte.</li>
-          <li data-lang="en" lang="en"><strong>Invoice month:</strong> a purchase on/after the closing day goes to next month's invoice.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Ciclo da fatura:</strong> compra a partir do dia de fechamento (inclusive) entra no ciclo do mês seguinte.</li>
+          <li data-lang="en" lang="en"><strong>Invoice cycle:</strong> a purchase on/after the closing day goes into next month's cycle.</li>
+          <li data-lang="pt" lang="pt-BR"><strong>Mês do vencimento:</strong> o vencimento cai no mesmo mês do fechamento quando o dia de vencimento é <strong>maior</strong> que o dia de fechamento. Quando o dia de vencimento é <strong>igual ou menor</strong> que o dia de fechamento — o caso mais comum no Brasil, como fechar dia 25 e vencer dia 5 —, o vencimento vai para o mês <strong>seguinte</strong> ao fechamento. A fatura aparece na timeline no mês em que <strong>vence</strong>, que é quando o dinheiro sai.</li>
+          <li data-lang="en" lang="en"><strong>Due month:</strong> the due date falls in the same month as the closing when the due day is <strong>greater</strong> than the closing day. When the due day is <strong>equal to or less</strong> than the closing day — the most common case in Brazil, like closing on the 25th and due on the 5th —, the due date moves to the month <strong>after</strong> the closing. The invoice shows up on the timeline in the month it's <strong>due</strong>, which is when the money leaves.</li>
           <li data-lang="pt" lang="pt-BR"><strong>Fatura reaberta:</strong> se você compra de novo após pagar, a timeline mostra só o valor não pago.</li>
           <li data-lang="en" lang="en"><strong>Reopened invoice:</strong> if you buy again after paying, the timeline shows only the unpaid amount.</li>
           <li data-lang="pt" lang="pt-BR"><strong>Limite disponível</strong> = limite − despesas não pagas.</li>
           <li data-lang="en" lang="en"><strong>Available limit</strong> = limit − unpaid expenses.</li>
         </ul>
+        <div class="example">
+          <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
+          <ul>
+            <li data-lang="pt" lang="pt-BR">Cartão fecha dia 25 e vence dia 5: uma compra em 09/09/2026 entra na fatura que fecha em 25/09/2026 e vence em 05/10/2026.</li>
+            <li data-lang="en" lang="en">Card closes on the 25th and is due on the 5th: a purchase on 2026-09-09 goes into the invoice that closes on 2026-09-25 and is due on 2026-10-05.</li>
+          </ul>
+        </div>
       </section>
 
       <section id="recorrencia">

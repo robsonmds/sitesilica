@@ -141,15 +141,15 @@
         <p data-lang="pt" lang="pt-BR">Cadastre seus cartões em <strong>Menu › Gerenciar Cartões</strong> (nome, limite, dia de fechamento, dia de vencimento, cor). Ao lançar despesas em um cartão, elas não aparecem soltas: o Silica agrupa tudo em uma <strong>fatura única</strong> por mês na timeline.</p>
         <p data-lang="en" lang="en">Register your cards in <strong>Menu › Manage Cards</strong> (name, limit, closing day, due day, color). When you add expenses to a card, they don't appear loose: Silica groups them into a <strong>single invoice</strong> per month in the timeline.</p>
         <h3 data-lang="pt" lang="pt-BR">Como o mês da fatura é decidido</h3><h3 data-lang="en" lang="en">How the invoice month is decided</h3>
-        <p data-lang="pt" lang="pt-BR">Se a compra cai <strong>a partir do dia de fechamento</strong>, entra na fatura do <strong>mês seguinte</strong>; senão, na fatura do mês atual.</p>
-        <p data-lang="en" lang="en">If a purchase falls <strong>on or after the closing day</strong>, it goes into <strong>next month's</strong> invoice; otherwise, the current month's.</p>
+        <p data-lang="pt" lang="pt-BR">A compra entra no <strong>ciclo do mês seguinte</strong> se cair a partir do dia de fechamento; senão, no ciclo do mês atual. Já o <strong>mês em que a fatura aparece na timeline</strong> é o mês do <strong>vencimento</strong>: se o dia de vencimento for maior que o dia de fechamento, ela vence no mesmo mês do fechamento; se for igual ou menor — o mais comum no Brasil, como fechar dia 25 e vencer dia 5 —, ela vence no mês <strong>seguinte</strong> ao fechamento.</p>
+        <p data-lang="en" lang="en">A purchase goes into <strong>next month's cycle</strong> if it falls on or after the closing day; otherwise, the current month's cycle. But the <strong>month the invoice shows up on the timeline</strong> is the <strong>due</strong> month: if the due day is greater than the closing day, it's due the same month as the closing; if it's equal to or less — the most common case in Brazil, like closing on the 25th and due on the 5th —, it's due the month <strong>after</strong> the closing.</p>
         <div class="example">
           <div class="ex-label">🔎 <span data-lang="pt" lang="pt-BR">Exemplo</span><span data-lang="en" lang="en">Example</span></div>
           <ul>
-            <li data-lang="pt" lang="pt-BR">Cartão fecha dia <b>20</b>. Compra em <b>18/abril</b> → fatura de <b>abril</b>.</li>
-            <li data-lang="en" lang="en">Card closes on the <b>20th</b>. Purchase on <b>Apr 18</b> → <b>April</b> invoice.</li>
-            <li data-lang="pt" lang="pt-BR">Compra em <b>22/abril</b> → cai na fatura de <b>maio</b>.</li>
-            <li data-lang="en" lang="en">Purchase on <b>Apr 22</b> → goes to the <b>May</b> invoice.</li>
+            <li data-lang="pt" lang="pt-BR">Cartão fecha dia <b>10</b> e vence dia <b>20</b>: compra em <b>08/abril</b> fecha em 10/abril e vence em 20/abril → aparece na timeline de <b>abril</b>.</li>
+            <li data-lang="en" lang="en">Card closes on the <b>10th</b> and is due on the <b>20th</b>: a purchase on <b>Apr 8</b> closes on Apr 10 and is due on Apr 20 → shows up in <b>April</b>'s timeline.</li>
+            <li data-lang="pt" lang="pt-BR">Cartão fecha dia <b>25</b> e vence dia <b>5</b>: compra em <b>09/setembro</b> fecha em 25/setembro, mas só vence em 05/outubro → aparece na timeline de <b>outubro</b>.</li>
+            <li data-lang="en" lang="en">Card closes on the <b>25th</b> and is due on the <b>5th</b>: a purchase on <b>Sep 9</b> closes on Sep 25 but is only due on Oct 5 → shows up in <b>October</b>'s timeline.</li>
           </ul>
         </div>
         <h3 data-lang="pt" lang="pt-BR">Limite, abatimento e fatura reaberta</h3><h3 data-lang="en" lang="en">Limit, partial payment & reopened invoice</h3>
