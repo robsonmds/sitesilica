@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"[Convert]::ToBase64String\\([IO.File]::ReadAllBytes\\('assets/fonts/sora-var.woff2'\\)\\)\")",
+      "Bash(powershell -Command \"[Convert]::ToBase64String\\([IO.File]::ReadAllBytes\\('assets/fonts/sora-var.woff2'\\)\\) | Out-File -Encoding ascii -NoNewline 'C:/Users/robson/Desktop/SiteSilica/sitesilica/.sora_b64.txt'\")"
+    ]
+  }
+}
