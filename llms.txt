@@ -1,12 +1,12 @@
 # Silica
 
-> Silica é um aplicativo Android de gestão financeira com quatro espaços isolados — Pessoal, Negócios, Vendas e Serviços. Funciona offline, com os dados armazenados no aparelho. Tem um plano Grátis (perfil Pessoal) e um plano PRO (R$ 49,90) que desbloqueia os demais perfis, temas premium, backup criptografado e exportação CSV.
+> Silica é um aplicativo Android de gestão financeira com quatro espaços isolados — Pessoal, Negócios, Vendas e Serviços. Funciona offline, com os dados armazenados no aparelho. Tem um plano Grátis (perfil Pessoal) e um plano PRO que desbloqueia os demais perfis, temas premium, backup criptografado e exportação CSV. O PRO sai por R$ 14,90/mês, R$ 119,90/ano ou R$ 299,90 no vitalício (pagamento único), com 20 dias grátis no mensal e no anual.
 
 ## Produto
 - [Início](https://silica.app.br/): Silica: gestão financeira com quatro espaços isolados (Pessoal, Negócios, Vendas e Serviços). Controle contas, cartões, lucro, estoque, orçamentos e recibos — tudo offline no seu Android.
 - [Começar](https://silica.app.br/comecar.html): Primeiros passos no Silica: a tela inicial, como adicionar lançamentos, gestos essenciais, as cores das contas e como alternar entre os espaços.
 - [Perfis](https://silica.app.br/perfis.html): Os quatro espaços isolados do Silica — Pessoal, Negócios, Vendas e Serviços — e como habilitar, desabilitar e definir o perfil principal.
-- [Planos](https://silica.app.br/planos.html): Silica Grátis vs PRO: compare os recursos. PRO desbloqueia os perfis Negócios, Vendas e Serviços, temas premium, backup criptografado e exportação CSV.
+- [Planos](https://silica.app.br/planos.html): Silica Grátis vs PRO: o PRO sai por R$ 14,90/mês, R$ 119,90/ano ou R$ 299,90 no vitalício, com 20 dias grátis no mensal e no anual. Compare os recursos.
 
 ## Recursos
 - [Finanças (Pessoal & Negócios)](https://silica.app.br/financas.html): Despesas, rendas, recorrência, assinaturas, parcelamento, cartões de crédito, categorias e saúde financeira no Silica — com regras e exemplos.
