@@ -1,12 +1,12 @@
 # Silica
 
-> Silica é um aplicativo Android de gestão financeira com quatro espaços isolados — Pessoal, Negócios, Vendas e Serviços. Funciona offline, com os dados armazenados no aparelho. Tem um plano Grátis (perfil Pessoal) e um plano PRO que desbloqueia os demais perfis, temas premium, backup criptografado e exportação CSV. O PRO sai por R$ 14,90/mês, R$ 119,90/ano ou R$ 299,90 no vitalício (pagamento único), com 20 dias grátis no mensal e no anual.
+> Silica é um aplicativo de gestão financeira para Android e iPhone com quatro espaços isolados — Pessoal, Negócios, Vendas e Serviços. Funciona offline, com os dados armazenados no aparelho. Tem um plano Grátis (perfil Pessoal) e um plano PRO que desbloqueia os demais perfis, temas premium, backup criptografado e exportação CSV. O PRO sai por R$ 14,90/mês, R$ 119,90/ano ou R$ 299,90 no vitalício (pagamento único), com teste grátis no mensal e no anual: 20 dias no Android e 14 no iPhone. Os preços são os mesmos nas duas lojas; a compra vale na loja em que foi feita.
 
 ## Produto
-- [Início](https://silica.app.br/): Silica: gestão financeira com quatro espaços isolados (Pessoal, Negócios, Vendas e Serviços). Controle contas, cartões, lucro, estoque, orçamentos e recibos — tudo offline no seu Android.
+- [Início](https://silica.app.br/): Silica: gestão financeira com quatro espaços isolados (Pessoal, Negócios, Vendas e Serviços). Controle contas, cartões, lucro, estoque, orçamentos e recibos — tudo offline no seu Android ou iPhone.
 - [Começar](https://silica.app.br/comecar.html): Primeiros passos no Silica: a tela inicial, como adicionar lançamentos, gestos essenciais, as cores das contas e como alternar entre os espaços.
 - [Perfis](https://silica.app.br/perfis.html): Os quatro espaços isolados do Silica — Pessoal, Negócios, Vendas e Serviços — e como habilitar, desabilitar e definir o perfil principal.
-- [Planos](https://silica.app.br/planos.html): Silica Grátis vs PRO: o PRO sai por R$ 14,90/mês, R$ 119,90/ano ou R$ 299,90 no vitalício, com 20 dias grátis no mensal e no anual. Compare os recursos.
+- [Planos](https://silica.app.br/planos.html): Silica Grátis vs PRO: o PRO sai por R$ 14,90/mês, R$ 119,90/ano ou R$ 299,90 no vitalício, com teste grátis no mensal e no anual (20 dias no Android, 14 no iPhone). Compare os recursos.
 
 ## Recursos
 - [Finanças (Pessoal & Negócios)](https://silica.app.br/financas.html): Despesas, rendas, recorrência, assinaturas, parcelamento, cartões de crédito, categorias e saúde financeira no Silica — com regras e exemplos.
@@ -25,5 +25,6 @@
 - [Termos de Uso](https://silica.app.br/termos.html): Termos de Uso do aplicativo Silica: licença, assinatura PRO, isenções e responsabilidades.
 
 ## Optional
-- Disponível apenas para Android, via Google Play: https://play.google.com/store/apps/details?id=com.nosbor.silica
+- Disponível para Android, via Google Play: https://play.google.com/store/apps/details?id=com.nosbor.silica
+- Disponível para iPhone (iOS 17 ou posterior), via App Store. O backup é o mesmo arquivo nas duas plataformas: dá para gerar no Android e restaurar no iPhone, ou o contrário.
 - Desenvolvido por Robson Mesquita (desenvolvedor individual). Contato: ro_bs_on@outlook.com

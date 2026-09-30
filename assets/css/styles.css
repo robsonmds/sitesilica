@@ -351,6 +351,10 @@ kbd { background: var(--surface-2); border: 1px solid var(--border-strong); bord
 .btn-store small { display: block; font-size: .68rem; font-weight: 600; opacity: .8; letter-spacing: .04em; text-transform: uppercase; line-height: 1; }
 .btn-store b { display: block; font-size: 1.12rem; font-weight: 800; line-height: 1.15; }
 
+/* Duas lojas lado a lado (Google Play e App Store); quebram linha no celular. */
+.store-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-cta .store-row, .cta-band .store-row { justify-content: inherit; }
+
 /* ---------- Badges ---------- */
 .badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: .74rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; border: 1px solid transparent; }
 .badge-pro { background: var(--grad); color: #fff; }
@@ -376,6 +380,18 @@ kbd { background: var(--surface-2); border: 1px solid var(--border-strong); bord
 :root[data-theme="ouro"] .device,
 :root[data-theme="grafite"] .device { border-color: var(--border-strong); }
 .device img { width: 100%; display: block; }
+/* iPhone: cantos mais redondos e a ilha dinâmica desenhada em CSS — nenhuma imagem de aparelho
+   da Apple. O print entra sem a barra de status, que a ilha substitui. */
+.device-iphone { position: relative; border-radius: 48px; border-width: 11px; padding-top: 34px; }
+.device-iphone::before {
+  content: ""; position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+  width: 31%; height: 17px; border-radius: 999px; background: #0b1220; z-index: 1;
+}
+.device-iphone { background: var(--surface, #fff); }
+:root[data-theme="dark"] .device-iphone,
+:root[data-theme="ouro"] .device-iphone,
+:root[data-theme="grafite"] .device-iphone { background: #111; }
+.device-label { font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); text-align: center; }
 .device-tilt { transform: rotate(-3deg); }
 .device-row { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; }
 .device-row .device { max-width: 240px; }
@@ -816,3 +832,26 @@ p { text-wrap: pretty; }
   .hero-media { animation: none !important; }
   .read-progress { display: none !important; }
 }
+
+/* ---------- Hero com os dois aparelhos (Android atrás, iPhone à frente) ---------- */
+.hero-duo { align-items: flex-end; gap: 0; }
+.hero-duo .shot { flex: 0 0 auto; }
+.hero-duo .device { max-width: 250px; }
+.hero-duo-android { transform: translateX(26px); z-index: 0; }
+.hero-duo-iphone { transform: translate(-26px, 28px); z-index: 1; }
+.hero-duo-iphone .device { transform: rotate(3deg); }
+@media (max-width: 720px) {
+  .hero-duo .device { max-width: 170px; }
+  .hero-duo-android { transform: translateX(14px); }
+  .hero-duo-iphone { transform: translate(-14px, 18px); }
+}
+
+/* Print que acompanha o tema do site (claro × escuro). */
+.only-dark { display: none !important; }
+:root[data-theme="dark"] .only-dark,
+:root[data-theme="ouro"] .only-dark,
+:root[data-theme="grafite"] .only-dark { display: block !important; }
+:root[data-theme="dark"] .only-light,
+:root[data-theme="ouro"] .only-light,
+:root[data-theme="grafite"] .only-light { display: none !important; }
+.device-row > div { display: flex; flex-direction: column; align-items: center; gap: 8px; }
