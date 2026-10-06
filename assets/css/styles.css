@@ -353,7 +353,7 @@ kbd { background: var(--surface-2); border: 1px solid var(--border-strong); bord
 
 /* Selo oficial da App Store: arte da Apple sem alteração, na altura do botão do Google Play.
    Regras da Apple: selo preto quando há outra loja ao lado, App Store primeiro, respiro de 1/4 da altura. */
-.btn-appstore { display: inline-flex; align-items: center; border-radius: 10px; transition: transform .12s ease, box-shadow .15s; }
+.btn-appstore { display: inline-flex; align-items: center; border-radius: 12px; transition: transform .12s ease, box-shadow .15s; }
 .btn-appstore:hover { box-shadow: var(--shadow-md); }
 .btn-appstore:active { transform: translateY(1px); }
 .btn-appstore img { display: block; height: 57.5px; width: auto; }
