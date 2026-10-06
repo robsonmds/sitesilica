@@ -26,5 +26,5 @@
 
 ## Optional
 - Disponível para Android, via Google Play: https://play.google.com/store/apps/details?id=com.nosbor.silica
-- Disponível para iPhone (iOS 17 ou posterior), via App Store. O backup é o mesmo arquivo nas duas plataformas: dá para gerar no Android e restaurar no iPhone, ou o contrário.
+- Disponível para iPhone (iOS 17 ou posterior), via App Store: https://apps.apple.com/br/app/silica/id6817602266. O backup é o mesmo arquivo nas duas plataformas: dá para gerar no Android e restaurar no iPhone, ou o contrário.
 - Desenvolvido por Robson Mesquita (desenvolvedor individual). Contato: ro_bs_on@outlook.com
