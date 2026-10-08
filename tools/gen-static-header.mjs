@@ -19,7 +19,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const SITE = path.dirname(path.dirname(fileURLToPath(import.meta.url))); // raiz do site (pai de /tools)
-const STORE_URL = "https://play.google.com/store/apps/details?id=com.nosbor.silica&hl=pt_BR";
+const STORE_URL = "https://play.google.com/store/apps/details?id=com.nosbor.silica&hl=pt_BR&referrer=utm_source%3Dsilica.app.br%26utm_medium%3Dsite%26utm_campaign%3Dbotao_loja";
 // Silica para iPhone publicado em 06/10/2026 (id conferido em itunes.apple.com/lookup?bundleId=br.app.silica).
 // Os botões fora do header/rodapé (hero, CTA) repetem este mesmo HTML: grep btn-appstore.
 const APP_STORE_URL = "https://apps.apple.com/br/app/silica/id6817602266";
