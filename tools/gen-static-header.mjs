@@ -22,7 +22,10 @@ const SITE = path.dirname(path.dirname(fileURLToPath(import.meta.url))); // raiz
 const STORE_URL = "https://play.google.com/store/apps/details?id=com.nosbor.silica&hl=pt_BR&referrer=utm_source%3Dsilica.app.br%26utm_medium%3Dsite%26utm_campaign%3Dbotao_loja";
 // Silica para iPhone publicado em 06/10/2026 (id conferido em itunes.apple.com/lookup?bundleId=br.app.silica).
 // Os botões fora do header/rodapé (hero, CTA) repetem este mesmo HTML: grep btn-appstore.
-const APP_STORE_URL = "https://apps.apple.com/br/app/silica/id6817602266";
+const APP_STORE_URL = "https://apps.apple.com/br/app/silica/id6817602266?pt=129536197&amp;ct=site_botao&amp;mt=8";
+// pt = provider token da conta Apple (gerado em App Store Connect > Analytics > Campanhas); ct = campanha.
+// Cada pagina tambem tem, antes de </body>, o beacon do Cloudflare Web Analytics, e a CSP libera
+// static.cloudflareinsights.com (script) e cloudflareinsights.com (connect). Pagina nova: copiar os dois.
 const SUPPORT_EMAIL = "ro_bs_on@outlook.com";
 const MAILTO = "mailto:" + SUPPORT_EMAIL + "?subject=" + encodeURIComponent("Silica — Suporte");
 
