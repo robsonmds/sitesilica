@@ -12,16 +12,19 @@
   function wire() {
     var root = document.documentElement;
 
-    // Tema — menu com as 6 opções (marca a atual e aplica a escolhida)
-    updateThemeMenu();
-    document.querySelectorAll("[data-theme-choice]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var id = btn.getAttribute("data-theme-choice");
-        root.setAttribute("data-theme", id);
-        try { localStorage.setItem("silica-theme", id); } catch (e) {}
-        updateThemeMenu();
-      });
+    // Tema — "Silica Glass" (escuro, padrão) × claro. Valores antigos (grafite, dark, zen,
+    // ouro, rosa) contam como Glass: o CSS só distingue data-theme="light".
+    var themeBtn = document.getElementById("themeBtn");
+    if (themeBtn) themeBtn.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "light" ? "glass" : "light";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("silica-theme", next); } catch (e) {}
+      syncThemeBtn();
     });
+    function syncThemeBtn() {
+      if (themeBtn) themeBtn.setAttribute("aria-pressed", root.getAttribute("data-theme") === "light" ? "true" : "false");
+    }
+    syncThemeBtn();
 
     // Idioma
     var langBtn = document.getElementById("langBtn");
@@ -29,28 +32,71 @@
       var next = root.getAttribute("data-lang") === "en" ? "pt" : "en";
       setLang(next);
       try { localStorage.setItem("silica-lang", next); } catch (e) {}
+      pauseAllVideos();
     });
 
     // Menu mobile
     var navToggle = document.getElementById("navToggle");
+    function closeMobileNav(returnFocus) {
+      if (!document.body.classList.contains("nav-open")) return;
+      document.body.classList.remove("nav-open");
+      if (navToggle) {
+        navToggle.setAttribute("aria-expanded", "false");
+        if (returnFocus) navToggle.focus();
+      }
+    }
     if (navToggle) navToggle.addEventListener("click", function () {
       var open = document.body.classList.toggle("nav-open");
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
+    // O menu aberto cobre a página: fecha quando o foco sai do cabeçalho (WCAG 2.4.11)
+    var nav = document.querySelector(".site-header .nav");
+    if (nav) nav.addEventListener("focusout", function (e) {
+      if (!nav.contains(e.relatedTarget)) closeMobileNav(false);
+    });
 
     // Dropdown (clique — importante no mobile e para acessibilidade)
+    function closeDrops(except) {
+      document.querySelectorAll(".nav-drop.open").forEach(function (d) {
+        if (d === except) return;
+        d.classList.remove("open");
+        var b = d.querySelector(":scope > button");
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+    }
     document.querySelectorAll(".nav-drop > button").forEach(function (btn) {
+      var drop = btn.parentElement;
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
-        var drop = btn.parentElement;
         var willOpen = !drop.classList.contains("open");
-        document.querySelectorAll(".nav-drop.open").forEach(function (d) { d.classList.remove("open"); });
+        closeDrops(drop);
         drop.classList.toggle("open", willOpen);
         btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
       });
+      drop.addEventListener("focusout", function (e) {
+        if (!drop.contains(e.relatedTarget)) {
+          drop.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+      drop.addEventListener("mouseleave", function () { drop.classList.remove("dismissed"); });
     });
-    document.addEventListener("click", function () {
-      document.querySelectorAll(".nav-drop.open").forEach(function (d) { d.classList.remove("open"); });
+    document.addEventListener("click", function () { closeDrops(null); });
+
+    // Escape fecha menus abertos (inclusive o aberto pelo mouse) e devolve o foco ao botão
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var opened = document.querySelector(".nav-drop.open");
+      document.querySelectorAll(".nav-drop").forEach(function (d) {
+        if (d.matches(":hover")) d.classList.add("dismissed");
+      });
+      if (opened) {
+        closeDrops(null);
+        var b = opened.querySelector(":scope > button");
+        if (b) b.focus();
+        return;
+      }
+      closeMobileNav(true);
     });
 
     // Fecha o menu ao clicar num link
@@ -83,6 +129,18 @@
     initFaqSearch();
     initHeaderScroll();
     initReadProgress();
+    initVideos();
+  }
+
+  // Vídeos: só um toca por vez (os outros pausam) e todos pausam ao trocar de idioma,
+  // porque a versão do outro idioma fica escondida.
+  function pauseAllVideos(except) {
+    document.querySelectorAll("video").forEach(function (v) { if (v !== except && !v.paused) v.pause(); });
+  }
+  function initVideos() {
+    document.querySelectorAll("video").forEach(function (v) {
+      v.addEventListener("play", function () { pauseAllVideos(v); });
+    });
   }
 
   // Cabeçalho condensa (sombra + altura menor) depois de rolar um pouco
@@ -137,7 +195,10 @@
     btn.type = "button";
     btn.setAttribute("aria-label", "Voltar ao topo");
     btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
-    btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    btn.addEventListener("click", function () {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    });
     document.body.appendChild(btn);
     var onScroll = function () { btn.classList.toggle("show", window.scrollY > 600); };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -150,19 +211,41 @@
     if (!imgs.length) return;
     var box = document.createElement("div");
     box.className = "lightbox";
-    box.innerHTML = '<button class="lightbox-close" type="button" aria-label="Fechar">×</button><img alt="">';
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.innerHTML = '<button class="lightbox-close" type="button">×</button><img alt="">';
     document.body.appendChild(box);
     var big = box.querySelector("img");
-    var close = function () { box.classList.remove("open"); document.body.style.overflow = ""; };
+    var closeBtn = box.querySelector(".lightbox-close");
+    var opener = null;
+    var close = function () {
+      if (!box.classList.contains("open")) return;
+      box.classList.remove("open");
+      document.body.style.overflow = "";
+      if (opener) opener.focus();
+    };
+    var open = function (im) {
+      opener = im;
+      big.src = im.currentSrc || im.src;
+      big.alt = im.alt || "";
+      box.setAttribute("aria-label", im.alt || "");
+      box.classList.add("open");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    };
     imgs.forEach(function (im) {
-      im.addEventListener("click", function () {
-        big.src = im.currentSrc || im.src;
-        big.alt = im.alt || "";
-        box.classList.add("open");
-        document.body.style.overflow = "hidden";
+      // Telas dentro de um link (cards dos espaços) seguem o link; não abrem o lightbox
+      if (im.closest("a")) return;
+      // Ampliável também pelo teclado (WCAG 2.1.1)
+      im.setAttribute("tabindex", "0");
+      im.setAttribute("role", "button");
+      im.addEventListener("click", function () { open(im); });
+      im.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(im); }
       });
     });
     box.addEventListener("click", close);
+    box.addEventListener("keydown", function (e) { if (e.key === "Tab") { e.preventDefault(); closeBtn.focus(); } });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   }
 
@@ -215,7 +298,7 @@
   function initReveal() {
     if (!("IntersectionObserver" in window)) return;
     // Grupos cujos filhos revelam em cascata (stagger por índice)
-    var STAGGER = ["grid", "shot-row", "plans", "origin-steps"];
+    var STAGGER = ["grid", "shot-row", "plans", "origin-steps", "hp-spaces", "bento", "hp-plans", "hp-videos"];
     function staggerDelay(el) {
       var p = el.parentElement;
       if (!p) return 0;
@@ -227,7 +310,7 @@
       return 0;
     }
     var targets = Array.prototype.slice.call(
-      document.querySelectorAll(".card, .split, figure.shot, .section-head, .example, .plan, .cta-band, .origin, .origin-step, .origin-arrow")
+      document.querySelectorAll(".card, .split, figure.shot, .section-head, .example, .plan, .cta-band, .origin, .origin-step, .origin-arrow, .hp-reveal")
     );
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -251,19 +334,29 @@
     }, 3000);
   }
 
-  function updateThemeMenu() {
-    var active = document.documentElement.getAttribute("data-theme");
-    document.querySelectorAll("[data-theme-choice]").forEach(function (btn) {
-      var isActive = btn.getAttribute("data-theme-choice") === active;
-      btn.classList.toggle("active", isActive);
-      if (isActive) btn.setAttribute("aria-current", "true"); else btn.removeAttribute("aria-current");
+  // Textos alternativos e rótulos que não têm versão duplicada por idioma no HTML:
+  // o PT fica no atributo e o EN em data-alt-en / data-label-en (WCAG 3.1.2).
+  function localizeLabels(lang) {
+    var en = lang === "en";
+    document.querySelectorAll("img[data-alt-en]").forEach(function (im) {
+      if (!im.hasAttribute("data-alt-pt")) im.setAttribute("data-alt-pt", im.getAttribute("alt") || "");
+      im.setAttribute("alt", en ? im.getAttribute("data-alt-en") : im.getAttribute("data-alt-pt"));
     });
+    document.querySelectorAll("[data-label-en]").forEach(function (el) {
+      if (!el.hasAttribute("data-label-pt")) el.setAttribute("data-label-pt", el.getAttribute("aria-label") || "");
+      el.setAttribute("aria-label", en ? el.getAttribute("data-label-en") : el.getAttribute("data-label-pt"));
+    });
+    var top = document.querySelector(".to-top");
+    if (top) top.setAttribute("aria-label", en ? "Back to top" : "Voltar ao topo");
+    var lbClose = document.querySelector(".lightbox-close");
+    if (lbClose) lbClose.setAttribute("aria-label", en ? "Close" : "Fechar");
   }
 
   function setLang(lang) {
     var root = document.documentElement;
     root.setAttribute("data-lang", lang);
     root.setAttribute("lang", lang === "en" ? "en" : "pt-BR");
+    localizeLabels(lang);
     // Reajusta a altura das FAQs abertas (texto mudou de tamanho)
     document.querySelectorAll(".faq-item.open .faq-a").forEach(function (a) { a.style.maxHeight = a.scrollHeight + "px"; });
   }
@@ -289,6 +382,7 @@
     var footYear = document.getElementById("footYear");
     if (footYear) footYear.textContent = new Date().getFullYear();
     wire();
+    localizeLabels(document.documentElement.getAttribute("data-lang") || "pt");
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

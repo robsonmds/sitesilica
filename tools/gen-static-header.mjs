@@ -30,10 +30,12 @@ const SUPPORT_EMAIL = "ro_bs_on@outlook.com";
 const MAILTO = "mailto:" + SUPPORT_EMAIL + "?subject=" + encodeURIComponent("Silica — Suporte");
 
 const IC = {
-  menu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>',
+  menu: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>',
   chevDown: '<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>',
-  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>',
-  palette: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-1.1-.9-1.7-2-1.7h-1.8a2.5 2.5 0 0 1 0-5H18a1.8 1.8 0 0 0 1.6-2.7A9 9 0 0 0 12 3Z"/><circle cx="7.3" cy="10.2" r="1.15" fill="currentColor" stroke="none"/><circle cx="9.3" cy="15.3" r="1.15" fill="currentColor" stroke="none"/><circle cx="14.5" cy="16.4" r="1.15" fill="currentColor" stroke="none"/></svg>',
+  globe: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>',
+  // Botão de tema: o sol aparece no Glass (leva ao claro); a lua aparece no claro (leva ao Glass).
+  sun: '<svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>',
+  moon: '<svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>',
   play: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#00C3FF" d="M3.4 2.3c-.25.26-.4.66-.4 1.17v17.06c0 .5.15.9.4 1.17l.06.05L13 12.06v-.11L3.46 2.25l-.06.05z"/><path fill="#00E676" d="M16.2 15.28 13 12.06v-.11l3.2-3.22.07.04 3.79 2.15c1.08.61 1.08 1.62 0 2.24l-3.79 2.15-.07.04z"/><path fill="#FF3D57" d="m16.27 15.24-3.27-3.24-9.6 9.6c.36.37.94.42 1.6.05l11.27-6.41"/><path fill="#FFC400" d="M16.27 8.76 5 2.35C4.34 1.98 3.76 2.03 3.4 2.4l9.6 9.6 3.27-3.24z"/></svg>'
 };
 
@@ -42,13 +44,13 @@ const NAV = [
   { href: "comecar.html", pt: "Começar", en: "Get started" },
   { href: "perfis.html", pt: "Perfis", en: "Profiles" },
   { drop: true, pt: "Recursos", en: "Features", items: [
-    { href: "financas.html", ic: "💰", pt: "Finanças (Pessoal & Negócios)", en: "Finances (Personal & Business)" },
-    { href: "vendas.html", ic: "📦", pt: "Silica Vendas", en: "Silica Sales" },
-    { href: "servicos.html", ic: "🔧", pt: "Silica Serviços", en: "Silica Services" },
-    { href: "raiox.html", ic: "📊", pt: "Raio-X", en: "X-Ray" },
-    { href: "notificacoes.html", ic: "🔔", pt: "Notificações (Sentinela)", en: "Notifications (Sentinel)" },
-    { href: "seguranca-backup.html", ic: "🔒", pt: "Segurança & Backup", en: "Security & Backup" },
-    { href: "temas.html", ic: "🎨", pt: "Temas & Modo Zen", en: "Themes & Zen Mode" }
+    { href: "financas.html", pt: "Finanças (Pessoal & Negócios)", en: "Finances (Personal & Business)" },
+    { href: "vendas.html", pt: "Silica Vendas", en: "Silica Sales" },
+    { href: "servicos.html", pt: "Silica Serviços", en: "Silica Services" },
+    { href: "raiox.html", pt: "Raio-X", en: "X-Ray" },
+    { href: "notificacoes.html", pt: "Notificações (Sentinela)", en: "Notifications (Sentinel)" },
+    { href: "seguranca-backup.html", pt: "Segurança & Backup", en: "Security & Backup" },
+    { href: "temas.html", pt: "Temas & Modo Zen", en: "Themes & Zen Mode" }
   ]},
   { href: "regras-de-negocio.html", pt: "Regras", en: "Business rules" },
   { href: "planos.html", pt: "Planos", en: "Plans" },
@@ -56,37 +58,22 @@ const NAV = [
   { href: "contato.html", pt: "Contato", en: "Contact" }
 ];
 
-const THEMES = [
-  { id: "light", color: "#16a34a", pt: "Claro", en: "Light" },
-  { id: "dark", color: "#34d399", pt: "Escuro", en: "Dark" },
-  { id: "zen", color: "#5C7A63", pt: "Zen", en: "Zen" },
-  { id: "ouro", color: "#D6A94A", pt: "Ouro", en: "Gold" },
-  { id: "rosa", color: "#C6685C", pt: "Rosa", en: "Pink" },
-  { id: "grafite", color: "#2FBF8F", pt: "Grafite & Esmeralda", en: "Graphite & Emerald", defaultActive: true }
-];
+// Tema do site: "Silica Glass" (escuro, padrão) e claro. O menu de 6 temas (v5) virou um botão;
+// valores antigos salvos no navegador (grafite, dark, zen, ouro, rosa) caem no Glass pelo CSS.
 
 function t(pt, en) { return '<span data-lang="pt" lang="pt-BR">' + pt + '</span><span data-lang="en" lang="en">' + en + '</span>'; }
-
-function themeMenuHTML() {
-  return THEMES.map(function (th) {
-    var cls = th.defaultActive ? ' class="active"' : "";
-    var current = th.defaultActive ? ' aria-current="true"' : "";
-    return '<button type="button" data-theme-choice="' + th.id + '"' + cls + current + '>' +
-      '<span class="theme-dot" style="background:' + th.color + '"></span>' + t(th.pt, th.en) + "</button>";
-  }).join("");
-}
 
 function buildHeader(current) {
   var links = "";
   NAV.forEach(function (n) {
     if (n.drop) {
       var items = n.items.map(function (it) {
-        return '<a href="' + it.href + '"><span class="ic">' + it.ic + '</span>' + t(it.pt, it.en) + "</a>";
+        return '<a href="' + it.href + '">' + t(it.pt, it.en) + "</a>";
       }).join("");
       var activeChild = n.items.some(function (it) { return it.href === current; });
       links += '<div class="nav-drop' + (activeChild ? " has-active" : "") + '">' +
-        '<button type="button" aria-haspopup="true" aria-expanded="false">' + t(n.pt, n.en) + IC.chevDown + "</button>" +
-        '<div class="nav-drop-menu">' + items + "</div></div>";
+        '<button type="button" aria-expanded="false" aria-controls="menu-recursos">' + t(n.pt, n.en) + IC.chevDown + "</button>" +
+        '<div class="nav-drop-menu" id="menu-recursos">' + items + "</div></div>";
     } else {
       var active = n.href === current ? " active" : "";
       links += '<a class="' + active.trim() + '" href="' + n.href + '">' + t(n.pt, n.en) + "</a>";
@@ -95,15 +82,14 @@ function buildHeader(current) {
 
   return '<header class="site-header"><div class="container"><div class="nav">' +
       '<a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a>' +
-      '<button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">' + IC.menu + "</button>" +
-      '<nav class="nav-links">' + links + "</nav>" +
+      '<button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">' + IC.menu + "</button>" +
+      '<nav class="nav-links" id="site-nav">' + links + "</nav>" +
       '<div class="nav-actions">' +
-        '<button class="icon-btn lang-btn" id="langBtn" aria-label="Trocar idioma">' + IC.globe +
-          '<span data-lang="pt" lang="pt-BR">EN</span><span data-lang="en" lang="en">PT</span></button>' +
-        '<div class="nav-drop theme-drop">' +
-          '<button class="icon-btn theme-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Tema">' + IC.palette + "</button>" +
-          '<div class="nav-drop-menu theme-menu">' + themeMenuHTML() + "</div>" +
-        "</div>" +
+        '<button class="icon-btn lang-btn" id="langBtn" type="button">' + IC.globe +
+          '<span data-lang="pt" lang="pt-BR"><span class="sr-only">Mudar idioma para </span>EN</span>' +
+          '<span data-lang="en" lang="en"><span class="sr-only">Switch language to </span>PT</span></button>' +
+        '<button class="icon-btn theme-toggle" id="themeBtn" type="button" aria-pressed="false">' + IC.sun + IC.moon +
+          '<span class="sr-only">' + t("Tema claro", "Light theme") + "</span></button>" +
       "</div>" +
     "</div></div></header>";
 }
@@ -134,12 +120,12 @@ function buildFooter() {
         ) + "</p>" +
         '<div style="margin-top:16px">' + storeButtonHTML() + "</div>" +
       "</div>" +
-      '<div class="footer-col"><h4>' + t("Produto", "Product") + "</h4>" +
+      '<div class="footer-col"><h2 class="footer-h">' + t("Produto", "Product") + "</h2>" +
         '<a href="index.html">' + t("Início", "Home") + "</a>" +
         '<a href="comecar.html">' + t("Começar", "Get started") + "</a>" +
         '<a href="perfis.html">' + t("Perfis", "Profiles") + "</a>" +
         '<a href="planos.html">' + t("Planos", "Plans") + "</a></div>" +
-      '<div class="footer-col"><h4>' + t("Recursos", "Features") + "</h4>" +
+      '<div class="footer-col"><h2 class="footer-h">' + t("Recursos", "Features") + "</h2>" +
         '<a href="financas.html">' + t("Finanças", "Finances") + "</a>" +
         '<a href="vendas.html">' + t("Vendas", "Sales") + "</a>" +
         '<a href="servicos.html">' + t("Serviços", "Services") + "</a>" +
@@ -147,7 +133,7 @@ function buildFooter() {
         '<a href="notificacoes.html">' + t("Notificações", "Notifications") + "</a>" +
         '<a href="seguranca-backup.html">' + t("Segurança & Backup", "Security & Backup") + "</a>" +
         '<a href="temas.html">' + t("Temas", "Themes") + "</a></div>" +
-      '<div class="footer-col"><h4>' + t("Ajuda & Legal", "Help & Legal") + "</h4>" +
+      '<div class="footer-col"><h2 class="footer-h">' + t("Ajuda & Legal", "Help & Legal") + "</h2>" +
         '<a href="regras-de-negocio.html">' + t("Regras de negócio", "Business rules") + "</a>" +
         '<a href="faq.html">FAQ</a>' +
         '<a href="contato.html">' + t("Contato", "Contact") + "</a>" +
