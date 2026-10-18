@@ -63,7 +63,17 @@ const NAV = [
 
 function t(pt, en) { return '<span data-lang="pt" lang="pt-BR">' + pt + '</span><span data-lang="en" lang="en">' + en + '</span>'; }
 
+// Páginas de destino de anúncio: header enxuto (logo, idioma e tema), sem o menu, para a pessoa não
+// sair da página antes de tocar no selo da loja. O rodapé continua completo (privacidade, termos).
+const LANDING = new Set(["orcamento.html"]);
+
 function buildHeader(current) {
+  if (LANDING.has(current)) {
+    return '<header class="site-header"><div class="container"><div class="nav">' +
+        '<a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a>' +
+        navActionsHTML() +
+      "</div></div></header>";
+  }
   var links = "";
   NAV.forEach(function (n) {
     if (n.drop) {
@@ -84,14 +94,18 @@ function buildHeader(current) {
       '<a class="nav-logo" href="index.html"><img src="assets/img/logo-mark.png" alt="" width="256" height="256"><span class="brand-word">Silica</span></a>' +
       '<button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">' + IC.menu + "</button>" +
       '<nav class="nav-links" id="site-nav">' + links + "</nav>" +
-      '<div class="nav-actions">' +
-        '<button class="icon-btn lang-btn" id="langBtn" type="button">' + IC.globe +
-          '<span data-lang="pt" lang="pt-BR"><span class="sr-only">Mudar idioma para </span>EN</span>' +
-          '<span data-lang="en" lang="en"><span class="sr-only">Switch language to </span>PT</span></button>' +
-        '<button class="icon-btn theme-toggle" id="themeBtn" type="button" aria-pressed="false">' + IC.sun + IC.moon +
-          '<span class="sr-only">' + t("Tema claro", "Light theme") + "</span></button>" +
-      "</div>" +
+      navActionsHTML() +
     "</div></div></header>";
+}
+
+function navActionsHTML() {
+  return '<div class="nav-actions">' +
+      '<button class="icon-btn lang-btn" id="langBtn" type="button">' + IC.globe +
+        '<span data-lang="pt" lang="pt-BR"><span class="sr-only">Mudar idioma para </span>EN</span>' +
+        '<span data-lang="en" lang="en"><span class="sr-only">Switch language to </span>PT</span></button>' +
+      '<button class="icon-btn theme-toggle" id="themeBtn" type="button" aria-pressed="false">' + IC.sun + IC.moon +
+        '<span class="sr-only">' + t("Tema claro", "Light theme") + "</span></button>" +
+    "</div>";
 }
 
 // Selo oficial da Apple, arte sem alteração, baixada de toolbox.marketingtools.apple.com.
