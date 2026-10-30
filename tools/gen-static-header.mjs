@@ -54,6 +54,7 @@ const NAV = [
   ]},
   { href: "regras-de-negocio.html", pt: "Regras", en: "Business rules" },
   { href: "planos.html", pt: "Planos", en: "Plans" },
+  { href: "videos.html", pt: "Vídeos", en: "Videos" },
   { href: "faq.html", pt: "FAQ", en: "FAQ" },
   { href: "contato.html", pt: "Contato", en: "Contact" }
 ];
@@ -138,7 +139,8 @@ function buildFooter() {
         '<a href="index.html">' + t("Início", "Home") + "</a>" +
         '<a href="comecar.html">' + t("Começar", "Get started") + "</a>" +
         '<a href="perfis.html">' + t("Perfis", "Profiles") + "</a>" +
-        '<a href="planos.html">' + t("Planos", "Plans") + "</a></div>" +
+        '<a href="planos.html">' + t("Planos", "Plans") + "</a>" +
+        '<a href="videos.html">' + t("Vídeos", "Videos") + "</a></div>" +
       '<div class="footer-col"><h2 class="footer-h">' + t("Recursos", "Features") + "</h2>" +
         '<a href="financas.html">' + t("Finanças", "Finances") + "</a>" +
         '<a href="vendas.html">' + t("Vendas", "Sales") + "</a>" +

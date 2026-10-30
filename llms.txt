@@ -7,6 +7,7 @@
 - [Começar](https://silica.app.br/comecar.html): Primeiros passos no Silica: a tela inicial, como adicionar lançamentos, gestos essenciais, as cores das contas e como alternar entre os espaços.
 - [Perfis](https://silica.app.br/perfis.html): Os quatro espaços isolados do Silica — Pessoal, Negócios, Vendas e Serviços — e como habilitar, desabilitar e definir o perfil principal.
 - [Planos](https://silica.app.br/planos.html): Silica Grátis vs PRO: o PRO sai por R$ 14,90/mês, R$ 119,90/ano ou R$ 299,90 no vitalício, com teste grátis no mensal e no anual (20 dias no Android, 14 no iPhone). Compare os recursos.
+- [Vídeos](https://silica.app.br/videos.html): Galeria com os vídeos do Silica, de cerca de um minuto, com legendas e transcrição: lançamento, o desenho do Carlos, privacidade sem conta nem login, os quatro espaços, o filme da marca, o tour pelo app e o criador apresentando o app.
 
 ## Recursos
 - [Finanças (Pessoal & Negócios)](https://silica.app.br/financas.html): Despesas, rendas, recorrência, assinaturas, parcelamento, cartões de crédito, categorias e saúde financeira no Silica — com regras e exemplos.
